@@ -119,6 +119,12 @@
           </a-avatar>
           <template #content>
             <a-doption>
+              <a-space @click="switchGit">
+                <icon-github />
+                <span> 开源地址 </span>
+              </a-space>
+            </a-doption>
+            <a-doption>
               <a-space @click="switchRoles">
                 <icon-tag />
                 <span>
@@ -223,6 +229,9 @@ export default defineComponent({
       const res = await userStore.switchRoles();
       Message.success(res as string);
     };
+    const switchGit = () => {
+      window.open('https://github.com/chuzhixin');
+    };
     return {
       locales,
       theme,
@@ -236,6 +245,7 @@ export default defineComponent({
       handleLogout,
       setDropDownVisible,
       switchRoles,
+      switchGit,
     };
   },
 });

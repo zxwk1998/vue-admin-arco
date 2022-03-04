@@ -13,7 +13,7 @@
 ## 🔗 演示地址
 
 - [字节跳动原版](https://vue-pro.arco.design)
-- [vue-admin-arco 魔改版](https://vue-pro.arco.design)
+- [vue-admin-arco 魔改版](https://vue-admin-beautiful.com/vue-admin-arco)
 
 ## ✨ 魔改内容
 
