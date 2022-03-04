@@ -1,7 +1,7 @@
 <template>
   <div class="navbar">
     <div class="left-side">
-      <a-space>
+      <!-- <a-space>
         <img
           alt="logo"
           src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
@@ -12,7 +12,7 @@
         >
           vue-admin-arco
         </a-typography-title>
-      </a-space>
+      </a-space> -->
     </div>
     <ul class="right-side">
       <li>
@@ -248,6 +248,7 @@ export default defineComponent({
   height: 100%;
   background-color: var(--color-bg-2);
   border-bottom: 1px solid var(--color-border);
+  width: calc(100% - 250px);
 }
 
 .left-side {

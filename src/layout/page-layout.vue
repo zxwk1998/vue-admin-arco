@@ -1,8 +1,5 @@
 <template>
   <a-layout class="layout">
-    <div v-if="navbar" class="layout-navbar">
-      <NavBar />
-    </div>
     <a-layout>
       <a-layout>
         <a-layout-sider
@@ -17,10 +14,28 @@
           @collapse="setCollapsed"
         >
           <div class="menu-wrapper">
+            <div class="left-side">
+              <a-space>
+                <img
+                  alt="logo"
+                  src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
+                />
+                <a-typography-title
+                  :style="{ margin: 0, fontSize: '18px', color: '#fff' }"
+                  :heading="5"
+                >
+                  vue-admin-arco
+                </a-typography-title>
+              </a-space>
+            </div>
             <Menu />
           </div>
         </a-layout-sider>
+
         <a-layout class="layout-content" :style="paddingStyle">
+          <div v-if="navbar" class="layout-navbar">
+            <NavBar />
+          </div>
           <a-layout-content>
             <router-view />
           </a-layout-content>
@@ -102,9 +117,10 @@ export default defineComponent({
 }
 
 .layout-navbar {
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
   position: fixed;
   top: 0;
-  left: 0;
+  left: 250px;
   z-index: 100;
   width: 100%;
   min-width: @layout-max-width;
@@ -117,6 +133,16 @@ export default defineComponent({
   left: 0;
   z-index: 99;
   height: 100%;
+  padding-top: 0 !important;
+
+  .left-side {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    background: var(--color-menu-dark-bg);
+    height: 60px;
+    transition: none !important;
+  }
 
   &::after {
     position: absolute;
@@ -131,14 +157,18 @@ export default defineComponent({
 
   > :deep(.arco-layout-sider-children) {
     overflow-y: hidden;
+    top: 0;
   }
 }
 
 .menu-wrapper {
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
   height: 100%;
   overflow: auto;
   overflow-x: hidden;
   :deep(.arco-menu) {
+    height: calc(100% - 60px) !important;
+    transition: none;
     ::-webkit-scrollbar {
       width: 12px;
       height: 4px;
@@ -162,6 +192,23 @@ export default defineComponent({
   min-height: 100vh;
   overflow-y: hidden;
   background-color: var(--color-fill-2);
-  transition: padding-left 0.2s;
+  transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+}
+
+.arco-layout-sider-collapsed {
+  .left-side {
+    width: 50px;
+    .arco-typography {
+      display: none;
+    }
+  }
+  + .layout-content {
+    .layout-navbar {
+      left: 50px !important;
+      .navbar {
+        width: calc(100% - 50px) !important;
+      }
+    }
+  }
 }
 </style>

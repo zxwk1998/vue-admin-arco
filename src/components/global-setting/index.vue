@@ -37,12 +37,12 @@ export default defineComponent({
       { name: 'settings.navbar', key: 'navbar', defaultVal: true },
       { name: 'settings.menu', key: 'menu', defaultVal: true },
       { name: 'settings.footer', key: 'footer', defaultVal: true },
-      {
+      /* {
         name: 'settings.menuWidth',
         key: 'menuWidth',
         defaultVal: appStore.menuWidth,
         type: 'number',
-      },
+      }, */
     ];
     const othersOpts = [
       { name: 'settings.colorWeek', key: 'colorWeek', defaultVal: false },
