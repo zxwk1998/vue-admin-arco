@@ -1,0 +1,16 @@
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.scss text eol=lf
+*.vue text eol=lf
+*.hbs text eol=lf
+*.sh text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+.browserslistrc text eol=lf
+.editorconfig text eol=lf
+.eslintignore text eol=lf
+.gitattributes text eol=lf
+LICENSE text eol=lf
+*.conf  text eol=lf
