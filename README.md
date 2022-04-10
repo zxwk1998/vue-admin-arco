@@ -12,12 +12,12 @@
 
 ## 🔗 演示地址
 
-- [字节跳动原版](https://vue-pro.arco.design)
 - [vue-admin-arco 魔改版](https://vue-admin-beautiful.com/vue-admin-arco)
 
 ## ✨ 魔改内容
 
 - 重构主题
+- 升级最新版本
 - 未完待续
 
 ## 📝 声明
@@ -28,3 +28,4 @@
 ## 🌐 文档地址
 
 - [arco.design](https://arco.design/vue/docs/start)
+- [字节跳动原版](https://vue-pro.arco.design)
