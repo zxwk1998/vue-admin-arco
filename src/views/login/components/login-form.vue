@@ -89,7 +89,6 @@ export default defineComponent({
       errors: Record<string, ValidatedError> | undefined;
       values: LoginData;
     }) => {
-      debugger;
       if (!errors) {
         setLoading(true);
         try {
