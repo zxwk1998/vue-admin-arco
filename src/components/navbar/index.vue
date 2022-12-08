@@ -149,6 +149,23 @@
               </a-space>
             </a-doption>
             <a-doption>
+              <a-space @click="open('/admin-plus')">
+                <icon-tag />
+                <span> admin plus 付费版本 </span>
+              </a-space>
+            </a-doption>
+            <a-doption>
+              <a-space @click="open('/admin-pro')">
+                <icon-tag />
+                <span> admin pro 付费版本 </span>
+              </a-space> </a-doption
+            ><a-doption>
+              <a-space @click="open('/vue-admin-beautiful-element')">
+                <icon-tag />
+                <span> admin better 开源版 </span>
+              </a-space>
+            </a-doption>
+            <a-doption>
               <a-space @click="handleLogout">
                 <icon-export />
                 <span>
@@ -232,6 +249,9 @@ export default defineComponent({
     const switchGit = () => {
       window.open('https://github.com/chuzhixin');
     };
+    const open = (val: string) => {
+      window.open(`https://vue-admin-beautiful.com/${val}`);
+    };
     return {
       locales,
       theme,
@@ -246,6 +266,7 @@ export default defineComponent({
       setDropDownVisible,
       switchRoles,
       switchGit,
+      open,
     };
   },
 });
@@ -305,5 +326,8 @@ export default defineComponent({
   .arco-popover-content {
     margin-top: 0;
   }
+}
+.arco-dropdown-list-wrapper {
+  max-height: 100vh !important;
 }
 </style>
