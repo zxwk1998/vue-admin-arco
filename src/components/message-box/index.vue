@@ -88,7 +88,7 @@ export default defineComponent({
     }
     const renderList = computed(() => {
       return messageData.messageList.filter(
-        (item) => messageType.value === item.type
+        (item) => messageType.value === item.type,
       );
     });
     const unreadCount = computed(() => {
@@ -96,7 +96,7 @@ export default defineComponent({
     });
     const getUnreadList = (type: string) => {
       const list = messageData.messageList.filter(
-        (item) => item.type === type && !item.status
+        (item) => item.type === type && !item.status,
       );
       return list;
     };

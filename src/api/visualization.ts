@@ -60,7 +60,7 @@ export interface PublicOpinionAnalysisRes {
 export function queryPublicOpinionAnalysis(data: DataChainGrowth) {
   return axios.post<PublicOpinionAnalysisRes>(
     '/api/public-opinion-analysis',
-    data
+    data,
   );
 }
 export interface DataOverviewRes {

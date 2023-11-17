@@ -8,7 +8,7 @@ export default function handleError(Vue: App, baseUrl: string) {
   Vue.config.errorHandler = (
     err: unknown,
     instance: ComponentPublicInstance | null,
-    info: string
+    info: string,
   ) => {
     // send error info
     axios.post(`${baseUrl}/report-error`, {

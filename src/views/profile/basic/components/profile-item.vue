@@ -115,13 +115,13 @@ export default defineComponent({
           {
             label: t('basicProfile.label.audio.acquisition.channels'),
             value: `${renderData?.audio?.acquisition.channels || '-'} ${t(
-              'basicProfile.unit.audio.channels'
+              'basicProfile.unit.audio.channels',
             )}`,
           },
           {
             label: t('basicProfile.label.audio.encoding.channels'),
             value: `${renderData?.audio?.encoding.channels || '-'} ${t(
-              'basicProfile.unit.audio.channels'
+              'basicProfile.unit.audio.channels',
             )}`,
           },
           {

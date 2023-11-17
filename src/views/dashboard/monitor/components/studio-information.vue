@@ -4,7 +4,7 @@
       <a-form-item :label="$t('monitor.studioInfo.label.studioTitle')" required>
         <a-input
           :placeholder="`王立群${$t(
-            'monitor.studioInfo.placeholder.studioTitle'
+            'monitor.studioInfo.placeholder.studioTitle',
           )}`"
         />
       </a-form-item>

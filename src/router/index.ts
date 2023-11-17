@@ -49,7 +49,7 @@ router.beforeEach(async (to, from, next) => {
     else {
       const destination = Permission.findFirstPermissionRoute(
         appRoutes,
-        userStore.role
+        userStore.role,
       ) || {
         name: 'notFound',
       };

@@ -44,7 +44,7 @@ export default defineComponent({
     const defaultValue: MyTeamRecord[] = new Array(4).fill({});
     const { loading, response: teamList } = useRequest<MyTeamRecord[]>(
       queryMyTeamList,
-      defaultValue
+      defaultValue,
     );
     return {
       loading,

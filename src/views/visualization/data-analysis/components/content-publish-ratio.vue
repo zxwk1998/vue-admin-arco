@@ -34,7 +34,7 @@ const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
     <span class="tooltip-value">
       ${Number(el.value).toLocaleString()}
     </span>
-  </div>`
+  </div>`,
     )
     .join('');
 };
