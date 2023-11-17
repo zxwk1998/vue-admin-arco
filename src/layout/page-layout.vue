@@ -2,14 +2,28 @@
   <a-layout class="layout">
     <a-layout>
       <a-layout>
-        <a-layout-sider v-if="menu" class="layout-sider" :breakpoint="'xl'" :collapsed="collapse" :collapsible="true"
-          :width="menuWidth" :style="{ paddingTop: navbar ? '60px' : '' }" :hide-trigger="true" @collapse="setCollapsed">
+        <a-layout-sider
+          v-if="menu"
+          class="layout-sider"
+          :breakpoint="'xl'"
+          :collapsed="collapse"
+          :collapsible="true"
+          :width="menuWidth"
+          :style="{ paddingTop: navbar ? '60px' : '' }"
+          :hide-trigger="true"
+          @collapse="setCollapsed"
+        >
           <div class="menu-wrapper">
             <div class="left-side">
               <a-space>
-                <img alt="logo"
-                  src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image" />
-                <a-typography-title :style="{ margin: 0, fontSize: '18px', color: '#fff' }" :heading="5">
+                <img
+                  alt="logo"
+                  src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
+                />
+                <a-typography-title
+                  :style="{ margin: 0, fontSize: '18px', color: '#fff' }"
+                  :heading="5"
+                >
                   vue-admin-arco
                 </a-typography-title>
               </a-space>
@@ -101,9 +115,6 @@ export default defineComponent({
   width: 100%;
   height: 100%;
 
-
-
-
   .layout-sider {
     background: var(--color-menu-dark-bg);
     position: fixed;
@@ -170,8 +181,6 @@ export default defineComponent({
     }
   }
 
-
-
   .layout-content {
     min-width: @layout-max-width;
     min-height: 100vh;
@@ -201,7 +210,7 @@ export default defineComponent({
       }
     }
 
-    +.layout-content {
+    + .layout-content {
       .layout-navbar {
         left: 50px !important;
 

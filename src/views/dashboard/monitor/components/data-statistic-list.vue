@@ -1,9 +1,16 @@
 <template>
   <div>
-    <a-table :columns="columns" :data="data" row-key="id" :row-selection="{
-      type: 'checkbox',
-      showCheckedAll: true,
-    }" :border="false" :pagination="false" />
+    <a-table
+      :columns="columns"
+      :data="data"
+      row-key="id"
+      :row-selection="{
+        type: 'checkbox',
+        showCheckedAll: true,
+      }"
+      :border="false"
+      :pagination="false"
+    />
     <a-typography-text type="secondary" class="data-statistic-list-tip">
       {{ $t('monitor.list.tip.rotations') }} {{ data.length }}
       {{ $t('monitor.list.tip.rest') }}
@@ -14,9 +21,7 @@
 <script lang="ts">
 import { defineComponent, computed, h, compile } from 'vue';
 import { useI18n } from 'vue-i18n';
-import {
-  TableData,
-} from '@arco-design/web-vue/es/table/interface.d';
+import { TableData } from '@arco-design/web-vue/es/table/interface.d';
 
 interface PreviewRecord {
   cover: string;
@@ -53,24 +58,14 @@ export default defineComponent({
       return [
         {
           title: t('monitor.list.title.order'),
-          render({
-            rowIndex,
-          }: {
-            record: TableData;
-            rowIndex: number;
-          }) {
+          render({ rowIndex }: { record: TableData; rowIndex: number }) {
             const tmp = `<span>${rowIndex + 1}</span>`;
             return h(compile(tmp));
           },
         },
         {
           title: t('monitor.list.title.cover'),
-          render({
-            record,
-          }: {
-            record: TableData;
-            rowIndex: number;
-          }) {
+          render({ record }: { record: TableData; rowIndex: number }) {
             const tmp = `<div class='data-statistic-list-cover-wrapper'>
               <img src=${record.cover} />
               ${renderTag(record.status)}

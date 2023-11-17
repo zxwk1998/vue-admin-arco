@@ -5,7 +5,11 @@
     </a-card>
     <a-card v-else :bordered="false" hoverable>
       <a-space align="start">
-        <a-avatar v-if="icon" :size="24" style="margin-right: 8px; background-color: #626aea">
+        <a-avatar
+          v-if="icon"
+          :size="24"
+          style="margin-right: 8px; background-color: #626aea"
+        >
           <icon-filter />
         </a-avatar>
         <a-card-meta>
@@ -14,7 +18,11 @@
               {{ title }}
             </a-typography-text>
             <template v-if="showTag">
-              <a-tag v-if="open && isExpires === false" size="small" color="green">
+              <a-tag
+                v-if="open && isExpires === false"
+                size="small"
+                color="green"
+              >
                 <template #icon>
                   <icon-check-circle-fill />
                 </template>

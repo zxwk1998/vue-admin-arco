@@ -1,18 +1,32 @@
 <template>
-  <a-card class="general-card" :title="$t('userSetting.certification.title.enterprise')"
-    :header-style="{ padding: '0px 20px 16px 20px' }">
+  <a-card
+    class="general-card"
+    :title="$t('userSetting.certification.title.enterprise')"
+    :header-style="{ padding: '0px 20px 16px 20px' }"
+  >
     <template #extra>
       <a-link>{{ $t('userSetting.certification.extra.enterprise') }}</a-link>
     </template>
-    <a-descriptions class="card-content" :data="renderData" :column="3" align="right" layout="inline-horizontal"
-      :label-style="{ fontWeight: 'normal' }" :value-style="{
+    <a-descriptions
+      class="card-content"
+      :data="renderData"
+      :column="3"
+      align="right"
+      layout="inline-horizontal"
+      :label-style="{ fontWeight: 'normal' }"
+      :value-style="{
         width: '200px',
         paddingLeft: '8px',
         textAlign: 'left',
-      }">
+      }"
+    >
       <template #label="{ label }">{{ $t(label) }} :</template>
       <template #value="{ value, data }">
-        <a-tag v-if="data.label === 'userSetting.certification.label.status'" color="green" size="small">
+        <a-tag
+          v-if="data.label === 'userSetting.certification.label.status'"
+          color="green"
+          size="small"
+        >
           已认证
         </a-tag>
         <span v-else>{{ value }}</span>

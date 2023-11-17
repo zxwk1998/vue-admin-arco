@@ -3,20 +3,41 @@
     <div class="login-form-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-error-msg">{{ errorMessage }}</div>
-    <a-form ref="loginForm" :model="userInfo" class="login-form" layout="vertical" @submit="handleSubmit">
-      <a-form-item field="username" :rules="[{ required: true, message: $t('login.form.userName.errMsg') }]"
-        :validate-trigger="['change', 'blur']" hide-label>
-        <a-input v-model="userInfo.username" :placeholder="$t('login.form.userName.placeholder')"
-          @keyup.enter="handleSubmit">
+    <a-form
+      ref="loginForm"
+      :model="userInfo"
+      class="login-form"
+      layout="vertical"
+      @submit="handleSubmit"
+    >
+      <a-form-item
+        field="username"
+        :rules="[{ required: true, message: $t('login.form.userName.errMsg') }]"
+        :validate-trigger="['change', 'blur']"
+        hide-label
+      >
+        <a-input
+          v-model="userInfo.username"
+          :placeholder="$t('login.form.userName.placeholder')"
+          @keyup.enter="handleSubmit"
+        >
           <template #prefix>
             <icon-user />
           </template>
         </a-input>
       </a-form-item>
-      <a-form-item field="password" :rules="[{ required: true, message: $t('login.form.password.errMsg') }]"
-        :validate-trigger="['change', 'blur']" hide-label>
-        <a-input-password v-model="userInfo.password" :placeholder="$t('login.form.password.placeholder')" allow-clear
-          @keyup.enter="handleSubmit">
+      <a-form-item
+        field="password"
+        :rules="[{ required: true, message: $t('login.form.password.errMsg') }]"
+        :validate-trigger="['change', 'blur']"
+        hide-label
+      >
+        <a-input-password
+          v-model="userInfo.password"
+          :placeholder="$t('login.form.password.placeholder')"
+          allow-clear
+          @keyup.enter="handleSubmit"
+        >
           <template #prefix>
             <icon-lock />
           </template>

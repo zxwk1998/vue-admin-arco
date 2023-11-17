@@ -15,14 +15,35 @@
           </a-card>
         </div>
       </a-col>
-      <a-col v-for="item in renderData" :key="item.id" :span="6" class="list-col">
-        <CardWrap :loading="loading" :title="item.title" :description="item.description" :default-value="item.enable"
-          :action-type="item.actionType" :icon="item.icon" :open-txt="$t('cardList.content.inspection')"
-          :close-txt="$t('cardList.content.delete')" :show-tag="false">
-          <a-descriptions style="margin-top: 16px" :data="item.data" layout="inline-horizontal" :column="2" />
+      <a-col
+        v-for="item in renderData"
+        :key="item.id"
+        :span="6"
+        class="list-col"
+      >
+        <CardWrap
+          :loading="loading"
+          :title="item.title"
+          :description="item.description"
+          :default-value="item.enable"
+          :action-type="item.actionType"
+          :icon="item.icon"
+          :open-txt="$t('cardList.content.inspection')"
+          :close-txt="$t('cardList.content.delete')"
+          :show-tag="false"
+        >
+          <a-descriptions
+            style="margin-top: 16px"
+            :data="item.data"
+            layout="inline-horizontal"
+            :column="2"
+          />
           <template #skeleton>
             <a-skeleton :animation="true">
-              <a-skeleton-line :widths="['50%', '50%', '100%', '40%']" :rows="4" />
+              <a-skeleton-line
+                :widths="['50%', '50%', '100%', '40%']"
+                :rows="4"
+              />
               <a-skeleton-line :widths="['40%']" :rows="1" />
             </a-skeleton>
           </template>

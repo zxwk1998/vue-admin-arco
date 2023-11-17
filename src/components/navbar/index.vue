@@ -26,7 +26,12 @@
       </li>
       <li>
         <a-tooltip :content="$t('settings.language')">
-          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setDropDownVisible">
+          <a-button
+            class="nav-btn"
+            type="outline"
+            :shape="'circle'"
+            @click="setDropDownVisible"
+          >
             <template #icon>
               <icon-language />
             </template>
@@ -35,18 +40,30 @@
         <a-dropdown trigger="click" @select="changeLocale">
           <div ref="triggerBtn" class="trigger-btn"></div>
           <template #content>
-            <a-doption v-for="item in locales" :key="item.value" :value="item.value">
+            <a-doption
+              v-for="item in locales"
+              :key="item.value"
+              :value="item.value"
+            >
               {{ item.label }}
             </a-doption>
           </template>
         </a-dropdown>
       </li>
       <li>
-        <a-tooltip :content="theme === 'light'
-          ? $t('settings.navbar.theme.toDark')
-          : $t('settings.navbar.theme.toLight')
-          ">
-          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleTheme">
+        <a-tooltip
+          :content="
+            theme === 'light'
+              ? $t('settings.navbar.theme.toDark')
+              : $t('settings.navbar.theme.toLight')
+          "
+        >
+          <a-button
+            class="nav-btn"
+            type="outline"
+            :shape="'circle'"
+            @click="toggleTheme"
+          >
             <template #icon>
               <icon-moon-fill v-if="theme === 'dark'" />
               <icon-sun-fill v-else />
@@ -58,14 +75,23 @@
         <a-tooltip :content="$t('settings.navbar.alerts')">
           <div class="message-box-trigger">
             <a-badge :count="9" dot>
-              <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setPopoverVisible">
+              <a-button
+                class="nav-btn"
+                type="outline"
+                :shape="'circle'"
+                @click="setPopoverVisible"
+              >
                 <icon-notification />
               </a-button>
             </a-badge>
           </div>
         </a-tooltip>
-        <a-popover trigger="click" :arrow-style="{ display: 'none' }" :content-style="{ padding: 0, minWidth: '400px' }"
-          content-class="message-popover">
+        <a-popover
+          trigger="click"
+          :arrow-style="{ display: 'none' }"
+          :content-style="{ padding: 0, minWidth: '400px' }"
+          content-class="message-popover"
+        >
           <div ref="refBtn" class="ref-btn"></div>
           <template #content>
             <message-box />
@@ -74,7 +100,12 @@
       </li>
       <li>
         <a-tooltip :content="$t('settings.title')">
-          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setVisible">
+          <a-button
+            class="nav-btn"
+            type="outline"
+            :shape="'circle'"
+            @click="setVisible"
+          >
             <template #icon>
               <icon-settings />
             </template>
@@ -118,6 +149,12 @@
               </a-space>
             </a-doption>
             <a-doption>
+              <a-space @click="open('/shop-vite')">
+                <icon-tag />
+                <span> shop vite 付费版本 </span>
+              </a-space>
+            </a-doption>
+            <a-doption>
               <a-space @click="open('/admin-plus')">
                 <icon-tag />
                 <span> admin plus 付费版本 </span>
@@ -127,7 +164,8 @@
               <a-space @click="open('/admin-pro')">
                 <icon-tag />
                 <span> admin pro 付费版本 </span>
-              </a-space> </a-doption><a-doption>
+              </a-space> </a-doption
+            ><a-doption>
               <a-space @click="open('/vue-admin-beautiful-element')">
                 <icon-tag />
                 <span> admin better 开源版 </span>
@@ -215,7 +253,7 @@ export default defineComponent({
       Message.success(res as string);
     };
     const switchGit = () => {
-      window.open('https://github.com/chuzhixin');
+      window.open('https://github.com/chuzhixin/vue-admin-arco');
     };
     const open = (val: string) => {
       window.open(`https://vue-admin-beautiful.com/${val}`);
