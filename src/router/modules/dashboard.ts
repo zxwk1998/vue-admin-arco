@@ -31,4 +31,4 @@ export default {
     },
     /** simple end */
   ],
-};
+}

@@ -36,4 +36,4 @@ export default {
   'basicProfile.cell.pass': 'Pass',
   'basicProfile.cell.auditing': 'Auditing',
   'basicProfile.cell.view': 'View',
-};
+}

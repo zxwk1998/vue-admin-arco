@@ -37,4 +37,4 @@ export default {
   'groupForm.submit': '提交',
   'groupForm.reset': '重置',
   'groupForm.submitSuccess': '提交成功',
-};
+}

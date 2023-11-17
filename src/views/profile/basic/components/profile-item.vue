@@ -26,17 +26,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, PropType } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { ProfileBasicRes } from '@/api/profile';
+import { defineComponent, computed, PropType } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { ProfileBasicRes } from '@/api/profile'
 
 type BlockList = {
-  title: string;
+  title: string
   data: {
-    label: string;
-    value: string;
-  }[];
-}[];
+    label: string
+    value: string
+  }[]
+}[]
 export default defineComponent({
   props: {
     type: {
@@ -53,15 +53,12 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { t } = useI18n();
+    const { t } = useI18n()
     const blockDataList = computed<BlockList>(() => {
-      const { renderData } = props;
-      const result = [];
+      const { renderData } = props
+      const result = []
       result.push({
-        title:
-          props.type === 'pre'
-            ? t('basicProfile.title.preVideo')
-            : t('basicProfile.title.video'),
+        title: props.type === 'pre' ? t('basicProfile.title.preVideo') : t('basicProfile.title.video'),
         data: [
           {
             label: t('basicProfile.label.video.mode'),
@@ -100,13 +97,10 @@ export default defineComponent({
             value: renderData?.video?.encoding.profile || '-',
           },
         ],
-      });
+      })
 
       result.push({
-        title:
-          props.type === 'pre'
-            ? t('basicProfile.title.preAudio')
-            : t('basicProfile.title.audio'),
+        title: props.type === 'pre' ? t('basicProfile.title.preAudio') : t('basicProfile.title.audio'),
         data: [
           {
             label: t('basicProfile.label.audio.mode'),
@@ -114,15 +108,11 @@ export default defineComponent({
           },
           {
             label: t('basicProfile.label.audio.acquisition.channels'),
-            value: `${renderData?.audio?.acquisition.channels || '-'} ${t(
-              'basicProfile.unit.audio.channels',
-            )}`,
+            value: `${renderData?.audio?.acquisition.channels || '-'} ${t('basicProfile.unit.audio.channels')}`,
           },
           {
             label: t('basicProfile.label.audio.encoding.channels'),
-            value: `${renderData?.audio?.encoding.channels || '-'} ${t(
-              'basicProfile.unit.audio.channels',
-            )}`,
+            value: `${renderData?.audio?.encoding.channels || '-'} ${t('basicProfile.unit.audio.channels')}`,
           },
           {
             label: t('basicProfile.label.audio.encoding.rate'),
@@ -133,16 +123,16 @@ export default defineComponent({
             value: renderData?.audio?.encoding.profile || '-',
           },
         ],
-      });
+      })
 
-      return result;
-    });
+      return result
+    })
 
     return {
       blockDataList,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

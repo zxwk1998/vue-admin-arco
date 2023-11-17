@@ -15,12 +15,7 @@
           </a-card>
         </div>
       </a-col>
-      <a-col
-        v-for="item in renderData"
-        :key="item.id"
-        :span="6"
-        class="list-col"
-      >
+      <a-col v-for="item in renderData" :key="item.id" :span="6" class="list-col">
         <CardWrap
           :loading="loading"
           :title="item.title"
@@ -32,18 +27,10 @@
           :close-txt="$t('cardList.content.delete')"
           :show-tag="false"
         >
-          <a-descriptions
-            style="margin-top: 16px"
-            :data="item.data"
-            layout="inline-horizontal"
-            :column="2"
-          />
+          <a-descriptions style="margin-top: 16px" :data="item.data" layout="inline-horizontal" :column="2" />
           <template #skeleton>
             <a-skeleton :animation="true">
-              <a-skeleton-line
-                :widths="['50%', '50%', '100%', '40%']"
-                :rows="4"
-              />
+              <a-skeleton-line :widths="['50%', '50%', '100%', '40%']" :rows="4" />
               <a-skeleton-line :widths="['40%']" :rows="1" />
             </a-skeleton>
           </template>
@@ -54,27 +41,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { queryInspectionList, ServiceRecord } from '@/api/list';
-import useRequest from '@/hooks/request';
-import CardWrap from './card-wrap.vue';
+import { defineComponent } from 'vue'
+import { queryInspectionList, ServiceRecord } from '@/api/list'
+import useRequest from '@/hooks/request'
+import CardWrap from './card-wrap.vue'
 
 export default defineComponent({
   components: {
     CardWrap,
   },
   setup() {
-    const defaultValue: ServiceRecord[] = new Array(3).fill({});
-    const { loading, response: renderData }: any = useRequest<ServiceRecord[]>(
-      queryInspectionList,
-      defaultValue,
-    );
+    const defaultValue: ServiceRecord[] = new Array(3).fill({})
+    const { loading, response: renderData }: any = useRequest<ServiceRecord[]>(queryInspectionList, defaultValue)
     return {
       loading,
       renderData,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

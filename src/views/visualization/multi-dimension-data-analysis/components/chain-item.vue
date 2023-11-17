@@ -1,21 +1,9 @@
 <template>
   <a-spin :loading="loading" style="width: 100%">
-    <a-card
-      class="general-card"
-      :title="title"
-      :header-style="{ paddingBottom: '12px' }"
-    >
+    <a-card class="general-card" :title="title" :header-style="{ paddingBottom: '12px' }">
       <div class="content">
-        <a-statistic
-          :value="count"
-          :show-group-separator="true"
-          :value-from="0"
-          animation
-        />
-        <a-typography-text
-          class="percent-text"
-          :type="isUp ? 'danger' : 'success'"
-        >
+        <a-statistic :value="count" :show-group-separator="true" :value-from="0" animation />
+        <a-typography-text class="percent-text" :type="isUp ? 'danger' : 'success'">
           {{ growth }}%
           <icon-arrow-rise v-if="isUp" />
           <icon-arrow-fall v-else />
@@ -29,10 +17,10 @@
 </template>
 
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue';
-import useLoading from '@/hooks/loading';
-import { queryDataChainGrowth, DataChainGrowth } from '@/api/visualization';
-import useChartOption from '@/hooks/chart-option';
+import { computed, defineComponent, ref } from 'vue'
+import useLoading from '@/hooks/loading'
+import { queryDataChainGrowth, DataChainGrowth } from '@/api/visualization'
+import useChartOption from '@/hooks/chart-option'
 
 export default defineComponent({
   props: {
@@ -50,11 +38,11 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const { loading, setLoading } = useLoading(true);
-    const count = ref(0);
-    const growth = ref(100);
-    const isUp = computed(() => growth.value > 50);
-    const chartDatas = ref<any>([]);
+    const { loading, setLoading } = useLoading(true)
+    const count = ref(0)
+    const growth = ref(100)
+    const isUp = computed(() => growth.value > 50)
+    const chartDatas = ref<any>([])
     const { chartOption } = useChartOption(() => {
       return {
         grid: {
@@ -94,14 +82,14 @@ export default defineComponent({
                 }),
           },
         ],
-      };
-    });
+      }
+    })
     const fetchData = async (params: DataChainGrowth) => {
       try {
-        const { data } = await queryDataChainGrowth(params);
-        const { chartData } = data;
-        count.value = data.count;
-        growth.value = data.growth;
+        const { data } = await queryDataChainGrowth(params)
+        const { chartData } = data
+        count.value = data.count
+        growth.value = data.growth
         chartData.data.value.forEach((el, idx) => {
           if (props.chartType === 'bar') {
             chartDatas.value.push({
@@ -109,27 +97,27 @@ export default defineComponent({
               itemStyle: {
                 color: idx % 2 ? '#468DFF' : '#86DF6C',
               },
-            });
+            })
           } else {
-            chartDatas.value.push(el);
+            chartDatas.value.push(el)
           }
-        });
+        })
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData({ quota: props.quota });
+    }
+    fetchData({ quota: props.quota })
     return {
       loading,
       count,
       growth,
       chartOption,
       isUp,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

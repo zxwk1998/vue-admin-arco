@@ -23,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 const links: any = [
   { text: 'workplace.contentManagement', icon: 'icon-file' },
@@ -31,15 +31,15 @@ const links: any = [
   { text: 'workplace.advanced', icon: 'icon-settings' },
   { text: 'workplace.onlinePromotion', icon: 'icon-mobile' },
   { text: 'workplace.contentPutIn', icon: 'icon-fire' },
-];
+]
 
 export default defineComponent({
   setup() {
     return {
       links,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>

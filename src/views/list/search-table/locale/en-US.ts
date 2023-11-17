@@ -31,4 +31,4 @@ export default {
   'searchTable.columns.status': 'Status',
   'searchTable.columns.operations': 'Operations',
   'searchTable.columns.operations.view': 'View',
-};
+}

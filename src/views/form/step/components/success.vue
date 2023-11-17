@@ -1,10 +1,6 @@
 <template>
   <div class="success-wrap">
-    <a-result
-      status="success"
-      :title="$t('stepForm.success.title')"
-      :subtitle="$t('stepForm.success.subTitle')"
-    />
+    <a-result status="success" :title="$t('stepForm.success.title')" :subtitle="$t('stepForm.success.subTitle')" />
     <a-space :size="16">
       <a-button key="view" type="primary">
         {{ $t('stepForm.button.view') }}
@@ -26,19 +22,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   emits: ['changeStep'],
   setup(props, ctx) {
     const oneMore = () => {
-      ctx.emit('changeStep', 1);
-    };
+      ctx.emit('changeStep', 1)
+    }
     return {
       oneMore,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

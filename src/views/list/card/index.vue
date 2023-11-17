@@ -35,10 +35,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import QualityInspection from './components/quality-inspection.vue';
-import TheService from './components/the-service.vue';
-import RulesPreset from './components/reules-preset.vue';
+import { defineComponent } from 'vue'
+import QualityInspection from './components/quality-inspection.vue'
+import TheService from './components/the-service.vue'
+import RulesPreset from './components/reules-preset.vue'
 
 export default defineComponent({
   components: {
@@ -49,7 +49,7 @@ export default defineComponent({
   setup() {
     //
   },
-});
+})
 </script>
 
 <style scoped lang="less">

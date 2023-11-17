@@ -3,24 +3,14 @@
     <div class="login-form-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-error-msg">{{ errorMessage }}</div>
-    <a-form
-      ref="loginForm"
-      :model="userInfo"
-      class="login-form"
-      layout="vertical"
-      @submit="handleSubmit"
-    >
+    <a-form ref="loginForm" :model="userInfo" class="login-form" layout="vertical" @submit="handleSubmit">
       <a-form-item
         field="username"
         :rules="[{ required: true, message: $t('login.form.userName.errMsg') }]"
         :validate-trigger="['change', 'blur']"
         hide-label
       >
-        <a-input
-          v-model="userInfo.username"
-          :placeholder="$t('login.form.userName.placeholder')"
-          @keyup.enter="handleSubmit"
-        >
+        <a-input v-model="userInfo.username" :placeholder="$t('login.form.userName.placeholder')" @keyup.enter="handleSubmit">
           <template #prefix>
             <icon-user />
           </template>
@@ -62,70 +52,64 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive, onMounted } from 'vue';
-import { useRouter } from 'vue-router';
-import { Message } from '@arco-design/web-vue';
-import { ValidatedError } from '@arco-design/web-vue/es/form/interface';
-import { useI18n } from 'vue-i18n';
-import { useUserStore } from '@/store';
-import useLoading from '@/hooks/loading';
-import { LoginData } from '@/api/user';
+import { defineComponent, ref, reactive, onMounted } from 'vue'
+import { useRouter } from 'vue-router'
+import { Message } from '@arco-design/web-vue'
+import { ValidatedError } from '@arco-design/web-vue/es/form/interface'
+import { useI18n } from 'vue-i18n'
+import { useUserStore } from '@/store'
+import useLoading from '@/hooks/loading'
+import { LoginData } from '@/api/user'
 
 export default defineComponent({
   setup() {
-    const router = useRouter();
-    const { t } = useI18n();
-    const errorMessage = ref('');
-    const { loading, setLoading } = useLoading();
-    const userStore = useUserStore();
+    const router = useRouter()
+    const { t } = useI18n()
+    const errorMessage = ref('')
+    const { loading, setLoading } = useLoading()
+    const userStore = useUserStore()
     const userInfo = reactive({
       username: 'admin',
       password: 'admin',
-    });
-    const handleSubmit: any = async ({
-      errors,
-      values,
-    }: {
-      errors: Record<string, ValidatedError> | undefined;
-      values: LoginData;
-    }) => {
+    })
+    const handleSubmit: any = async ({ errors, values }: { errors: Record<string, ValidatedError> | undefined; values: LoginData }) => {
       if (!errors) {
-        setLoading(true);
+        setLoading(true)
         try {
-          await userStore.login(values);
-          const { redirect, ...othersQuery } = router.currentRoute.value.query;
+          await userStore.login(values)
+          const { redirect, ...othersQuery } = router.currentRoute.value.query
           router.push({
             name: (redirect as string) || 'workplace',
             query: {
               ...othersQuery,
             },
-          });
-          Message.success(t('login.form.login.success'));
+          })
+          Message.success(t('login.form.login.success'))
         } catch (err) {
-          errorMessage.value = (err as Error).message;
+          errorMessage.value = (err as Error).message
         } finally {
-          setLoading(false);
+          setLoading(false)
         }
       }
-    };
+    }
     // 演示地址自动登录
     onMounted(() => {
       setTimeout(() => {
-        handleSubmit({ errors: undefined, values: userInfo });
-      }, 3000);
-    });
+        handleSubmit({ errors: undefined, values: userInfo })
+      }, 3000)
+    })
     const setRememberPassword = () => {
       //
-    };
+    }
     return {
       loading,
       userInfo,
       errorMessage,
       handleSubmit,
       setRememberPassword,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="less" scoped>

@@ -12,4 +12,4 @@ export default {
   'userInfo.nodata': 'No Data',
   'userInfo.visits.unit': 'times',
   'userInfo.visits.lastMonth': 'Last Month',
-};
+}

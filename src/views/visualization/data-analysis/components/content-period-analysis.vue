@@ -10,11 +10,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import useLoading from '@/hooks/loading';
-import { queryContentPeriodAnalysis } from '@/api/visualization';
-import { ToolTipFormatterParams } from '@/types/echarts';
-import useChartOption from '@/hooks/chart-option';
+import { defineComponent, ref } from 'vue'
+import useLoading from '@/hooks/loading'
+import { queryContentPeriodAnalysis } from '@/api/visualization'
+import { ToolTipFormatterParams } from '@/types/echarts'
+import useChartOption from '@/hooks/chart-option'
 
 const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
   return items
@@ -27,18 +27,18 @@ const tooltipItemsHtmlString = (items: ToolTipFormatterParams[]) => {
         <span class="tooltip-value">
         ${el.value}%
         </span>
-      </div>`,
+      </div>`
     )
-    .join('');
-};
+    .join('')
+}
 
 export default defineComponent({
   setup() {
-    const { loading, setLoading } = useLoading(true);
-    const xAxis = ref<string[]>([]);
-    const textChartsData = ref<number[]>([]);
-    const imgChartsData = ref<number[]>([]);
-    const videoChartsData = ref<number[]>([]);
+    const { loading, setLoading } = useLoading(true)
+    const xAxis = ref<string[]>([])
+    const textChartsData = ref<number[]>([])
+    const imgChartsData = ref<number[]>([])
+    const videoChartsData = ref<number[]>([])
     const { chartOption } = useChartOption((isDark) => {
       return {
         grid: {
@@ -70,17 +70,17 @@ export default defineComponent({
               color: '#86909C',
             },
             interval(idx: number) {
-              if (idx === 0) return false;
-              if (idx === xAxis.value.length - 1) return false;
-              return true;
+              if (idx === 0) return false
+              if (idx === xAxis.value.length - 1) return false
+              return true
             },
           },
           axisLabel: {
             color: '#86909C',
             formatter(value: number, idx: number) {
-              if (idx === 0) return '';
-              if (idx === xAxis.value.length - 1) return '';
-              return `${value}`;
+              if (idx === 0) return ''
+              if (idx === xAxis.value.length - 1) return ''
+              return `${value}`
             },
           },
         },
@@ -100,11 +100,11 @@ export default defineComponent({
           show: true,
           trigger: 'axis',
           formatter(params) {
-            const [firstElement] = params as ToolTipFormatterParams[];
+            const [firstElement] = params as ToolTipFormatterParams[]
             return `<div>
             <p class="tooltip-title">${firstElement.axisValueLabel}</p>
             ${tooltipItemsHtmlString(params as ToolTipFormatterParams[])}
-          </div>`;
+          </div>`
           },
           className: 'echarts-tooltip-diy',
         },
@@ -186,34 +186,34 @@ export default defineComponent({
             zoomOnMouseWheel: false,
           },
         ],
-      };
-    });
+      }
+    })
     const fetchData = async () => {
-      setLoading(true);
+      setLoading(true)
       try {
-        const { data: chartData } = await queryContentPeriodAnalysis();
-        xAxis.value = chartData.xAxis;
+        const { data: chartData } = await queryContentPeriodAnalysis()
+        xAxis.value = chartData.xAxis
         chartData.data.forEach((el) => {
           if (el.name === '纯文本') {
-            textChartsData.value = el.value;
+            textChartsData.value = el.value
           } else if (el.name === '图文类') {
-            imgChartsData.value = el.value;
+            imgChartsData.value = el.value
           }
-          videoChartsData.value = el.value;
-        });
+          videoChartsData.value = el.value
+        })
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData();
+    }
+    fetchData()
     return {
       loading,
       chartOption,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

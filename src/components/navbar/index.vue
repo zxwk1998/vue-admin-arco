@@ -26,12 +26,7 @@
       </li>
       <li>
         <a-tooltip :content="$t('settings.language')">
-          <a-button
-            class="nav-btn"
-            type="outline"
-            :shape="'circle'"
-            @click="setDropDownVisible"
-          >
+          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setDropDownVisible">
             <template #icon>
               <icon-language />
             </template>
@@ -40,30 +35,15 @@
         <a-dropdown trigger="click" @select="changeLocale">
           <div ref="triggerBtn" class="trigger-btn"></div>
           <template #content>
-            <a-doption
-              v-for="item in locales"
-              :key="item.value"
-              :value="item.value"
-            >
+            <a-doption v-for="item in locales" :key="item.value" :value="item.value">
               {{ item.label }}
             </a-doption>
           </template>
         </a-dropdown>
       </li>
       <li>
-        <a-tooltip
-          :content="
-            theme === 'light'
-              ? $t('settings.navbar.theme.toDark')
-              : $t('settings.navbar.theme.toLight')
-          "
-        >
-          <a-button
-            class="nav-btn"
-            type="outline"
-            :shape="'circle'"
-            @click="toggleTheme"
-          >
+        <a-tooltip :content="theme === 'light' ? $t('settings.navbar.theme.toDark') : $t('settings.navbar.theme.toLight')">
+          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleTheme">
             <template #icon>
               <icon-moon-fill v-if="theme === 'dark'" />
               <icon-sun-fill v-else />
@@ -75,12 +55,7 @@
         <a-tooltip :content="$t('settings.navbar.alerts')">
           <div class="message-box-trigger">
             <a-badge :count="9" dot>
-              <a-button
-                class="nav-btn"
-                type="outline"
-                :shape="'circle'"
-                @click="setPopoverVisible"
-              >
+              <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setPopoverVisible">
                 <icon-notification />
               </a-button>
             </a-badge>
@@ -100,12 +75,7 @@
       </li>
       <li>
         <a-tooltip :content="$t('settings.title')">
-          <a-button
-            class="nav-btn"
-            type="outline"
-            :shape="'circle'"
-            @click="setVisible"
-          >
+          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setVisible">
             <template #icon>
               <icon-settings />
             </template>
@@ -121,7 +91,7 @@
             <a-doption>
               <a-space @click="switchGit">
                 <icon-github />
-                <span> 开源地址 </span>
+                <span>开源地址</span>
               </a-space>
             </a-doption>
             <a-doption>
@@ -151,24 +121,25 @@
             <a-doption>
               <a-space @click="open('/shop-vite')">
                 <icon-tag />
-                <span> shop vite 付费版本 </span>
+                <span>shop vite 付费版本</span>
               </a-space>
             </a-doption>
             <a-doption>
               <a-space @click="open('/admin-plus')">
                 <icon-tag />
-                <span> admin plus 付费版本 </span>
+                <span>admin plus 付费版本</span>
               </a-space>
             </a-doption>
             <a-doption>
               <a-space @click="open('/admin-pro')">
                 <icon-tag />
-                <span> admin pro 付费版本 </span>
-              </a-space> </a-doption
-            ><a-doption>
+                <span>admin pro 付费版本</span>
+              </a-space>
+            </a-doption>
+            <a-doption>
               <a-space @click="open('/vue-admin-beautiful-element')">
                 <icon-tag />
-                <span> admin better 开源版 </span>
+                <span>admin better 开源版</span>
               </a-space>
             </a-doption>
             <a-doption>
@@ -187,31 +158,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, ref } from 'vue';
-import { Message } from '@arco-design/web-vue';
-import { useDark, useToggle } from '@vueuse/core';
-import { useAppStore, useUserStore } from '@/store';
-import { LOCALE_OPTIONS } from '@/locale';
-import useLocale from '@/hooks/locale';
-import useUser from '@/hooks/user';
-import MessageBox from '../message-box/index.vue';
+import { defineComponent, computed, ref } from 'vue'
+import { Message } from '@arco-design/web-vue'
+import { useDark, useToggle } from '@vueuse/core'
+import { useAppStore, useUserStore } from '@/store'
+import { LOCALE_OPTIONS } from '@/locale'
+import useLocale from '@/hooks/locale'
+import useUser from '@/hooks/user'
+import MessageBox from '../message-box/index.vue'
 
 export default defineComponent({
   components: {
     MessageBox,
   },
   setup() {
-    const appStore = useAppStore();
-    const userStore = useUserStore();
-    const { logout } = useUser();
-    const { changeLocale }: any = useLocale();
-    const locales = [...LOCALE_OPTIONS];
+    const appStore = useAppStore()
+    const userStore = useUserStore()
+    const { logout } = useUser()
+    const { changeLocale }: any = useLocale()
+    const locales = [...LOCALE_OPTIONS]
     const avatar = computed(() => {
-      return userStore.avatar;
-    });
+      return userStore.avatar
+    })
     const theme = computed(() => {
-      return appStore.theme;
-    });
+      return appStore.theme
+    })
     const isDark = useDark({
       selector: 'body',
       attribute: 'arco-theme',
@@ -220,44 +191,44 @@ export default defineComponent({
       storageKey: 'arco-theme',
       onChanged(dark: boolean) {
         // overridded default behavior
-        appStore.toggleTheme(dark);
+        appStore.toggleTheme(dark)
       },
-    });
-    const toggleTheme: any = useToggle(isDark);
+    })
+    const toggleTheme: any = useToggle(isDark)
     const setVisible = () => {
-      appStore.updateSettings({ globalSettings: true });
-    };
-    const refBtn = ref();
-    const triggerBtn = ref();
+      appStore.updateSettings({ globalSettings: true })
+    }
+    const refBtn = ref()
+    const triggerBtn = ref()
     const setPopoverVisible = () => {
       const event = new MouseEvent('click', {
         view: window,
         bubbles: true,
         cancelable: true,
-      });
-      refBtn.value.dispatchEvent(event);
-    };
+      })
+      refBtn.value.dispatchEvent(event)
+    }
     const handleLogout = () => {
-      logout();
-    };
+      logout()
+    }
     const setDropDownVisible = () => {
       const event = new MouseEvent('click', {
         view: window,
         bubbles: true,
         cancelable: true,
-      });
-      triggerBtn.value.dispatchEvent(event);
-    };
+      })
+      triggerBtn.value.dispatchEvent(event)
+    }
     const switchRoles = async () => {
-      const res = await userStore.switchRoles();
-      Message.success(res as string);
-    };
+      const res = await userStore.switchRoles()
+      Message.success(res as string)
+    }
     const switchGit = () => {
-      window.open('https://github.com/chuzhixin/vue-admin-arco');
-    };
+      window.open('https://github.com/chuzhixin/vue-admin-arco')
+    }
     const open = (val: string) => {
-      window.open(`https://vue-admin-beautiful.com/${val}`);
-    };
+      window.open(`https://vue-admin-beautiful.com/${val}`)
+    }
     return {
       locales,
       theme,
@@ -273,9 +244,9 @@ export default defineComponent({
       switchRoles,
       switchGit,
       open,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

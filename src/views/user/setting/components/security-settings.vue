@@ -31,9 +31,7 @@
         <template #description>
           <div class="content">
             <a-typography-paragraph class="tip">
-              {{
-                $t('userSetting.SecuritySettings.placeholder.securityQuestion')
-              }}
+              {{ $t('userSetting.SecuritySettings.placeholder.securityQuestion') }}
             </a-typography-paragraph>
           </div>
           <div class="operation">
@@ -53,9 +51,7 @@
         </template>
         <template #description>
           <div class="content">
-            <a-typography-paragraph>
-              已绑定：150******50
-            </a-typography-paragraph>
+            <a-typography-paragraph>已绑定：150******50</a-typography-paragraph>
           </div>
           <div class="operation">
             <a-link>
@@ -90,13 +86,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
     //
   },
-});
+})
 </script>
 
 <style scoped lang="less">

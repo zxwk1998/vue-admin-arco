@@ -13,4 +13,4 @@ export default {
   'dataAnalysis.popularAuthor.column.content': 'Content Number',
   'dataAnalysis.popularAuthor.column.click': 'Click Number',
   'dataAnalysis.contentPeriodAnalysis': 'Content Period Analysis',
-};
+}

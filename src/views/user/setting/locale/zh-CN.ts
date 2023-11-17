@@ -40,20 +40,17 @@ export default {
   'userSetting.basicInfo.form.label.address': '具体地址',
   'userSetting.basicInfo.placeholder.address': '请输入您的地址',
   'userSetting.basicInfo.form.label.profile': '个人简介',
-  'userSetting.basicInfo.placeholder.profile':
-    '请输入您的个人简介，最多不超过200字。',
+  'userSetting.basicInfo.placeholder.profile': '请输入您的个人简介，最多不超过200字。',
   'userSetting.form.error.profile.maxLength': '最多不超过200字',
   'userSetting.SecuritySettings.form.label.password': '登录密码',
   'userSetting.SecuritySettings.placeholder.password':
     '已设置。密码至少6位字符，支持数字、字母和除空格外的特殊字符，且必须同时包含数字和大小写字母。',
   'userSetting.SecuritySettings.form.label.securityQuestion': '密保问题',
-  'userSetting.SecuritySettings.placeholder.securityQuestion':
-    '您暂未设置密保问题，密保问题可以有效的保护账号的安全。',
+  'userSetting.SecuritySettings.placeholder.securityQuestion': '您暂未设置密保问题，密保问题可以有效的保护账号的安全。',
   'userSetting.SecuritySettings.form.label.phone': '安全手机',
   // 'userSetting.SecuritySettings.placeholder.phone': '已绑定：150******50',
   'userSetting.SecuritySettings.form.label.email': '安全邮箱',
-  'userSetting.SecuritySettings.placeholder.email':
-    '您暂未设置邮箱，绑定邮箱可以用来找回密码、接收通知等。',
+  'userSetting.SecuritySettings.placeholder.email': '您暂未设置邮箱，绑定邮箱可以用来找回密码、接收通知等。',
   'userSetting.SecuritySettings.button.settings': '设置',
   'userSetting.SecuritySettings.button.update': '修改',
   'userSetting.certification.title.enterprise': '企业实名认证',
@@ -78,4 +75,4 @@ export default {
   'userSetting.certification.columns.operation': '操作',
   'userSetting.certification.button.check': '查看',
   'userSetting.certification.button.withdraw': '撤回',
-};
+}

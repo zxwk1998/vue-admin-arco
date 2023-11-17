@@ -1,8 +1,8 @@
-import Mock from 'mockjs';
-import qs from 'query-string';
-import dayjs from 'dayjs';
-import { GetParams } from '@/types/global';
-import setupMock, { successResponseWrap } from '@/utils/setup-mock';
+import Mock from 'mockjs'
+import qs from 'query-string'
+import dayjs from 'dayjs'
+import { GetParams } from '@/types/global'
+import setupMock, { successResponseWrap } from '@/utils/setup-mock'
 
 const textList = [
   {
@@ -35,7 +35,7 @@ const textList = [
     title: '人民快评：没想到“浓眉大眼”的…',
     increases: 37,
   },
-];
+]
 const imageList = [
   {
     key: 1,
@@ -67,7 +67,7 @@ const imageList = [
     title: '派出所副所长威胁市民？警方调…',
     increases: 4,
   },
-];
+]
 const videoList = [
   {
     key: 1,
@@ -99,31 +99,31 @@ const videoList = [
     title: '95后现役军人荣立一等功',
     increases: 2,
   },
-];
+]
 setupMock({
   setup() {
     Mock.mock(new RegExp('/api/content-data'), () => {
-      const presetData = [58, 81, 53, 90, 64, 88, 49, 79];
+      const presetData = [58, 81, 53, 90, 64, 88, 49, 79]
       const getLineData = () => {
-        const count = 8;
+        const count = 8
         return new Array(count).fill(0).map((el, idx) => ({
           x: dayjs()
             .day(idx - 2)
             .format('YYYY-MM-DD'),
           y: presetData[idx],
-        }));
-      };
-      return successResponseWrap([...getLineData()]);
-    });
+        }))
+      }
+      return successResponseWrap([...getLineData()])
+    })
     Mock.mock(new RegExp('/api/popular/list'), (params: GetParams) => {
-      const { type = 'text' } = qs.parseUrl(params.url).query;
+      const { type = 'text' } = qs.parseUrl(params.url).query
       if (type === 'image') {
-        return successResponseWrap([...videoList]);
+        return successResponseWrap([...videoList])
       }
       if (type === 'video') {
-        return successResponseWrap([...imageList]);
+        return successResponseWrap([...imageList])
       }
-      return successResponseWrap([...textList]);
-    });
+      return successResponseWrap([...textList])
+    })
   },
-});
+})

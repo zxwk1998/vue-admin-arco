@@ -1,49 +1,49 @@
-import axios from 'axios';
+import axios from 'axios'
 
 export interface ProfileBasicRes {
-  status: number;
+  status: number
   video: {
-    mode: string;
+    mode: string
     acquisition: {
-      resolution: string;
-      frameRate: number;
-    };
+      resolution: string
+      frameRate: number
+    }
     encoding: {
-      resolution: string;
+      resolution: string
       rate: {
-        min: number;
-        max: number;
-        default: number;
-      };
-      frameRate: number;
-      profile: string;
-    };
-  };
+        min: number
+        max: number
+        default: number
+      }
+      frameRate: number
+      profile: string
+    }
+  }
   audio: {
-    mode: string;
+    mode: string
     acquisition: {
-      channels: number;
-    };
+      channels: number
+    }
     encoding: {
-      channels: number;
-      rate: number;
-      profile: string;
-    };
-  };
+      channels: number
+      rate: number
+      profile: string
+    }
+  }
 }
 
 export function queryProfileBasic() {
-  return axios.get<ProfileBasicRes>('/api/profile/basic');
+  return axios.get<ProfileBasicRes>('/api/profile/basic')
 }
 
 export type operationLogRes = Array<{
-  key: string;
-  contentNumber: string;
-  updateContent: string;
-  status: number;
-  updateTime: string;
-}>;
+  key: string
+  contentNumber: string
+  updateContent: string
+  status: number
+  updateTime: string
+}>
 
 export function queryOperationLog() {
-  return axios.get<operationLogRes>('/api/operation/log');
+  return axios.get<operationLogRes>('/api/operation/log')
 }

@@ -1,16 +1,12 @@
 <template>
-  <a-card
-    class="general-card"
-    :title="$t('multiDAnalysis.card.title.contentTypeDistribution')"
-    :header-style="{ paddingBottom: 0 }"
-  >
+  <a-card class="general-card" :title="$t('multiDAnalysis.card.title.contentTypeDistribution')" :header-style="{ paddingBottom: 0 }">
     <Chart style="height: 222px" :option="chartOption" />
   </a-card>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import useChartOption from '@/hooks/chart-option';
+import { defineComponent } from 'vue'
+import useChartOption from '@/hooks/chart-option'
 
 export default defineComponent({
   setup() {
@@ -99,14 +95,14 @@ export default defineComponent({
             ],
           },
         ],
-      };
-    });
+      }
+    })
 
     return {
       chartOption,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>

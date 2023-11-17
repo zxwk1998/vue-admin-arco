@@ -1,10 +1,7 @@
 <template>
   <div class="container">
     <div class="logo">
-      <img
-        alt="logo"
-        src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
-      />
+      <img alt="logo" src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image" />
       <div class="logo-text">vue-admin-arco</div>
     </div>
     <LoginBanner />
@@ -12,35 +9,37 @@
       <div class="content-inner">
         <LoginForm />
       </div>
-      <div class="footer">
-        <Footer />
-      </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Footer from '@/components/footer/index.vue';
-import LoginBanner from './components/banner.vue';
-import LoginForm from './components/login-form.vue';
+import { defineComponent } from 'vue'
+import LoginBanner from './components/banner.vue'
+import LoginForm from './components/login-form.vue'
 
 export default defineComponent({
   components: {
     LoginBanner,
     LoginForm,
-    Footer,
   },
-});
+})
 </script>
 
 <style lang="less" scoped>
 .container {
   display: flex;
-  height: 100vh;
+  height: 500px;
+  border: 1px solid #dedede;
+  width: 900px;
+  border-radius: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
 
   .banner {
-    width: 550px;
+    width: 400px;
     background: linear-gradient(163.85deg, #1d2129 0%, #00308f 100%);
   }
 
@@ -51,13 +50,6 @@ export default defineComponent({
     align-items: center;
     justify-content: center;
     padding-bottom: 40px;
-  }
-
-  .footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    width: 100%;
   }
 }
 

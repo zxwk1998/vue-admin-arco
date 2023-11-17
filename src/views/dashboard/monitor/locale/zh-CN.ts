@@ -45,4 +45,4 @@ export default {
   'monitor.studioStatus.pictureQuality': '画质',
   'monitor.studioPreview.studio': '直播间',
   'monitor.studioPreview.watching': '在看',
-};
+}

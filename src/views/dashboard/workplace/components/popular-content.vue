@@ -1,10 +1,6 @@
 <template>
   <a-spin :loading="loading" style="width: 100%">
-    <a-card
-      class="general-card"
-      :header-style="{ paddingBottom: '0' }"
-      :body-style="{ padding: '17px 20px 21px 20px' }"
-    >
+    <a-card class="general-card" :header-style="{ paddingBottom: '0' }" :body-style="{ padding: '17px 20px 21px 20px' }">
       <template #title>
         {{ $t('workplace.popularContent') }}
       </template>
@@ -12,11 +8,7 @@
         <a-link>{{ $t('workplace.viewMore') }}</a-link>
       </template>
       <a-space direction="vertical" :size="10" fill>
-        <a-radio-group
-          v-model:model-value="type"
-          type="button"
-          @change="typeChange"
-        >
+        <a-radio-group v-model:model-value="type" type="button" @change="typeChange">
           <a-radio value="text">
             {{ $t('workplace.popularContent.text') }}
           </a-radio>
@@ -41,8 +33,7 @@
                 </a-typography-paragraph>
               </template>
             </a-table-column>
-            <a-table-column title="点击量" data-index="clickNumber">
-            </a-table-column>
+            <a-table-column title="点击量" data-index="clickNumber"></a-table-column>
             <a-table-column
               title="日涨幅"
               data-index="increases"
@@ -53,10 +44,7 @@
               <template #cell="{ record }">
                 <div class="increases-cell">
                   <span>{{ record.increases }}%</span>
-                  <icon-caret-up
-                    v-if="record.increases !== 0"
-                    style="color: #f53f3f; font-size: 8px"
-                  />
+                  <icon-caret-up v-if="record.increases !== 0" style="color: #f53f3f; font-size: 8px" />
                 </div>
               </template>
             </a-table-column>
@@ -68,38 +56,38 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import useLoading from '@/hooks/loading';
-import { queryPopularList, PopularRecord } from '@/api/dashboard';
+import { defineComponent, ref } from 'vue'
+import useLoading from '@/hooks/loading'
+import { queryPopularList, PopularRecord } from '@/api/dashboard'
 
 export default defineComponent({
   setup() {
-    const type = ref('text');
-    const { loading, setLoading } = useLoading();
-    const renderList = ref<any>();
+    const type = ref('text')
+    const { loading, setLoading } = useLoading()
+    const renderList = ref<any>()
     const fetchData = async (contentType: string) => {
       try {
-        setLoading(true);
-        const { data } = await queryPopularList({ type: contentType });
-        renderList.value = data;
+        setLoading(true)
+        const { data } = await queryPopularList({ type: contentType })
+        renderList.value = data
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
     const typeChange: any = (contentType: string) => {
-      fetchData(contentType);
-    };
-    fetchData('text');
+      fetchData(contentType)
+    }
+    fetchData('text')
     return {
       type,
       typeChange,
       loading,
       renderList,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

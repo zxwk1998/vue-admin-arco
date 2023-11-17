@@ -12,4 +12,4 @@ export default {
   'success.launched': '正式上线',
   'success.waiting': '未开始',
   'success.processing': '进行中',
-};
+}

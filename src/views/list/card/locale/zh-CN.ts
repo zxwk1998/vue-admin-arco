@@ -16,4 +16,4 @@ export default {
   'cardList.service.tag': '已开通',
   'cardList.service.expiresTag': '已过期',
   'cardList.preset.tag': '已启用',
-};
+}

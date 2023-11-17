@@ -32,24 +32,20 @@ export default {
   'userSetting.basicInfo.placeholder.nickname': 'Please enter nickname',
   'userSetting.form.error.nickname.required': 'Please enter nickname',
   'userSetting.basicInfo.form.label.countryRegion': 'Country/region',
-  'userSetting.basicInfo.placeholder.countryRegion':
-    'Please select country/region',
-  'userSetting.form.error.countryRegion.required':
-    'Please select country/region',
+  'userSetting.basicInfo.placeholder.countryRegion': 'Please select country/region',
+  'userSetting.form.error.countryRegion.required': 'Please select country/region',
   'userSetting.basicInfo.form.label.area': 'Area',
   'userSetting.basicInfo.placeholder.area': 'Please select area',
   'userSetting.form.error.area.required': 'Please Select a area',
   'userSetting.basicInfo.form.label.address': 'Address',
   'userSetting.basicInfo.placeholder.address': 'Please enter address',
   'userSetting.basicInfo.form.label.profile': 'Personal profile',
-  'userSetting.basicInfo.placeholder.profile':
-    'Please enter your profile, no more than 200 words',
+  'userSetting.basicInfo.placeholder.profile': 'Please enter your profile, no more than 200 words',
   'userSetting.form.error.profile.maxLength': 'No more than 200 words',
   'userSetting.SecuritySettings.form.label.password': 'Login Password',
   'userSetting.SecuritySettings.placeholder.password':
     'Has been set. The password must contain at least six letters, digits, and special characters except Spaces. The password must contain both uppercase and lowercase letters.',
-  'userSetting.SecuritySettings.form.label.securityQuestion':
-    'Security Question',
+  'userSetting.SecuritySettings.form.label.securityQuestion': 'Security Question',
   'userSetting.SecuritySettings.placeholder.securityQuestion':
     'You have not set the password protection question. The password protection question can effectively protect the account security.',
   'userSetting.SecuritySettings.form.label.phone': 'Phone',
@@ -59,28 +55,21 @@ export default {
     'You have not set a mailbox yet. The mailbox binding can be used to retrieve passwords and receive notifications.',
   'userSetting.SecuritySettings.button.settings': 'Settings',
   'userSetting.SecuritySettings.button.update': 'Update',
-  'userSetting.certification.title.enterprise':
-    'Enterprise Real Name Authentication',
-  'userSetting.certification.extra.enterprise':
-    'Modifying an Authentication Body',
+  'userSetting.certification.title.enterprise': 'Enterprise Real Name Authentication',
+  'userSetting.certification.extra.enterprise': 'Modifying an Authentication Body',
   'userSetting.certification.label.accountType': 'Account Type',
   'userSetting.certification.label.status': 'status',
   'userSetting.certification.label.time': 'time',
   'userSetting.certification.label.legalPerson': 'Legal Person Name',
-  'userSetting.certification.label.certificateType':
-    'Types of legal person documents',
-  'userSetting.certification.label.authenticationNumber':
-    'Legal person certification number',
+  'userSetting.certification.label.certificateType': 'Types of legal person documents',
+  'userSetting.certification.label.authenticationNumber': 'Legal person certification number',
   'userSetting.certification.label.enterpriseName': 'Enterprise Name',
-  'userSetting.certification.label.enterpriseCertificateType':
-    'Types of corporate certificates',
+  'userSetting.certification.label.enterpriseCertificateType': 'Types of corporate certificates',
   'userSetting.certification.label.organizationCode': 'Organization Code',
   'userSetting.certification.title.record': 'Certification Records',
   'userSetting.certification.columns.certificationType': 'Certification Type',
-  'userSetting.certification.cell.certificationType':
-    'Enterprise certificate Certification',
-  'userSetting.certification.columns.certificationContent':
-    'Certification Content',
+  'userSetting.certification.cell.certificationType': 'Enterprise certificate Certification',
+  'userSetting.certification.columns.certificationContent': 'Certification Content',
   'userSetting.certification.columns.status': 'Status',
   'userSetting.certification.cell.pass': 'Pass',
   'userSetting.certification.cell.auditing': 'Auditing',
@@ -88,4 +77,4 @@ export default {
   'userSetting.certification.columns.operation': 'Operation',
   'userSetting.certification.button.check': 'Check',
   'userSetting.certification.button.withdraw': 'Withdraw',
-};
+}

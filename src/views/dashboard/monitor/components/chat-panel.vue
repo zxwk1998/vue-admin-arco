@@ -17,9 +17,7 @@
           {{ $t('monitor.chat.options.all') }}
         </a-option>
       </a-select>
-      <a-input-search
-        :placeholder="$t('monitor.chat.placeholder.searchCategory')"
-      />
+      <a-input-search :placeholder="$t('monitor.chat.placeholder.searchCategory')" />
       <a-button type="text">
         <icon-download />
       </a-button>
@@ -43,35 +41,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { queryChatList, ChatRecord } from '@/api/message';
-import useLoading from '@/hooks/loading';
-import ChatList from './chat-list.vue';
+import { defineComponent, ref } from 'vue'
+import { queryChatList, ChatRecord } from '@/api/message'
+import useLoading from '@/hooks/loading'
+import ChatList from './chat-list.vue'
 
 export default defineComponent({
   components: {
     ChatList,
   },
   setup() {
-    const { loading, setLoading } = useLoading(true);
-    const chatList = ref<ChatRecord[]>([]);
+    const { loading, setLoading } = useLoading(true)
+    const chatList = ref<ChatRecord[]>([])
     const fetchData = async () => {
       try {
-        const { data } = await queryChatList();
-        chatList.value = data;
+        const { data } = await queryChatList()
+        chatList.value = data
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData();
+    }
+    fetchData()
     return {
       loading,
       chatList,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

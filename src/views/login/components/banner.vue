@@ -15,13 +15,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { useI18n } from 'vue-i18n';
-import bannerImage from '@/assets/images/login-banner.png';
+import { defineComponent, computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import bannerImage from '@/assets/images/login-banner.png'
 
 export default defineComponent({
   setup() {
-    const { t } = useI18n();
+    const { t } = useI18n()
     const carouselItem = computed(() => [
       {
         slogan: t('login.banner.slogan1'),
@@ -38,12 +38,12 @@ export default defineComponent({
         subSlogan: t('login.banner.subSlogan3'),
         image: bannerImage,
       },
-    ]);
+    ])
     return {
       carouselItem,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="less" scoped>

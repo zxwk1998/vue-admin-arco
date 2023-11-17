@@ -5,11 +5,7 @@
     </a-card>
     <a-card v-else :bordered="false" hoverable>
       <a-space align="start">
-        <a-avatar
-          v-if="icon"
-          :size="24"
-          style="margin-right: 8px; background-color: #626aea"
-        >
+        <a-avatar v-if="icon" :size="24" style="margin-right: 8px; background-color: #626aea">
           <icon-filter />
         </a-avatar>
         <a-card-meta>
@@ -18,11 +14,7 @@
               {{ title }}
             </a-typography-text>
             <template v-if="showTag">
-              <a-tag
-                v-if="open && isExpires === false"
-                size="small"
-                color="green"
-              >
+              <a-tag v-if="open && isExpires === false" size="small" color="green">
                 <template #icon>
                   <icon-check-circle-fill />
                 </template>
@@ -75,8 +67,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { useToggle } from '@vueuse/core';
+import { defineComponent, ref } from 'vue'
+import { useToggle } from '@vueuse/core'
 
 export default defineComponent({
   props: {
@@ -134,19 +126,19 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const [open, toggle]: any = useToggle(props.defaultValue);
-    const isExpires = ref(props.expires);
+    const [open, toggle]: any = useToggle(props.defaultValue)
+    const isExpires = ref(props.expires)
     const renew = () => {
-      isExpires.value = false;
-    };
+      isExpires.value = false
+    }
     return {
       open,
       toggle,
       isExpires,
       renew,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

@@ -23,13 +23,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import ChatPanel from './components/chat-panel.vue';
-import Studio from './components/studio.vue';
-import DataStatistic from './components/data-statistic.vue';
-import StudioStatus from './components/studio-status.vue';
-import QuickOperation from './components/quick-operation.vue';
-import StudioInformation from './components/studio-information.vue';
+import { defineComponent } from 'vue'
+import ChatPanel from './components/chat-panel.vue'
+import Studio from './components/studio.vue'
+import DataStatistic from './components/data-statistic.vue'
+import StudioStatus from './components/studio-status.vue'
+import QuickOperation from './components/quick-operation.vue'
+import StudioInformation from './components/studio-information.vue'
 
 export default defineComponent({
   components: {
@@ -43,7 +43,7 @@ export default defineComponent({
   setup() {
     //
   },
-});
+})
 </script>
 
 <style scoped lang="less">

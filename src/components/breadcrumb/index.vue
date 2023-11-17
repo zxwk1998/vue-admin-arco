@@ -10,18 +10,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
+import { defineComponent, PropType } from 'vue'
 
 export default defineComponent({
   props: {
     items: {
       type: Array as PropType<string[]>,
       default() {
-        return [];
+        return []
       },
     },
   },
-});
+})
 </script>
 
 <style scoped lang="less">

@@ -17,8 +17,7 @@ export default {
   'stepForm.form.label.activityName': '活动名称',
   'stepForm.placeholder.activityName': '输入汉字、字母或数字，最多20字符',
   'stepForm.form.error.activityName.required': '请输入活动名称',
-  'stepForm.form.error.activityName.pattern':
-    '输入汉字、字母或数字，最多20字符',
+  'stepForm.form.error.activityName.pattern': '输入汉字、字母或数字，最多20字符',
   'stepForm.form.label.channelType': '渠道类型',
   'stepForm.placeholder.channelType': '请选择渠道类型',
   'stepForm.form.error.channelType.required': '请选择渠道类型',
@@ -26,10 +25,8 @@ export default {
   'stepForm.form.error.promotionTime.required': '请选择推广时间',
   'stepForm.form.label.promoteLink': '推广地址',
   'stepForm.form.error.promoteLink.required': '请输入推广地址',
-  'stepForm.form.error.promoteLink.pattern':
-    '如 Android 或 iOS 的下载地址、中间跳转URL，网址必须以 http:// 或 https:// 开头',
-  'stepForm.form.tip.promoteLink':
-    '如 Android 或 iOS 的下载地址、中间跳转URL，网址必须以 http:// 或 https:// 开头',
+  'stepForm.form.error.promoteLink.pattern': '如 Android 或 iOS 的下载地址、中间跳转URL，网址必须以 http:// 或 https:// 开头',
+  'stepForm.form.tip.promoteLink': '如 Android 或 iOS 的下载地址、中间跳转URL，网址必须以 http:// 或 https:// 开头',
   'stepForm.placeholder.promoteLink': '请输入推广页面地址',
   'stepForm.form.label.advertisingSource': '广告来源',
   'stepForm.placeholder.advertisingSource': '引荐来源地址：sohu、sina',
@@ -42,11 +39,10 @@ export default {
   'stepForm.form.error.keyword.required': '请选择关键词',
   'stepForm.form.label.pushNotify': '推送提醒',
   'stepForm.form.label.advertisingContent': '广告内容',
-  'stepForm.placeholder.advertisingContent':
-    '请输入广告内容介绍，最多不超过200字。',
+  'stepForm.placeholder.advertisingContent': '请输入广告内容介绍，最多不超过200字。',
   'stepForm.form.error.advertisingContent.required': '请输入广告内容',
   'stepForm.form.error.advertisingContent.maxLength': '最多不超过200字',
   'stepForm.form.description.title': '渠道表单说明',
   'stepForm.form.description.text':
     '广告商渠道推广支持追踪在第三方广告商投放广告下载App用户的场景，例如在今日头条渠道投放下载App广告，追踪通过在渠道下载激活App的用户。',
-};
+}

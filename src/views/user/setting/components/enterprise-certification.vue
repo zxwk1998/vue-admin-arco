@@ -1,9 +1,5 @@
 <template>
-  <a-card
-    class="general-card"
-    :title="$t('userSetting.certification.title.enterprise')"
-    :header-style="{ padding: '0px 20px 16px 20px' }"
-  >
+  <a-card class="general-card" :title="$t('userSetting.certification.title.enterprise')" :header-style="{ padding: '0px 20px 16px 20px' }">
     <template #extra>
       <a-link>{{ $t('userSetting.certification.extra.enterprise') }}</a-link>
     </template>
@@ -22,13 +18,7 @@
     >
       <template #label="{ label }">{{ $t(label) }} :</template>
       <template #value="{ value, data }">
-        <a-tag
-          v-if="data.label === 'userSetting.certification.label.status'"
-          color="green"
-          size="small"
-        >
-          已认证
-        </a-tag>
+        <a-tag v-if="data.label === 'userSetting.certification.label.status'" color="green" size="small">已认证</a-tag>
         <span v-else>{{ value }}</span>
       </template>
     </a-descriptions>
@@ -36,8 +26,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType, computed } from 'vue';
-import { EnterpriseCertificationModel } from '@/api/user-center';
+import { defineComponent, PropType, computed } from 'vue'
+import { EnterpriseCertificationModel } from '@/api/user-center'
 
 export default defineComponent({
   props: {
@@ -58,7 +48,7 @@ export default defineComponent({
         enterpriseName,
         enterpriseCertificateType,
         organizationCode,
-      } = props.enterpriseInfo;
+      } = props.enterpriseInfo
       return [
         {
           label: 'userSetting.certification.label.accountType',
@@ -96,13 +86,13 @@ export default defineComponent({
           label: 'userSetting.certification.label.organizationCode',
           value: organizationCode,
         },
-      ];
-    });
+      ]
+    })
     return {
       renderData,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

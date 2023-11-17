@@ -1,16 +1,11 @@
 <template>
-  <VCharts
-    v-if="renderChart"
-    :option="options"
-    :autoresize="autoresize"
-    :style="{ width, height }"
-  />
+  <VCharts v-if="renderChart" :option="options" :autoresize="autoresize" :style="{ width, height }" />
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed, nextTick } from 'vue';
-import VCharts from 'vue-echarts';
-import { useAppStore } from '@/store';
+import { defineComponent, ref, computed, nextTick } from 'vue'
+import VCharts from 'vue-echarts'
+import { useAppStore } from '@/store'
 
 export default defineComponent({
   components: {
@@ -20,7 +15,7 @@ export default defineComponent({
     options: {
       type: Object,
       default() {
-        return {};
+        return {}
       },
     },
     autoresize: {
@@ -37,22 +32,22 @@ export default defineComponent({
     },
   },
   setup() {
-    const appStore = useAppStore();
+    const appStore = useAppStore()
     const theme = computed(() => {
-      if (appStore.theme === 'dark') return 'dark';
-      return '';
-    });
-    const renderChart = ref(false);
+      if (appStore.theme === 'dark') return 'dark'
+      return ''
+    })
+    const renderChart = ref(false)
     // wait container expand
     nextTick(() => {
-      renderChart.value = true;
-    });
+      renderChart.value = true
+    })
     return {
       theme,
       renderChart,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>

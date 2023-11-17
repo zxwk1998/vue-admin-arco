@@ -1,31 +1,29 @@
 <template>
   <a-col class="banner">
     <a-col :span="8">
-      <a-typography-title :heading="5" style="margin-top: 0">
-        {{ $t('workplace.welcome') }} {{ userInfo.name }}
-      </a-typography-title>
+      <a-typography-title :heading="5" style="margin-top: 0">{{ $t('workplace.welcome') }} {{ userInfo.name }}</a-typography-title>
     </a-col>
     <a-divider class="panel-border" />
   </a-col>
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue';
-import { useUserStore } from '@/store';
+import { defineComponent, computed } from 'vue'
+import { useUserStore } from '@/store'
 
 export default defineComponent({
   setup() {
-    const userStore = useUserStore();
+    const userStore = useUserStore()
     const userInfo = computed(() => {
       return {
         name: userStore.name,
-      };
-    });
+      }
+    })
     return {
       userInfo,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

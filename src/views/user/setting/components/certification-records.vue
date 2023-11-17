@@ -1,22 +1,13 @@
 <template>
-  <a-card
-    class="general-card"
-    :title="$t('userSetting.certification.title.record')"
-    :header-style="{ border: 'none' }"
-  >
+  <a-card class="general-card" :title="$t('userSetting.certification.title.record')" :header-style="{ border: 'none' }">
     <a-table v-if="renderData.length" :data="renderData">
       <template #columns>
-        <a-table-column
-          :title="$t('userSetting.certification.columns.certificationType')"
-        >
+        <a-table-column :title="$t('userSetting.certification.columns.certificationType')">
           <template #cell>
             {{ $t('userSetting.certification.cell.certificationType') }}
           </template>
         </a-table-column>
-        <a-table-column
-          :title="$t('userSetting.certification.columns.certificationContent')"
-          data-index="certificationContent"
-        />
+        <a-table-column :title="$t('userSetting.certification.columns.certificationContent')" data-index="certificationContent" />
         <a-table-column :title="$t('userSetting.certification.columns.status')">
           <template #cell="{ record }">
             <p v-if="record.status === 0">
@@ -29,13 +20,8 @@
             </p>
           </template>
         </a-table-column>
-        <a-table-column
-          :title="$t('userSetting.certification.columns.time')"
-          data-index="time"
-        />
-        <a-table-column
-          :title="$t('userSetting.certification.columns.operation')"
-        >
+        <a-table-column :title="$t('userSetting.certification.columns.time')" data-index="time" />
+        <a-table-column :title="$t('userSetting.certification.columns.operation')">
           <template #cell="{ record }">
             <a-space>
               <a-button type="text">
@@ -53,22 +39,22 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { CertificationRecord } from '@/api/user-center';
+import { defineComponent, PropType } from 'vue'
+import { CertificationRecord } from '@/api/user-center'
 
 export default defineComponent({
   props: {
     renderData: {
       type: Array as PropType<CertificationRecord>,
       default() {
-        return [];
+        return []
       },
     },
   },
   setup() {
     //
   },
-});
+})
 </script>
 
 <style scoped lang="less">

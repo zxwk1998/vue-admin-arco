@@ -1,6 +1,6 @@
-import Mock from 'mockjs';
-import setupMock, { successResponseWrap } from '@/utils/setup-mock';
-import { ServiceRecord } from '@/api/list';
+import Mock from 'mockjs'
+import setupMock, { successResponseWrap } from '@/utils/setup-mock'
+import { ServiceRecord } from '@/api/list'
 
 const qualityInspectionList: ServiceRecord[] = [
   {
@@ -63,14 +63,13 @@ const qualityInspectionList: ServiceRecord[] = [
       },
     ],
   },
-];
+]
 const theServiceList: ServiceRecord[] = [
   {
     id: 1,
     icon: 'code',
     title: '漏斗分析',
-    description:
-      '用户行为分析之漏斗分析模型是企业实现精细化运营、进行用户行为分析的重要数据分析模型。',
+    description: '用户行为分析之漏斗分析模型是企业实现精细化运营、进行用户行为分析的重要数据分析模型。',
     enable: true,
     actionType: 'button',
   },
@@ -78,8 +77,7 @@ const theServiceList: ServiceRecord[] = [
     id: 2,
     icon: 'edit',
     title: '用户分布',
-    description:
-      '快速诊断用户人群，地域细分情况，了解数据分布的集中度，以及主要的数据分布的区间段是什么。',
+    description: '快速诊断用户人群，地域细分情况，了解数据分布的集中度，以及主要的数据分布的区间段是什么。',
     enable: true,
     actionType: 'button',
     expires: true,
@@ -88,8 +86,7 @@ const theServiceList: ServiceRecord[] = [
     id: 3,
     icon: 'user',
     title: '资源分发',
-    description:
-      '移动端动态化资源分发解决方案。提供稳定大流量服务支持、灵活定制的分发圈选规则，通过离线化预加载。',
+    description: '移动端动态化资源分发解决方案。提供稳定大流量服务支持、灵活定制的分发圈选规则，通过离线化预加载。',
     enable: false,
     actionType: 'button',
   },
@@ -97,26 +94,23 @@ const theServiceList: ServiceRecord[] = [
     id: 4,
     icon: 'user',
     title: '用户画像分析',
-    description:
-      '用户画像就是将典型用户信息标签化，根据用户特征、业务场景和用户行为等信息，构建一个标签化的用户模型。',
+    description: '用户画像就是将典型用户信息标签化，根据用户特征、业务场景和用户行为等信息，构建一个标签化的用户模型。',
     enable: true,
     actionType: 'button',
   },
-];
+]
 const rulesPresetList: ServiceRecord[] = [
   {
     id: 1,
     title: '内容屏蔽规则',
-    description:
-      '用户在执行特定的内容分发任务时，可使用内容屏蔽规则根据特定标签，过滤内容集合。',
+    description: '用户在执行特定的内容分发任务时，可使用内容屏蔽规则根据特定标签，过滤内容集合。',
     enable: true,
     actionType: 'switch',
   },
   {
     id: 2,
     title: '内容置顶规则',
-    description:
-      '该规则支持用户在执行特定内容分发任务时，对固定的几条内容置顶。',
+    description: '该规则支持用户在执行特定内容分发任务时，对固定的几条内容置顶。',
     enable: true,
     actionType: 'switch',
   },
@@ -144,12 +138,11 @@ const rulesPresetList: ServiceRecord[] = [
   {
     id: 6,
     title: '多语言文字符号识别',
-    description:
-      '精准识别英语、维语、藏语、蒙古语、朝鲜语等多种语言以及emoji表情形态的语义识别。',
+    description: '精准识别英语、维语、藏语、蒙古语、朝鲜语等多种语言以及emoji表情形态的语义识别。',
     enable: false,
     actionType: 'switch',
   },
-];
+]
 
 setupMock({
   setup() {
@@ -159,9 +152,9 @@ setupMock({
         qualityInspectionList.map((_, index) => ({
           ...qualityInspectionList[index % qualityInspectionList.length],
           id: Mock.Random.guid(),
-        })),
-      );
-    });
+        }))
+      )
+    })
 
     // the service
     Mock.mock(new RegExp('/api/list/the-service'), () => {
@@ -169,9 +162,9 @@ setupMock({
         theServiceList.map((_, index) => ({
           ...theServiceList[index % theServiceList.length],
           id: Mock.Random.guid(),
-        })),
-      );
-    });
+        }))
+      )
+    })
 
     // rules preset
     Mock.mock(new RegExp('/api/list/rules-preset'), () => {
@@ -179,8 +172,8 @@ setupMock({
         rulesPresetList.map((_, index) => ({
           ...rulesPresetList[index % rulesPresetList.length],
           id: Mock.Random.guid(),
-        })),
-      );
-    });
+        }))
+      )
+    })
   },
-});
+})

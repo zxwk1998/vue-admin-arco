@@ -6,11 +6,7 @@
     :body-style="{ paddingBottom: '12px' }"
   >
     <a-list :bordered="false">
-      <a-list-item
-        v-for="team in teamList"
-        :key="team.id"
-        action-layout="horizontal"
-      >
+      <a-list-item v-for="team in teamList" :key="team.id" action-layout="horizontal">
         <a-skeleton v-if="loading" :loading="loading" :animation="true">
           <a-row :gutter="6">
             <a-col :span="6">
@@ -27,7 +23,7 @@
               <img :src="team.avatar" />
             </a-avatar>
           </template>
-          <template #description> 共{{ team.peopleNumber }}人 </template>
+          <template #description>共{{ team.peopleNumber }}人</template>
         </a-list-item-meta>
       </a-list-item>
     </a-list>
@@ -35,23 +31,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { queryMyTeamList, MyTeamRecord } from '@/api/user-center';
-import useRequest from '@/hooks/request';
+import { defineComponent } from 'vue'
+import { queryMyTeamList, MyTeamRecord } from '@/api/user-center'
+import useRequest from '@/hooks/request'
 
 export default defineComponent({
   setup() {
-    const defaultValue: MyTeamRecord[] = new Array(4).fill({});
-    const { loading, response: teamList } = useRequest<MyTeamRecord[]>(
-      queryMyTeamList,
-      defaultValue,
-    );
+    const defaultValue: MyTeamRecord[] = new Array(4).fill({})
+    const { loading, response: teamList } = useRequest<MyTeamRecord[]>(queryMyTeamList, defaultValue)
     return {
       loading,
       teamList,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

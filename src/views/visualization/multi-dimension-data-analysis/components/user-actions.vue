@@ -1,15 +1,12 @@
 <template>
-  <a-card
-    class="general-card"
-    :title="$t('multiDAnalysis.card.title.userActions')"
-  >
+  <a-card class="general-card" :title="$t('multiDAnalysis.card.title.userActions')">
     <Chart height="122px" :option="chartOption" />
   </a-card>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import useChartOption from '@/hooks/chart-option';
+import { defineComponent } from 'vue'
+import useChartOption from '@/hooks/chart-option'
 
 export default defineComponent({
   setup() {
@@ -26,8 +23,8 @@ export default defineComponent({
           axisLabel: {
             show: true,
             formatter(value: number, idx: number) {
-              if (idx === 0) return String(value);
-              return `${Number(value) / 1000}k`;
+              if (idx === 0) return String(value)
+              return `${Number(value) / 1000}k`
             },
           },
           splitLine: {
@@ -72,14 +69,14 @@ export default defineComponent({
             },
           },
         ],
-      };
-    });
+      }
+    })
 
     return {
       chartOption,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>

@@ -17,13 +17,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { graphic } from 'echarts';
-import useLoading from '@/hooks/loading';
-import { queryContentData, ContentDataRecord } from '@/api/dashboard';
-import useChartOption from '@/hooks/chart-option';
-import { ToolTipFormatterParams } from '@/types/echarts';
-import { AnyObject } from '@/types/global';
+import { defineComponent, ref } from 'vue'
+import { graphic } from 'echarts'
+import useLoading from '@/hooks/loading'
+import { queryContentData, ContentDataRecord } from '@/api/dashboard'
+import useChartOption from '@/hooks/chart-option'
+import { ToolTipFormatterParams } from '@/types/echarts'
+import { AnyObject } from '@/types/global'
 
 function graphicFactory(side: AnyObject) {
   return {
@@ -36,17 +36,14 @@ function graphicFactory(side: AnyObject) {
       fill: '#4E5969',
       fontSize: 12,
     },
-  };
+  }
 }
 export default defineComponent({
   setup() {
-    const { loading, setLoading } = useLoading(true);
-    const xAxis = ref<string[]>([]);
-    const chartsData = ref<number[]>([]);
-    const graphicElements = ref([
-      graphicFactory({ left: '2.6%' }),
-      graphicFactory({ right: 0 }),
-    ]);
+    const { loading, setLoading } = useLoading(true)
+    const xAxis = ref<string[]>([])
+    const chartsData = ref<number[]>([])
+    const graphicElements = ref([graphicFactory({ left: '2.6%' }), graphicFactory({ right: 0 })])
     const { chartOption } = useChartOption(() => {
       return {
         grid: {
@@ -63,9 +60,9 @@ export default defineComponent({
           axisLabel: {
             color: '#4E5969',
             formatter(value: number, idx: number) {
-              if (idx === 0) return '';
-              if (idx === xAxis.value.length - 1) return '';
-              return `${value}`;
+              if (idx === 0) return ''
+              if (idx === xAxis.value.length - 1) return ''
+              return `${value}`
             },
           },
           axisLine: {
@@ -77,9 +74,9 @@ export default defineComponent({
           splitLine: {
             show: true,
             interval: (idx: number) => {
-              if (idx === 0) return false;
-              if (idx === xAxis.value.length - 1) return false;
-              return true;
+              if (idx === 0) return false
+              if (idx === xAxis.value.length - 1) return false
+              return true
             },
             lineStyle: {
               color: '#E5E8EF',
@@ -100,8 +97,8 @@ export default defineComponent({
           },
           axisLabel: {
             formatter(value: any, idx: number) {
-              if (idx === 0) return value;
-              return `${value}k`;
+              if (idx === 0) return value
+              return `${value}k`
             },
           },
           splitLine: {
@@ -115,13 +112,13 @@ export default defineComponent({
         tooltip: {
           trigger: 'axis',
           formatter(params) {
-            const [firstElement] = params as ToolTipFormatterParams[];
+            const [firstElement] = params as ToolTipFormatterParams[]
             return `<div>
             <p class="tooltip-title">${firstElement.axisValueLabel}</p>
             <div class="content-panel"><span>总内容量</span><span class="tooltip-value">${(
               Number(firstElement.value) * 10000
             ).toLocaleString()}</span></div>
-          </div>`;
+          </div>`
           },
           className: 'echarts-tooltip-diy',
         },
@@ -174,35 +171,35 @@ export default defineComponent({
             },
           },
         ],
-      };
-    });
+      }
+    })
     const fetchData = async () => {
-      setLoading(true);
+      setLoading(true)
       try {
-        const { data: chartData } = await queryContentData();
+        const { data: chartData } = await queryContentData()
         chartData.forEach((el: ContentDataRecord, idx: number) => {
-          xAxis.value.push(el.x);
-          chartsData.value.push(el.y);
+          xAxis.value.push(el.x)
+          chartsData.value.push(el.y)
           if (idx === 0) {
-            graphicElements.value[0].style.text = el.x;
+            graphicElements.value[0].style.text = el.x
           }
           if (idx === chartData.length - 1) {
-            graphicElements.value[1].style.text = el.x;
+            graphicElements.value[1].style.text = el.x
           }
-        });
+        })
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData();
+    }
+    fetchData()
     return {
       loading,
       chartOption,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>

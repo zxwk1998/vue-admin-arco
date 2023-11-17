@@ -20,13 +20,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { useI18n } from 'vue-i18n';
-import UserInfoHeader from './components/user-info-header.vue';
-import LatestNotification from './components/latest-notification.vue';
-import MyProject from './components/my-project.vue';
-import LatestActivity from './components/latest-activity.vue';
-import Myteam from './components/my-team.vue';
+import { defineComponent } from 'vue'
+import { useI18n } from 'vue-i18n'
+import UserInfoHeader from './components/user-info-header.vue'
+import LatestNotification from './components/latest-notification.vue'
+import MyProject from './components/my-project.vue'
+import LatestActivity from './components/latest-activity.vue'
+import Myteam from './components/my-team.vue'
 
 export default defineComponent({
   components: {
@@ -37,7 +37,7 @@ export default defineComponent({
     Myteam,
   },
   setup() {
-    const { t } = useI18n();
+    const { t } = useI18n()
 
     const tabList = [
       {
@@ -58,12 +58,12 @@ export default defineComponent({
         icon: 'icon-user',
         component: 'Overview',
       },
-    ];
+    ]
     return {
       tabList,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

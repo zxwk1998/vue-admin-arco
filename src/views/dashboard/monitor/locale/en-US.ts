@@ -45,4 +45,4 @@ export default {
   'monitor.studioStatus.pictureQuality': 'Quality',
   'monitor.studioPreview.studio': 'Studio',
   'monitor.studioPreview.watching': 'watching',
-};
+}

@@ -25,19 +25,19 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { ChatRecord } from '@/api/message';
+import { defineComponent, PropType } from 'vue'
+import { ChatRecord } from '@/api/message'
 
 export default defineComponent({
   props: {
     itemData: {
       type: Object as PropType<ChatRecord>,
       default() {
-        return {};
+        return {}
       },
     },
   },
-});
+})
 </script>
 
 <style scoped lang="less">

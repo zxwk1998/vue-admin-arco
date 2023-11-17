@@ -8,4 +8,4 @@ export default {
   'error.detailLine.record': '当前域名未备案，备案流程请查看：',
   'error.detailLine.record.link': '备案流程',
   'error.detailLine.auth': '你的用户组不具有进行此操作的权限；',
-};
+}

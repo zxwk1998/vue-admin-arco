@@ -18,8 +18,7 @@ export default {
   'groupForm.placeholder.video.encoding.resolution': 'Please Select',
   'groupForm.placeholder.video.encoding.rate.min': 'Enter Range [150, 1800]',
   'groupForm.placeholder.video.encoding.rate.max': 'Enter Range [150, 1800]',
-  'groupForm.placeholder.video.encoding.rate.default':
-    'Enter Range [150, 1800]',
+  'groupForm.placeholder.video.encoding.rate.default': 'Enter Range [150, 1800]',
   'groupForm.placeholder.video.encoding.frameRate': 'Enter Range [1, 30]',
   'groupForm.placeholder.video.encoding.profile': 'Enter Range [150, 1800]',
   'groupForm.form.label.audio.mode': 'Match Mode',
@@ -38,4 +37,4 @@ export default {
   'groupForm.submit': 'Submit',
   'groupForm.reset': 'Reset',
   'groupForm.submitSuccess': 'Submit Success',
-};
+}

@@ -34,17 +34,17 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import Banner from './components/banner.vue';
-import DataPanel from './components/data-panel.vue';
-import ContentChart from './components/content-chart.vue';
-import PopularContent from './components/popular-content.vue';
-import CateforiesPercent from './components/categories-percent.vue';
-import RecentlyVisited from './components/recently-visited.vue';
-import QuickOperation from './components/quick-operation.vue';
-import Announcement from './components/announcement.vue';
-import Carousel from './components/carousel.vue';
-import Docs from './components/docs.vue';
+import { defineComponent } from 'vue'
+import Banner from './components/banner.vue'
+import DataPanel from './components/data-panel.vue'
+import ContentChart from './components/content-chart.vue'
+import PopularContent from './components/popular-content.vue'
+import CateforiesPercent from './components/categories-percent.vue'
+import RecentlyVisited from './components/recently-visited.vue'
+import QuickOperation from './components/quick-operation.vue'
+import Announcement from './components/announcement.vue'
+import Carousel from './components/carousel.vue'
+import Docs from './components/docs.vue'
 
 export default defineComponent({
   components: {
@@ -59,7 +59,7 @@ export default defineComponent({
     Carousel,
     Docs,
   },
-});
+})
 </script>
 
 <style lang="less" scoped>

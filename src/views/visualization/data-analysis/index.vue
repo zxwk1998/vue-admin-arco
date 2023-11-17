@@ -1,8 +1,6 @@
 <template>
   <div class="container">
-    <Breadcrumb
-      :items="['menu.visualization', 'menu.visualization.dataAnalysis']"
-    />
+    <Breadcrumb :items="['menu.visualization', 'menu.visualization.dataAnalysis']" />
     <a-space direction="vertical" :size="12" fill>
       <a-space direction="vertical" :size="16" fill>
         <div class="space-unit">
@@ -27,11 +25,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import PublicOpinion from './components/public-opinion.vue';
-import ContentPeriodAnalysis from './components/content-period-analysis.vue';
-import ContentPublishRatio from './components/content-publish-ratio.vue';
-import PopularAuthor from './components/popular-author.vue';
+import { defineComponent } from 'vue'
+import PublicOpinion from './components/public-opinion.vue'
+import ContentPeriodAnalysis from './components/content-period-analysis.vue'
+import ContentPublishRatio from './components/content-publish-ratio.vue'
+import PopularAuthor from './components/popular-author.vue'
 
 export default defineComponent({
   components: {
@@ -40,7 +38,7 @@ export default defineComponent({
     ContentPublishRatio,
     PopularAuthor,
   },
-});
+})
 </script>
 
 <style scoped lang="less">

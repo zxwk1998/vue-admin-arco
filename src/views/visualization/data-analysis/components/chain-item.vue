@@ -3,13 +3,7 @@
     <a-card :bordered="false" :style="cardStyle">
       <div class="content-wrap">
         <div class="content">
-          <a-statistic
-            :title="title"
-            :value="renderData.count"
-            :value-from="0"
-            animation
-            show-group-separator
-          />
+          <a-statistic :title="title" :value="renderData.count" :value-from="0" animation show-group-separator />
           <div class="desc">
             <a-typography-text type="secondary" class="label">
               {{ $t('dataAnalysis.card.yesterday') }}
@@ -29,17 +23,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType, CSSProperties } from 'vue';
-import useLoading from '@/hooks/loading';
-import {
-  queryPublicOpinionAnalysis,
-  PublicOpinionAnalysis,
-  PublicOpinionAnalysisRes,
-} from '@/api/visualization';
-import useChartOption from '@/hooks/chart-option';
+import { defineComponent, ref, PropType, CSSProperties } from 'vue'
+import useLoading from '@/hooks/loading'
+import { queryPublicOpinionAnalysis, PublicOpinionAnalysis, PublicOpinionAnalysisRes } from '@/api/visualization'
+import useChartOption from '@/hooks/chart-option'
 
 const barChartOptionsFactory = () => {
-  const data = ref<any>([]);
+  const data = ref<any>([])
   const { chartOption } = useChartOption(() => {
     return {
       grid: {
@@ -68,16 +58,16 @@ const barChartOptionsFactory = () => {
           borderRadius: 2,
         },
       },
-    };
-  });
+    }
+  })
   return {
     data,
     chartOption,
-  };
-};
+  }
+}
 
 const lineChartOptionsFactory = () => {
-  const data = ref<number[][]>([[], []]);
+  const data = ref<number[][]>([[], []])
   const { chartOption } = useChartOption(() => {
     return {
       grid: {
@@ -122,16 +112,16 @@ const lineChartOptionsFactory = () => {
           },
         },
       ],
-    };
-  });
+    }
+  })
   return {
     data,
     chartOption,
-  };
-};
+  }
+}
 
 const pieChartOptionsFactory = () => {
-  const data = ref<any>([]);
+  const data = ref<any>([])
   const { chartOption } = useChartOption(() => {
     return {
       grid: {
@@ -166,13 +156,13 @@ const pieChartOptionsFactory = () => {
           data,
         },
       ],
-    };
-  });
+    }
+  })
   return {
     data,
     chartOption,
-  };
-};
+  }
+}
 
 export default defineComponent({
   props: {
@@ -191,29 +181,26 @@ export default defineComponent({
     cardStyle: {
       type: Object as PropType<CSSProperties>,
       default: () => {
-        return {};
+        return {}
       },
     },
   },
   setup(props) {
-    const { loading, setLoading } = useLoading(true);
-    const { chartOption: lineChartOption, data: lineData } =
-      lineChartOptionsFactory();
-    const { chartOption: barChartOption, data: barData } =
-      barChartOptionsFactory();
-    const { chartOption: pieChartOption, data: pieData } =
-      pieChartOptionsFactory();
+    const { loading, setLoading } = useLoading(true)
+    const { chartOption: lineChartOption, data: lineData } = lineChartOptionsFactory()
+    const { chartOption: barChartOption, data: barData } = barChartOptionsFactory()
+    const { chartOption: pieChartOption, data: pieData } = pieChartOptionsFactory()
     const renderData = ref<PublicOpinionAnalysisRes>({
       count: 0,
       growth: 0,
       chartData: [],
-    });
-    const chartOption = ref({});
+    })
+    const chartOption = ref({})
     const fetchData = async (params: PublicOpinionAnalysis) => {
       try {
-        const { data } = await queryPublicOpinionAnalysis(params);
-        renderData.value = data;
-        const { chartData } = data;
+        const { data } = await queryPublicOpinionAnalysis(params)
+        renderData.value = data
+        const { chartData } = data
         if (props.chartType === 'bar') {
           chartData.forEach((el, idx) => {
             barData.value.push({
@@ -221,38 +208,38 @@ export default defineComponent({
               itemStyle: {
                 color: idx % 2 ? '#2CAB40' : '#86DF6C',
               },
-            });
-          });
-          chartOption.value = barChartOption.value;
+            })
+          })
+          chartOption.value = barChartOption.value
         } else if (props.chartType === 'line') {
           chartData.forEach((el) => {
             if (el.name === '2021') {
-              lineData.value[0].push(el.y);
+              lineData.value[0].push(el.y)
             } else {
-              lineData.value[1].push(el.y);
+              lineData.value[1].push(el.y)
             }
-          });
-          chartOption.value = lineChartOption.value;
+          })
+          chartOption.value = lineChartOption.value
         } else {
           chartData.forEach((el) => {
-            pieData.value.push(el);
-          });
-          chartOption.value = pieChartOption.value;
+            pieData.value.push(el)
+          })
+          chartOption.value = pieChartOption.value
         }
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData({ quota: props.quota });
+    }
+    fetchData({ quota: props.quota })
     return {
       loading,
       renderData,
       chartOption,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

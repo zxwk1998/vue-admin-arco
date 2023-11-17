@@ -29,11 +29,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import useLoading from '@/hooks/loading';
-import { queryProfileBasic, ProfileBasicRes } from '@/api/profile';
-import ProfileItem from './components/profile-item.vue';
-import OperationLog from './components/operation-log.vue';
+import { defineComponent, ref } from 'vue'
+import useLoading from '@/hooks/loading'
+import { queryProfileBasic, ProfileBasicRes } from '@/api/profile'
+import ProfileItem from './components/profile-item.vue'
+import OperationLog from './components/operation-log.vue'
 
 export default defineComponent({
   components: {
@@ -41,43 +41,43 @@ export default defineComponent({
     OperationLog,
   },
   setup() {
-    const { loading, setLoading } = useLoading(true);
-    const { loading: preLoading, setLoading: preSetLoading } = useLoading(true);
-    const currentData = ref<ProfileBasicRes>({} as ProfileBasicRes);
-    const preData = ref<ProfileBasicRes>({} as ProfileBasicRes);
-    const step = ref(1);
+    const { loading, setLoading } = useLoading(true)
+    const { loading: preLoading, setLoading: preSetLoading } = useLoading(true)
+    const currentData = ref<ProfileBasicRes>({} as ProfileBasicRes)
+    const preData = ref<ProfileBasicRes>({} as ProfileBasicRes)
+    const step = ref(1)
     const fetchCurrentData = async () => {
       try {
-        const { data } = await queryProfileBasic();
-        currentData.value = data;
-        step.value = 2;
+        const { data } = await queryProfileBasic()
+        currentData.value = data
+        step.value = 2
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
     const fetchPreData = async () => {
       try {
-        const { data } = await queryProfileBasic();
-        preData.value = data;
+        const { data } = await queryProfileBasic()
+        preData.value = data
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        preSetLoading(false);
+        preSetLoading(false)
       }
-    };
-    fetchCurrentData();
-    fetchPreData();
+    }
+    fetchCurrentData()
+    fetchPreData()
     return {
       loading,
       preLoading,
       step,
       currentData,
       preData,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

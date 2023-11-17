@@ -4,17 +4,8 @@
       <a-link>{{ $t('userInfo.viewAll') }}</a-link>
     </template>
     <a-list :bordered="false">
-      <a-list-item
-        v-for="activity in activityList"
-        :key="activity.id"
-        action-layout="horizontal"
-      >
-        <a-skeleton
-          v-if="loading"
-          :loading="loading"
-          :animation="true"
-          class="skeleton-item"
-        >
+      <a-list-item v-for="activity in activityList" :key="activity.id" action-layout="horizontal">
+        <a-skeleton v-if="loading" :loading="loading" :animation="true" class="skeleton-item">
           <a-row :gutter="6">
             <a-col :span="2">
               <a-skeleton-shape shape="circle" />
@@ -24,11 +15,7 @@
             </a-col>
           </a-row>
         </a-skeleton>
-        <a-list-item-meta
-          v-else
-          :title="activity.title"
-          :description="activity.description"
-        >
+        <a-list-item-meta v-else :title="activity.title" :description="activity.description">
           <template #avatar>
             <a-avatar>
               <img :src="activity.avatar" />
@@ -41,31 +28,31 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { queryLatestActivity, LatestActivity } from '@/api/user-center';
-import useLoading from '@/hooks/loading';
+import { defineComponent, ref } from 'vue'
+import { queryLatestActivity, LatestActivity } from '@/api/user-center'
+import useLoading from '@/hooks/loading'
 
 export default defineComponent({
   setup() {
-    const { loading, setLoading } = useLoading(true);
-    const activityList = ref<LatestActivity[]>(new Array(7).fill({}));
+    const { loading, setLoading } = useLoading(true)
+    const activityList = ref<LatestActivity[]>(new Array(7).fill({}))
     const fetchData = async () => {
       try {
-        const { data } = await queryLatestActivity();
-        activityList.value = data;
+        const { data } = await queryLatestActivity()
+        activityList.value = data
       } catch (err) {
         // you can report use errorHandler or other
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
-    fetchData();
+    }
+    fetchData()
     return {
       loading,
       activityList,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

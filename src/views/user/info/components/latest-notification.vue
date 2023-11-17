@@ -12,20 +12,20 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import useLoading from '@/hooks/loading';
+import { defineComponent } from 'vue'
+import useLoading from '@/hooks/loading'
 
 export default defineComponent({
   setup() {
-    const { loading, setLoading } = useLoading(true);
+    const { loading, setLoading } = useLoading(true)
     setTimeout(() => {
-      setLoading(false);
-    }, 500);
+      setLoading(false)
+    }, 500)
     return {
       loading,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="less" scoped>

@@ -19,38 +19,37 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, h, compile } from 'vue';
-import { useI18n } from 'vue-i18n';
-import { TableData } from '@arco-design/web-vue/es/table/interface.d';
+import { defineComponent, computed, h, compile } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { TableData } from '@arco-design/web-vue/es/table/interface.d'
 
 interface PreviewRecord {
-  cover: string;
-  name: string;
-  duration: string;
-  id: string;
-  status: number;
+  cover: string
+  name: string
+  duration: string
+  id: string
+  status: number
 }
 export default defineComponent({
   setup() {
-    const { t } = useI18n();
+    const { t } = useI18n()
     const data: PreviewRecord[] = [
       {
-        cover:
-          'http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c788fc704d32cf3b1136c7d45afc2669.png~tplv-uwbnlip3yd-webp.webp',
+        cover: 'http://p1-arco.byteimg.com/tos-cn-i-uwbnlip3yd/c788fc704d32cf3b1136c7d45afc2669.png~tplv-uwbnlip3yd-webp.webp',
         name: '视频直播',
         duration: '00:05:19',
         id: '54e23ade',
         status: -1,
       },
-    ];
+    ]
     const renderTag = (status: number) => {
       if (status === -1) {
         return `<a-tag  color="red" class='data-statistic-list-cover-tag'>
             ${t('monitor.list.tag.auditFailed')}
-        </a-tag>`;
+        </a-tag>`
       }
-      return '';
-    };
+      return ''
+    }
     // Using the Render function is more flexible than using templates.
     // But, cannot bind context and local scopes are also lost
 
@@ -59,8 +58,8 @@ export default defineComponent({
         {
           title: t('monitor.list.title.order'),
           render({ rowIndex }: { record: TableData; rowIndex: number }) {
-            const tmp = `<span>${rowIndex + 1}</span>`;
-            return h(compile(tmp));
+            const tmp = `<span>${rowIndex + 1}</span>`
+            return h(compile(tmp))
           },
         },
         {
@@ -69,8 +68,8 @@ export default defineComponent({
             const tmp = `<div class='data-statistic-list-cover-wrapper'>
               <img src=${record.cover} />
               ${renderTag(record.status)}
-            </div>`;
-            return h(compile(tmp));
+            </div>`
+            return h(compile(tmp))
           },
         },
         {
@@ -85,14 +84,14 @@ export default defineComponent({
           dataIndex: 'id',
           title: t('monitor.list.title.id'),
         },
-      ];
-    });
+      ]
+    })
     return {
       data,
       columns,
-    };
+    }
   },
-});
+})
 </script>
 
 <style lang="less">

@@ -16,4 +16,4 @@ export default {
   'cardList.service.tag': 'Opened',
   'cardList.service.expiresTag': 'Expired',
   'cardList.preset.tag': 'Enable',
-};
+}

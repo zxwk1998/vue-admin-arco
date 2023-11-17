@@ -2,12 +2,7 @@
   <div class="container">
     <Breadcrumb :items="['menu.result', 'menu.result.error']" />
     <div class="wrapper">
-      <a-result
-        class="result"
-        status="error"
-        :title="$t('error.result.title')"
-        :subtitle="$t('error.result.subTitle')"
-      >
+      <a-result class="result" status="error" :title="$t('error.result.title')" :subtitle="$t('error.result.subTitle')">
         <template #extra>
           <a-space class="operation-wrap" :size="16">
             <a-button key="again" type="secondary">
@@ -42,9 +37,9 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
-export default defineComponent({});
+export default defineComponent({})
 </script>
 
 <style scoped lang="less">

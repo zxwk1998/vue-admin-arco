@@ -1,21 +1,10 @@
 <template>
-  <a-input-number
-    v-if="type === 'number'"
-    :style="{ width: '80px' }"
-    size="small"
-    :default-value="defaultValue"
-    @change="handleChange"
-  />
-  <a-switch
-    v-else
-    :default-checked="defaultValue"
-    size="small"
-    @change="handleChange"
-  />
+  <a-input-number v-if="type === 'number'" :style="{ width: '80px' }" size="small" :default-value="defaultValue" @change="handleChange" />
+  <a-switch v-else :default-checked="defaultValue" size="small" @change="handleChange" />
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   props: {
@@ -38,11 +27,11 @@ export default defineComponent({
       emit('inputChange', {
         value,
         key: props.name,
-      });
-    };
+      })
+    }
     return {
       handleChange,
-    };
+    }
   },
-});
+})
 </script>

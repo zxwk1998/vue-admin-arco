@@ -12,4 +12,4 @@ export default {
   'multiDAnalysis.card.title.contentConsumptionTrends': '内容消费趋势',
   'multiDAnalysis.card.title.contentConsumption': '内容消费量',
   'multiDAnalysis.card.title.contentPublishingSource': '内容发布来源',
-};
+}

@@ -25,11 +25,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import UserPanel from './components/user-panel.vue';
-import BasicInformation from './components/basic-information.vue';
-import SecuritySettings from './components/security-settings.vue';
-import Certification from './components/certification.vue';
+import { defineComponent } from 'vue'
+import UserPanel from './components/user-panel.vue'
+import BasicInformation from './components/basic-information.vue'
+import SecuritySettings from './components/security-settings.vue'
+import Certification from './components/certification.vue'
 
 export default defineComponent({
   components: {
@@ -39,9 +39,9 @@ export default defineComponent({
     Certification,
   },
   setup() {
-    return {};
+    return {}
   },
-});
+})
 </script>
 
 <style scoped lang="less">

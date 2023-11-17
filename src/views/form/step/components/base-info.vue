@@ -1,11 +1,5 @@
 <template>
-  <a-form
-    ref="formRef"
-    :model="formData"
-    class="form"
-    :label-col-props="{ span: 6 }"
-    :wrapper-col-props="{ span: 18 }"
-  >
+  <a-form ref="formRef" :model="formData" class="form" :label-col-props="{ span: 6 }" :wrapper-col-props="{ span: 18 }">
     <a-form-item
       field="activityName"
       :label="$t('stepForm.form.label.activityName')"
@@ -20,10 +14,7 @@
         },
       ]"
     >
-      <a-input
-        v-model="formData.activityName"
-        :placeholder="$t('stepForm.placeholder.activityName')"
-      />
+      <a-input v-model="formData.activityName" :placeholder="$t('stepForm.placeholder.activityName')" />
     </a-form-item>
     <a-form-item
       field="channelType"
@@ -35,10 +26,7 @@
         },
       ]"
     >
-      <a-select
-        v-model="formData.channelType"
-        :placeholder="$t('stepForm.placeholder.channelType')"
-      >
+      <a-select v-model="formData.channelType" :placeholder="$t('stepForm.placeholder.channelType')">
         <a-option>APP通用渠道</a-option>
       </a-select>
     </a-form-item>
@@ -69,10 +57,7 @@
       ]"
       row-class="keep-margin"
     >
-      <a-input
-        v-model="formData.promoteLink"
-        :placeholder="$t('stepForm.placeholder.promoteLink')"
-      />
+      <a-input v-model="formData.promoteLink" :placeholder="$t('stepForm.placeholder.promoteLink')" />
       <template #help>
         <span>{{ $t('stepForm.form.tip.promoteLink') }}</span>
       </template>
@@ -86,35 +71,35 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { FormInstance } from '@arco-design/web-vue/es/form';
-import { BaseInfoModel } from '@/api/form';
+import { defineComponent, ref } from 'vue'
+import { FormInstance } from '@arco-design/web-vue/es/form'
+import { BaseInfoModel } from '@/api/form'
 
 export default defineComponent({
   emits: ['changeStep'],
   setup(props, ctx) {
-    const formRef = ref<FormInstance>();
+    const formRef = ref<FormInstance>()
     const formData = ref<BaseInfoModel>({
       activityName: '',
       channelType: '',
       promotionTime: [],
       promoteLink: 'https://arco.design',
-    });
+    })
 
     const onNextClick = async () => {
-      const res = await formRef.value?.validate();
+      const res = await formRef.value?.validate()
       if (!res) {
-        ctx.emit('changeStep', 'forward', { ...formData.value });
+        ctx.emit('changeStep', 'forward', { ...formData.value })
       }
-    };
+    }
 
     return {
       formData,
       formRef,
       onNextClick,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

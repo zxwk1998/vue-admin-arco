@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent } from 'vue'
 
 export default defineComponent({
   setup() {
@@ -51,12 +51,12 @@ export default defineComponent({
         label: '消息',
         content: '新增内容已经通过审核，详情请点击查看。',
       },
-    ];
+    ]
     return {
       list,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

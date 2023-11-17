@@ -36,12 +36,10 @@
                 :ellipsis="{
                   rows: 1,
                 }"
-                >{{ item.content }}</a-typography-paragraph
               >
-              <a-typography-text
-                v-if="item.type === 'message'"
-                class="time-text"
-              >
+                {{ item.content }}
+              </a-typography-paragraph>
+              <a-typography-text v-if="item.type === 'message'" class="time-text">
                 {{ item.time }}
               </a-typography-text>
             </div>
@@ -50,11 +48,7 @@
       </div>
     </a-list-item>
     <template #footer>
-      <a-space
-        fill
-        :size="0"
-        :class="{ 'add-border-top': renderList.length < showMax }"
-      >
+      <a-space fill :size="0" :class="{ 'add-border-top': renderList.length < showMax }">
         <div class="footer-wrap">
           <a-link @click="allRead">{{ $t('messageBox.allRead') }}</a-link>
         </div>
@@ -63,16 +57,13 @@
         </div>
       </a-space>
     </template>
-    <div
-      v-if="renderList.length && renderList.length < 3"
-      :style="{ height: (showMax - renderList.length) * 86 + 'px' }"
-    ></div>
+    <div v-if="renderList.length && renderList.length < 3" :style="{ height: (showMax - renderList.length) * 86 + 'px' }"></div>
   </a-list>
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue';
-import { MessageRecord, MessageListType } from '@/api/message';
+import { defineComponent, PropType } from 'vue'
+import { MessageRecord, MessageListType } from '@/api/message'
 
 export default defineComponent({
   props: {
@@ -88,22 +79,22 @@ export default defineComponent({
   emits: ['itemClick'],
   setup(props, context) {
     const allRead = () => {
-      context.emit('itemClick', [...props.renderList]);
-    };
+      context.emit('itemClick', [...props.renderList])
+    }
 
     const onItemClick = (item: MessageRecord) => {
       if (!item.status) {
-        context.emit('itemClick', [item]);
+        context.emit('itemClick', [item])
       }
-    };
-    const showMax = 3;
+    }
+    const showMax = 3
     return {
       allRead,
       onItemClick,
       showMax,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

@@ -12,4 +12,4 @@ export default {
   'success.launched': 'Officially launched',
   'success.waiting': 'Waiting',
   'success.processing': 'Processing',
-};
+}

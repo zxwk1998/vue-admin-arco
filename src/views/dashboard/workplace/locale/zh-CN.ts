@@ -34,4 +34,4 @@ export default {
   'workplace.popularContent.video': '视频',
   'workplace.categoriesPercent': '内容类型占比',
   'workplace.pecs': '个',
-};
+}

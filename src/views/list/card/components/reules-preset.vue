@@ -4,13 +4,7 @@
       {{ $t('cardList.tab.title.preset') }}
     </a-typography-title>
     <a-row class="list-row" :gutter="24">
-      <a-col
-        v-for="item in renderData"
-        :key="item.id"
-        :span="6"
-        class="list-col"
-        style="min-height: 140px"
-      >
+      <a-col v-for="item in renderData" :key="item.id" :span="6" class="list-col" style="min-height: 140px">
         <CardWrap
           :loading="loading"
           :title="item.title"
@@ -32,27 +26,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import { queryRulesPresetList, ServiceRecord } from '@/api/list';
-import useRequest from '@/hooks/request';
-import CardWrap from './card-wrap.vue';
+import { defineComponent } from 'vue'
+import { queryRulesPresetList, ServiceRecord } from '@/api/list'
+import useRequest from '@/hooks/request'
+import CardWrap from './card-wrap.vue'
 
 export default defineComponent({
   components: {
     CardWrap,
   },
   setup() {
-    const defaultValue: ServiceRecord[] = new Array(6).fill({});
-    const { loading, response: renderData } = useRequest<ServiceRecord[]>(
-      queryRulesPresetList,
-      defaultValue,
-    );
+    const defaultValue: ServiceRecord[] = new Array(6).fill({})
+    const { loading, response: renderData } = useRequest<ServiceRecord[]>(queryRulesPresetList, defaultValue)
     return {
       loading,
       renderData,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>

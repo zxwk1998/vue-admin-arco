@@ -1,3 +1,3 @@
-const debug = true;
+const debug = true
 
-export default debug;
+export default debug

@@ -36,13 +36,7 @@
       >
         <template #label="{ label }">{{ $t(label) }} :</template>
         <template #value="{ value, data }">
-          <a-tag
-            v-if="data.label === 'userSetting.label.certification'"
-            color="green"
-            size="small"
-          >
-            已认证
-          </a-tag>
+          <a-tag v-if="data.label === 'userSetting.label.certification'" color="green" size="small">已认证</a-tag>
           <span v-else>{{ value }}</span>
         </template>
       </a-descriptions>
@@ -51,18 +45,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
-import { FileItem } from '@arco-design/web-vue/es/upload/interfaces';
-import { useUserStore } from '@/store';
+import { defineComponent, ref } from 'vue'
+import { FileItem } from '@arco-design/web-vue/es/upload/interfaces'
+import { useUserStore } from '@/store'
 
 export default defineComponent({
   setup() {
-    const userStore = useUserStore();
+    const userStore = useUserStore()
     const file = {
       uid: '-2',
       name: 'avatar.png',
       url: userStore.avatar,
-    };
+    }
     const renderData: any = [
       {
         label: 'userSetting.label.name',
@@ -84,18 +78,18 @@ export default defineComponent({
         label: 'userSetting.label.registrationDate',
         value: userStore.registrationDate,
       },
-    ];
-    const fileList = ref<FileItem[]>([file]);
+    ]
+    const fileList = ref<FileItem[]>([file])
     const uploadChange = (fileItemList: FileItem[], fileItem: FileItem) => {
-      fileList.value = [fileItem];
-    };
+      fileList.value = [fileItem]
+    }
     return {
       fileList,
       renderData,
       uploadChange,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less">

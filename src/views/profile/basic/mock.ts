@@ -1,5 +1,5 @@
-import Mock from 'mockjs';
-import setupMock, { successResponseWrap } from '@/utils/setup-mock';
+import Mock from 'mockjs'
+import setupMock, { successResponseWrap } from '@/utils/setup-mock'
 
 setupMock({
   setup() {
@@ -34,8 +34,8 @@ setupMock({
             profile: 'ACC-LC',
           },
         },
-      });
-    });
+      })
+    })
     Mock.mock(new RegExp('/api/operation/log'), () => {
       return successResponseWrap([
         {
@@ -52,7 +52,7 @@ setupMock({
           status: 1,
           updateTime: '2020-05-13 08:00:00',
         },
-      ]);
-    });
+      ])
+    })
   },
-});
+})

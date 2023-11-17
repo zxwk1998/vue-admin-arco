@@ -16,13 +16,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import useLoading from '@/hooks/loading';
-import useChartOption from '@/hooks/chart-option';
+import { defineComponent } from 'vue'
+import useLoading from '@/hooks/loading'
+import useChartOption from '@/hooks/chart-option'
 
 export default defineComponent({
   setup() {
-    const { loading } = useLoading();
+    const { loading } = useLoading()
     const { chartOption } = useChartOption((isDark) => {
       // echarts support https://echarts.apache.org/zh/theme-builder.html
       // It's not used here
@@ -110,14 +110,14 @@ export default defineComponent({
             ],
           },
         ],
-      };
-    });
+      }
+    })
     return {
       loading,
       chartOption,
-    };
+    }
   },
-});
+})
 </script>
 
 <style scoped lang="less"></style>
