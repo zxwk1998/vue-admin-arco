@@ -1,17 +1,7 @@
 <template>
-  <a-input-number
-    v-if="type === 'number'"
-    :style="{ width: '80px' }"
-    size="small"
-    :default-value="defaultValue"
-    @change="handleChange"
-  />
-  <a-switch
-    v-else
-    :default-checked="defaultValue"
-    size="small"
-    @change="handleChange"
-  />
+  <a-input-number v-if="type === 'number'" :style="{ width: '80px' }" size="small" :default-value="defaultValue"
+    @change="handleChange" />
+  <a-switch v-else :default-checked="defaultValue" size="small" @change="handleChange" />
 </template>
 
 <script lang="ts">
@@ -30,7 +20,7 @@ export default defineComponent({
     defaultValue: {
       type: [String, Boolean, Number],
       default: '',
-    },
+    } as any,
   },
   emits: ['inputChange'],
   setup(props, { emit }) {

@@ -1,10 +1,6 @@
 <template>
-  <a-card
-    class="general-card"
-    :title="$t('workplace.quick.operation')"
-    :header-style="{ paddingBottom: '0' }"
-    :body-style="{ padding: '24px 20px 0 20px' }"
-  >
+  <a-card class="general-card" :title="$t('workplace.quick.operation')" :header-style="{ paddingBottom: '0' }"
+    :body-style="{ padding: '24px 20px 0 20px' }">
     <template #extra>
       <a-link>{{ $t('workplace.quickOperation.setup') }}</a-link>
     </template>
@@ -25,7 +21,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
-const links = [
+const links: any = [
   { text: 'workplace.contentManagement', icon: 'icon-file' },
   { text: 'workplace.contentStatistical', icon: 'icon-storage' },
   { text: 'workplace.advanced', icon: 'icon-settings' },

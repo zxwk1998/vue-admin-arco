@@ -15,35 +15,14 @@
           </a-card>
         </div>
       </a-col>
-      <a-col
-        v-for="item in renderData"
-        :key="item.id"
-        :span="6"
-        class="list-col"
-      >
-        <CardWrap
-          :loading="loading"
-          :title="item.title"
-          :description="item.description"
-          :default-value="item.enable"
-          :action-type="item.actionType"
-          :icon="item.icon"
-          :open-txt="$t('cardList.content.inspection')"
-          :close-txt="$t('cardList.content.delete')"
-          :show-tag="false"
-        >
-          <a-descriptions
-            style="margin-top: 16px"
-            :data="item.data"
-            layout="inline-horizontal"
-            :column="2"
-          />
+      <a-col v-for="item in renderData" :key="item.id" :span="6" class="list-col">
+        <CardWrap :loading="loading" :title="item.title" :description="item.description" :default-value="item.enable"
+          :action-type="item.actionType" :icon="item.icon" :open-txt="$t('cardList.content.inspection')"
+          :close-txt="$t('cardList.content.delete')" :show-tag="false">
+          <a-descriptions style="margin-top: 16px" :data="item.data" layout="inline-horizontal" :column="2" />
           <template #skeleton>
             <a-skeleton :animation="true">
-              <a-skeleton-line
-                :widths="['50%', '50%', '100%', '40%']"
-                :rows="4"
-              />
+              <a-skeleton-line :widths="['50%', '50%', '100%', '40%']" :rows="4" />
               <a-skeleton-line :widths="['40%']" :rows="1" />
             </a-skeleton>
           </template>
@@ -65,7 +44,7 @@ export default defineComponent({
   },
   setup() {
     const defaultValue: ServiceRecord[] = new Array(3).fill({});
-    const { loading, response: renderData } = useRequest<ServiceRecord[]>(
+    const { loading, response: renderData }: any = useRequest<ServiceRecord[]>(
       queryInspectionList,
       defaultValue,
     );
@@ -82,30 +61,37 @@ export default defineComponent({
   height: 100%;
   transition: all 0.3s;
   border: 1px solid var(--color-neutral-3);
+
   &:hover {
     transform: translateY(-4px);
   }
+
   :deep(.arco-card-meta-description) {
     color: rgb(var(--gray-6));
+
     .arco-descriptions-item-label-inline {
       font-weight: normal;
       font-size: 12px;
       color: rgb(var(--gray-6));
     }
+
     .arco-descriptions-item-value-inline {
       color: rgb(var(--gray-8));
     }
   }
 }
+
 .empty-wrap {
   height: 200px;
   border-radius: 4px;
+
   :deep(.arco-card) {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+
     .arco-result-title {
       color: rgb(var(--gray-6));
     }

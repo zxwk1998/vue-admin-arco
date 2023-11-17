@@ -1,16 +1,9 @@
 <template>
   <div>
-    <a-table
-      :columns="columns"
-      :data="data"
-      row-key="id"
-      :row-selection="{
-        type: 'checkbox',
-        showCheckedAll: true,
-      }"
-      :border="false"
-      :pagination="false"
-    />
+    <a-table :columns="columns" :data="data" row-key="id" :row-selection="{
+      type: 'checkbox',
+      showCheckedAll: true,
+    }" :border="false" :pagination="false" />
     <a-typography-text type="secondary" class="data-statistic-list-tip">
       {{ $t('monitor.list.tip.rotations') }} {{ data.length }}
       {{ $t('monitor.list.tip.rest') }}
@@ -22,7 +15,6 @@
 import { defineComponent, computed, h, compile } from 'vue';
 import { useI18n } from 'vue-i18n';
 import {
-  TableColumn,
   TableData,
 } from '@arco-design/web-vue/es/table/interface.d';
 
@@ -65,7 +57,6 @@ export default defineComponent({
             rowIndex,
           }: {
             record: TableData;
-            column: TableColumn;
             rowIndex: number;
           }) {
             const tmp = `<span>${rowIndex + 1}</span>`;
@@ -78,7 +69,6 @@ export default defineComponent({
             record,
           }: {
             record: TableData;
-            column: TableColumn;
             rowIndex: number;
           }) {
             const tmp = `<div class='data-statistic-list-cover-wrapper'>
