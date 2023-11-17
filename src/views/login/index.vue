@@ -43,7 +43,8 @@ export default defineComponent({
     background: linear-gradient(163.85deg, #1d2129 0%, #00308f 100%);
   }
 
-  .content {
+  .content { 
+    border-radius: 10px;
     position: relative;
     display: flex;
     flex: 1;
