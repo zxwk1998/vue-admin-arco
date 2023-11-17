@@ -4,7 +4,7 @@
 
 <div align="center">
 
-本模板基于 [arco-design-pro-vue](https://arco.design/) 源码魔改而来，Arco Design 是一款由字节跳动出品的让人眼前一亮的 UI 库。
+本模板基于arco-design-pro-vue源码魔改而来，Arco Design 是一款由字节跳动出品的让人眼前一亮的 UI 库。
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/arco-design/arco-design-pro/blob/main/LICENSE)
 
@@ -12,7 +12,12 @@
 
 ## 🔗 演示地址
 
-- [vue-admin-arco 魔改版](https://vue-admin-beautiful.com/vue-admin-arco)
+- [🚀 Vue Admin Arco 演示地址（vue3.x + vite 4.x + arco-design 2.x 免费）](https://vue-admin-beautiful.com/vue-admin-arco)
+- [🚀 Vue Admin Pro 演示地址（vue2.x + element-ui 2.x 付费版本，支持 PC、平板、手机）](https://vue-admin-beautiful.com/admin-pro/)
+- [🚀 Vue Admin Plus 演示地址（vue3.x + element-plus 2.x 付费版本，支持 PC、平板、手机）](https://vue-admin-beautiful.com/admin-plus/)
+- [🚀 Vue Shop Vite 演示地址（vue3.x + vite 4.x + element-plus 2.x 付费版本，支持 PC、平板、手机）](https://vue-admin-beautiful.com/shop-vite/)
+- [📌 Vue Admin Pro 及 Vue Admin Plus 购买地址](https://vue-admin-beautiful.com/authorization/)
+- [📌 Vue Shop Vite 购买地址](https://vue-admin-beautiful.com/authorization/shop-vite.html)
 
 ## ✨ 魔改内容
 
