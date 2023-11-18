@@ -1,9 +1,13 @@
 import { mergeConfig } from 'vite'
+import configArcoResolverPlugin from './plugin/arcoResolver'
+import configCompressPlugin from './plugin/compress'
+import configVisualizerPlugin from './plugin/visualizer'
 import baseConig from './vite.config.base'
 
 export default mergeConfig(
   {
     mode: 'production',
+    plugins: [configCompressPlugin('gzip'), configVisualizerPlugin(), configArcoResolverPlugin()],
     build: {
       chunkSizeWarningLimit: 20480,
       reportCompressedSize: false,
