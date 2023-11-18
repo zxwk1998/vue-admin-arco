@@ -50,7 +50,7 @@ export default defineComponent({
 .banner {
   display: flex;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   border-radius: 10px;
 
   &-inner {
