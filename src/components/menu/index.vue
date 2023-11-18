@@ -1,9 +1,9 @@
 <script lang="tsx">
-import { defineComponent, ref, watch, h, compile, computed } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useRouter, useRoute, RouteRecordRaw, RouteRecordNormalized } from 'vue-router'
-import { useAppStore } from '@/store'
 import usePermission from '@/hooks/permission'
+import { useAppStore } from '@/store'
+import { compile, computed, defineComponent, h, ref, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { RouteRecordNormalized, RouteRecordRaw, useRoute, useRouter } from 'vue-router'
 
 export default defineComponent({
   emit: ['collapse'],

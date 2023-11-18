@@ -8,9 +8,9 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
 import { useAppStore } from '@/store'
+import { PropType } from 'vue'
 import FormWrapper from './form-wrapper.vue'
 
 interface OptionsProps {
@@ -19,39 +19,33 @@ interface OptionsProps {
   type?: string
   defaultVal?: boolean | string | number
 }
-
-export default defineComponent({
-  components: {
-    FormWrapper,
+defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-  props: {
-    title: {
-      type: String,
-      default: '',
+  options: {
+    type: Array as PropType<OptionsProps[]>,
+    default() {
+      return []
     },
-    options: {
-      type: Array as PropType<OptionsProps[]>,
-      default() {
-        return []
-      },
-    },
-  },
-  setup() {
-    const appStore = useAppStore()
-    const handleChange = ({ key, value }: { key: string; value: unknown }) => {
-      if (value && key === 'colorWeek') {
-        document.body.style.filter = 'invert(80%)'
-      }
-      if (!value && key === 'colorWeek') {
-        document.body.style.filter = 'none'
-      }
-      appStore.updateSettings({ [key]: value })
-    }
-    return {
-      handleChange,
-    }
   },
 })
+const appStore: any = useAppStore()
+const handleChange = async ({ key, value }: { key: string; value: unknown }) => {
+  if (key === 'colorWeak') {
+    document.body.style.filter = value ? 'invert(80%)' : 'none'
+  }
+  if (key === 'menuFromServer' && value) {
+    await appStore.fetchServerMenuConfig()
+  }
+  if (key === 'topMenu') {
+    appStore.updateSettings({
+      menuCollapse: false,
+    })
+  }
+  appStore.updateSettings({ [key]: value })
+}
 </script>
 
 <style scoped lang="less">

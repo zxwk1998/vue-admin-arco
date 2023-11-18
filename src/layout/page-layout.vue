@@ -20,7 +20,7 @@
                   alt="logo"
                   src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
                 />
-                <a-typography-title :style="{ margin: 0, fontSize: '18px', color: '#fff' }" :heading="5">vue-admin-arco</a-typography-title>
+                <a-typography-title>Vue Admin Arco</a-typography-title>
               </a-space>
             </div>
             <Menu />
@@ -42,13 +42,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed, watch } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
-import { useAppStore, useUserStore } from '@/store'
-import NavBar from '@/components/navbar/index.vue'
-import Menu from '@/components/menu/index.vue'
 import Footer from '@/components/footer/index.vue'
+import Menu from '@/components/menu/index.vue'
+import NavBar from '@/components/navbar/index.vue'
 import usePermission from '@/hooks/permission'
+import { useAppStore, useUserStore } from '@/store'
+import { computed, defineComponent, watch } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 export default defineComponent({
   components: {
@@ -119,13 +119,14 @@ export default defineComponent({
     .left-side {
       display: flex;
       align-items: center;
-      padding-left: 10px;
+      padding-left: 8px;
       background: var(--color-menu-dark-bg);
       height: 60px;
-      transition: none !important;
 
       .arco-typography {
-        transition: all 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+        color: #fff;
+        font-size: 18px;
+        width: 200px;
       }
     }
 
@@ -152,7 +153,6 @@ export default defineComponent({
 
       :deep(.arco-menu) {
         height: calc(100% - 60px) !important;
-        transition: none;
 
         ::-webkit-scrollbar {
           width: 12px;
@@ -197,8 +197,7 @@ export default defineComponent({
       width: 50px;
 
       .arco-typography {
-        transition: none;
-        display: none;
+        color: transparent;
       }
     }
 

@@ -9,16 +9,14 @@
   </a-breadcrumb>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType } from 'vue'
 
-export default defineComponent({
-  props: {
-    items: {
-      type: Array as PropType<string[]>,
-      default() {
-        return []
-      },
+defineProps({
+  items: {
+    type: Array as PropType<string[]>,
+    default() {
+      return []
     },
   },
 })

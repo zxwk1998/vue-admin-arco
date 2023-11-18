@@ -61,40 +61,31 @@
   </a-list>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { MessageRecord, MessageListType } from '@/api/message'
+<script lang="ts" setup>
+import { MessageListType, MessageRecord } from '@/api/message'
+import { PropType } from 'vue'
 
-export default defineComponent({
-  props: {
-    renderList: {
-      type: Array as PropType<MessageListType>,
-      required: true,
-    },
-    unreadCount: {
-      type: Number,
-      default: 0,
-    },
+const props = defineProps({
+  renderList: {
+    type: Array as PropType<MessageListType>,
+    required: true,
   },
-  emits: ['itemClick'],
-  setup(props, context) {
-    const allRead = () => {
-      context.emit('itemClick', [...props.renderList])
-    }
-
-    const onItemClick = (item: MessageRecord) => {
-      if (!item.status) {
-        context.emit('itemClick', [item])
-      }
-    }
-    const showMax = 3
-    return {
-      allRead,
-      onItemClick,
-      showMax,
-    }
+  unreadCount: {
+    type: Number,
+    default: 0,
   },
 })
+const emit = defineEmits(['itemClick'])
+const allRead = () => {
+  emit('itemClick', [...props.renderList])
+}
+
+const onItemClick = (item: MessageRecord) => {
+  if (!item.status) {
+    emit('itemClick', [item])
+  }
+}
+const showMax = 3
 </script>
 
 <style scoped lang="less">
@@ -117,11 +108,14 @@ export default defineComponent({
     font-size: 12px;
     color: rgb(var(--gray-6));
   }
+  .arco-empty {
+    display: none;
+  }
   .arco-list-footer {
     padding: 0;
     height: 50px;
     line-height: 50px;
-    // border-top: 1px solid rgb(var(--gray-3));
+    border-top: none;
     .arco-space-item {
       width: 100%;
       border-right: 1px solid rgb(var(--gray-3));
