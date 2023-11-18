@@ -7,7 +7,10 @@
 </div>
 
 <div align="center">
-本模板基于arco-design-pro-vue源码魔改而来，Arco Design 是一款由字节跳动出品的让人眼前一亮的 UI 库。
+
+基于arco-design-pro-vue源码魔改而来，Arco Design 是一款由字节跳动出品的让人眼前一亮的 UI 库。
+
+<br />
 
 [![stars](https://img.shields.io/github/stars/chuzhixin/vue-admin-arco?style=flat-square&logo=GitHub)](https://github.com/chuzhixin/vue-admin-arco)
 [![star](https://gitee.com/chu1204505056/vue-admin-arco/badge/star.svg?theme=gray)](https://gitee.com/chu1204505056/vue-admin-arco)
