@@ -1,7 +1,6 @@
 <template>
   <div class="login-form-wrapper">
     <div class="login-form-title">{{ $t('login.form.title') }}</div>
-    <div class="login-form-sub-title">{{ $t('login.form.title') }}</div>
     <div class="login-form-error-msg">{{ errorMessage }}</div>
     <a-form ref="loginForm" :model="userInfo" class="login-form" layout="vertical" @submit="handleSubmit">
       <a-form-item
@@ -52,14 +51,14 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive, onMounted } from 'vue'
-import { useRouter } from 'vue-router'
+import { LoginData } from '@/api/user'
+import useLoading from '@/hooks/loading'
+import { useUserStore } from '@/store'
 import { Message } from '@arco-design/web-vue'
 import { ValidatedError } from '@arco-design/web-vue/es/form/interface'
+import { defineComponent, onMounted, reactive, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useUserStore } from '@/store'
-import useLoading from '@/hooks/loading'
-import { LoginData } from '@/api/user'
+import { useRouter } from 'vue-router'
 
 export default defineComponent({
   setup() {
@@ -96,7 +95,7 @@ export default defineComponent({
     onMounted(() => {
       setTimeout(() => {
         handleSubmit({ errors: undefined, values: userInfo })
-      }, 3000)
+      }, 5000)
     })
     const setRememberPassword = () => {
       //
@@ -123,12 +122,6 @@ export default defineComponent({
     font-weight: 500;
     font-size: 24px;
     line-height: 32px;
-  }
-
-  &-sub-title {
-    color: var(--color-text-3);
-    font-size: 16px;
-    line-height: 24px;
   }
 
   &-error-msg {

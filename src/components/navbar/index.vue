@@ -1,18 +1,13 @@
 <template>
   <div class="navbar">
     <div class="left-side">
-      <!-- <a-space>
-        <img
-          alt="logo"
-          src="//p3-armor.byteimg.com/tos-cn-i-49unhts6dw/dfdba5317c0c20ce20e64fac803d52bc.svg~tplv-49unhts6dw-image.image"
+      <a-space>
+        <icon-menu-fold
+          v-if="!topMenu && appStore.device === 'mobile'"
+          style="font-size: 22px; cursor: pointer"
+          @click="toggleDrawerMenu"
         />
-        <a-typography-title
-          :style="{ margin: 0, fontSize: '18px' }"
-          :heading="5"
-        >
-          vue-admin-arco
-        </a-typography-title>
-      </a-space> -->
+      </a-space>
     </div>
     <ul class="right-side">
       <li>
@@ -32,10 +27,13 @@
             </template>
           </a-button>
         </a-tooltip>
-        <a-dropdown trigger="click" @select="changeLocale">
+        <a-dropdown trigger="click" @select="changeLocale as any">
           <div ref="triggerBtn" class="trigger-btn"></div>
           <template #content>
             <a-doption v-for="item in locales" :key="item.value" :value="item.value">
+              <template #icon>
+                <icon-check v-show="item.value === currentLocale" />
+              </template>
               {{ item.label }}
             </a-doption>
           </template>
@@ -43,7 +41,7 @@
       </li>
       <li>
         <a-tooltip :content="theme === 'light' ? $t('settings.navbar.theme.toDark') : $t('settings.navbar.theme.toLight')">
-          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleTheme">
+          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="handleToggleTheme">
             <template #icon>
               <icon-moon-fill v-if="theme === 'dark'" />
               <icon-sun-fill v-else />
@@ -72,6 +70,16 @@
             <message-box />
           </template>
         </a-popover>
+      </li>
+      <li>
+        <a-tooltip :content="isFullscreen ? $t('settings.navbar.screen.toExit') : $t('settings.navbar.screen.toFull')">
+          <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleFullScreen">
+            <template #icon>
+              <icon-fullscreen-exit v-if="isFullscreen" />
+              <icon-fullscreen v-else />
+            </template>
+          </a-button>
+        </a-tooltip>
       </li>
       <li>
         <a-tooltip :content="$t('settings.title')">
@@ -157,96 +165,79 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed, ref } from 'vue'
-import { Message } from '@arco-design/web-vue'
-import { useDark, useToggle } from '@vueuse/core'
-import { useAppStore, useUserStore } from '@/store'
-import { LOCALE_OPTIONS } from '@/locale'
+<script lang="ts" setup>
 import useLocale from '@/hooks/locale'
 import useUser from '@/hooks/user'
+import { LOCALE_OPTIONS } from '@/locale'
+import { useAppStore, useUserStore } from '@/store'
+import { Message } from '@arco-design/web-vue'
+import { useDark, useFullscreen, useToggle } from '@vueuse/core'
+import { computed, inject, ref } from 'vue'
 import MessageBox from '../message-box/index.vue'
 
-export default defineComponent({
-  components: {
-    MessageBox,
-  },
-  setup() {
-    const appStore = useAppStore()
-    const userStore = useUserStore()
-    const { logout } = useUser()
-    const { changeLocale }: any = useLocale()
-    const locales = [...LOCALE_OPTIONS]
-    const avatar = computed(() => {
-      return userStore.avatar
-    })
-    const theme = computed(() => {
-      return appStore.theme
-    })
-    const isDark = useDark({
-      selector: 'body',
-      attribute: 'arco-theme',
-      valueDark: 'dark',
-      valueLight: 'light',
-      storageKey: 'arco-theme',
-      onChanged(dark: boolean) {
-        // overridded default behavior
-        appStore.toggleTheme(dark)
-      },
-    })
-    const toggleTheme: any = useToggle(isDark)
-    const setVisible = () => {
-      appStore.updateSettings({ globalSettings: true })
-    }
-    const refBtn = ref()
-    const triggerBtn = ref()
-    const setPopoverVisible = () => {
-      const event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-      })
-      refBtn.value.dispatchEvent(event)
-    }
-    const handleLogout = () => {
-      logout()
-    }
-    const setDropDownVisible = () => {
-      const event = new MouseEvent('click', {
-        view: window,
-        bubbles: true,
-        cancelable: true,
-      })
-      triggerBtn.value.dispatchEvent(event)
-    }
-    const switchRoles = async () => {
-      const res = await userStore.switchRoles()
-      Message.success(res as string)
-    }
-    const switchGit = () => {
-      window.open('https://github.com/chuzhixin/vue-admin-arco')
-    }
-    const open = (val: string) => {
-      window.open(`https://vue-admin-beautiful.com/${val}`)
-    }
-    return {
-      locales,
-      theme,
-      avatar,
-      changeLocale,
-      toggleTheme,
-      setVisible,
-      setPopoverVisible,
-      refBtn,
-      triggerBtn,
-      handleLogout,
-      setDropDownVisible,
-      switchRoles,
-      switchGit,
-      open,
-    }
+const appStore = useAppStore()
+const userStore = useUserStore()
+const { logout } = useUser()
+const { changeLocale, currentLocale }: any = useLocale()
+const { isFullscreen, toggle: toggleFullScreen } = useFullscreen()
+const locales = [...LOCALE_OPTIONS]
+const avatar = computed(() => {
+  return userStore.avatar
+})
+const theme = computed(() => {
+  return appStore.theme
+})
+const topMenu = computed(() => appStore.topMenu && appStore.menu)
+const isDark = useDark({
+  selector: 'body',
+  attribute: 'arco-theme',
+  valueDark: 'dark',
+  valueLight: 'light',
+  storageKey: 'arco-theme',
+  onChanged(dark: boolean) {
+    // overridden default behavior
+    appStore.toggleTheme(dark)
   },
 })
+const toggleTheme = useToggle(isDark)
+const handleToggleTheme = () => {
+  toggleTheme()
+}
+const setVisible = () => {
+  appStore.updateSettings({ globalSettings: true })
+}
+const refBtn = ref()
+const triggerBtn = ref()
+const setPopoverVisible = () => {
+  const event = new MouseEvent('click', {
+    view: window,
+    bubbles: true,
+    cancelable: true,
+  })
+  refBtn.value.dispatchEvent(event)
+}
+const handleLogout = () => {
+  logout()
+}
+const setDropDownVisible = () => {
+  const event = new MouseEvent('click', {
+    view: window,
+    bubbles: true,
+    cancelable: true,
+  })
+  triggerBtn.value.dispatchEvent(event)
+}
+const switchRoles = async () => {
+  const res = await userStore.switchRoles()
+  Message.success(res as string)
+}
+const toggleDrawerMenu = inject('toggleDrawerMenu') as () => void
+const switchGit = () => {
+  window.open('https://github.com/chuzhixin/vue-admin-arco')
+}
+const open = (val: string) => {
+  window.open(`https://vue-admin-beautiful.com/${val}`)
+}
 </script>
 
 <style scoped lang="less">
