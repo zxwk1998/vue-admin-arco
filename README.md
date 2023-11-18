@@ -1,12 +1,11 @@
 <div align="center">
   <img alt="Arco Design Logo" width="200" src="https://avatars.githubusercontent.com/u/64576149?s=200&v=4"/>
-</div>
 
-<div align="center">
+<br />
+
   <h1>vue-admin-arco</h1>
-</div>
 
-<div align="center">
+<br />
 
 基于arco-design-pro-vue源码魔改而来，Arco Design 是一款由字节跳动出品的让人眼前一亮的 UI 库。
 
