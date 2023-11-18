@@ -1,8 +1,8 @@
-import { resolve } from 'path';
-import { defineConfig } from 'vite';
-import vue from '@vitejs/plugin-vue';
-import vueJsx from '@vitejs/plugin-vue-jsx';
-import svgLoader from 'vite-svg-loader';
+import vue from '@vitejs/plugin-vue'
+import vueJsx from '@vitejs/plugin-vue-jsx'
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
+import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
   base: '/vue-admin-arco/',
@@ -31,4 +31,4 @@ export default defineConfig({
   define: {
     'process.env': {},
   },
-});
+})

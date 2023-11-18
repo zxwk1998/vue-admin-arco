@@ -1,13 +1,13 @@
-import { mergeConfig } from 'vite';
-import eslint from 'vite-plugin-eslint';
-import baseConig from './vite.config.base';
+import { mergeConfig } from 'vite'
+import eslint from 'vite-plugin-eslint'
+import baseConig from './vite.config.base'
 
 export default mergeConfig(
   {
     mode: 'development',
     server: {
       open: true,
-      host:"0.0.0.0",
+      host: '0.0.0.0',
       fs: {
         strict: true,
       },
@@ -21,4 +21,4 @@ export default mergeConfig(
     ],
   },
   baseConig
-);
+)
