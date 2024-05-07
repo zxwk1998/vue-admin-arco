@@ -7,22 +7,15 @@
   </a-col>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import { useUserStore } from '@/store'
 
-export default defineComponent({
-  setup() {
-    const userStore = useUserStore()
-    const userInfo = computed(() => {
-      return {
-        name: userStore.name,
-      }
-    })
-    return {
-      userInfo,
-    }
-  },
+const userStore = useUserStore()
+const userInfo = computed(() => {
+  return {
+    name: userStore.name,
+  }
 })
 </script>
 

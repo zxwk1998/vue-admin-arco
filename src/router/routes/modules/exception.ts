@@ -1,11 +1,15 @@
-export default {
-  path: 'exception',
+import { DEFAULT_LAYOUT } from '../base'
+import { AppRouteRecordRaw } from '../types'
+
+const EXCEPTION: AppRouteRecordRaw = {
+  path: '/exception',
   name: 'exception',
-  component: () => import('@/views/exception/index.vue'),
+  component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.exception',
     requiresAuth: true,
     icon: 'icon-exclamation-circle',
+    order: 6,
   },
   children: [
     {
@@ -40,3 +44,5 @@ export default {
     },
   ],
 }
+
+export default EXCEPTION

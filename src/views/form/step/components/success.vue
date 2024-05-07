@@ -21,20 +21,11 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  emits: ['changeStep'],
-  setup(props, ctx) {
-    const oneMore = () => {
-      ctx.emit('changeStep', 1)
-    }
-    return {
-      oneMore,
-    }
-  },
-})
+<script lang="ts" setup>
+const emits = defineEmits(['changeStep'])
+const oneMore = () => {
+  emits('changeStep', 1)
+}
 </script>
 
 <style scoped lang="less">

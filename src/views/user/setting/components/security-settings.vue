@@ -85,15 +85,7 @@
   </a-list>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  setup() {
-    //
-  },
-})
-</script>
+<script lang="ts" setup></script>
 
 <style scoped lang="less">
 :deep(.arco-list-item) {

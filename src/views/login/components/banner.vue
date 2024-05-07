@@ -14,36 +14,29 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, computed } from 'vue'
+<script lang="ts" setup>
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import bannerImage from '@/assets/images/login-banner.png'
 
-export default defineComponent({
-  setup() {
-    const { t } = useI18n()
-    const carouselItem = computed(() => [
-      {
-        slogan: t('login.banner.slogan1'),
-        subSlogan: t('login.banner.subSlogan1'),
-        image: bannerImage,
-      },
-      {
-        slogan: t('login.banner.slogan2'),
-        subSlogan: t('login.banner.subSlogan2'),
-        image: bannerImage,
-      },
-      {
-        slogan: t('login.banner.slogan3'),
-        subSlogan: t('login.banner.subSlogan3'),
-        image: bannerImage,
-      },
-    ])
-    return {
-      carouselItem,
-    }
+const { t } = useI18n()
+const carouselItem = computed(() => [
+  {
+    slogan: t('login.banner.slogan1'),
+    subSlogan: t('login.banner.subSlogan1'),
+    image: bannerImage,
   },
-})
+  {
+    slogan: t('login.banner.slogan2'),
+    subSlogan: t('login.banner.subSlogan2'),
+    image: bannerImage,
+  },
+  {
+    slogan: t('login.banner.slogan3'),
+    subSlogan: t('login.banner.subSlogan3'),
+    image: bannerImage,
+  },
+])
 </script>
 
 <style lang="less" scoped>
@@ -51,7 +44,6 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
 
   &-inner {
     flex: 1;

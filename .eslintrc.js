@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const path = require('path');
+const path = require('path')
 
 module.exports = {
   root: true,
@@ -67,4 +67,4 @@ module.exports = {
     'prefer-regex-literals': 0,
     'import/no-extraneous-dependencies': 0,
   },
-};
+}

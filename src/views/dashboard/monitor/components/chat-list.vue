@@ -5,21 +5,16 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType } from 'vue'
 import { ChatRecord } from '@/api/message'
 import ChatItem from './chat-item.vue'
 
-export default defineComponent({
-  components: {
-    ChatItem,
-  },
-  props: {
-    renderList: {
-      type: Array as PropType<ChatRecord[]>,
-      default() {
-        return []
-      },
+defineProps({
+  renderList: {
+    type: Array as PropType<ChatRecord[]>,
+    default() {
+      return []
     },
   },
 })

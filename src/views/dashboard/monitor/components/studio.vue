@@ -23,18 +23,10 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useUserStore } from '@/store'
 
-export default defineComponent({
-  setup() {
-    const userStore = useUserStore()
-    return {
-      userInfo: userStore,
-    }
-  },
-})
+const userInfo = useUserStore()
 </script>
 
 <style scoped lang="less">
@@ -43,6 +35,7 @@ export default defineComponent({
     display: block;
     max-width: 600px;
     margin: 0 auto;
+    width: 100%;
   }
 
   &-bar {

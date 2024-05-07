@@ -6,7 +6,7 @@ import svgLoader from 'vite-svg-loader'
 import configArcoStyleImportPlugin from './plugin/arcoStyleImport'
 
 export default defineConfig({
-  base: '/vue-admin-arco/',
+  base: './',
   plugins: [vue(), vueJsx(), svgLoader({ svgoConfig: {} }), configArcoStyleImportPlugin()],
   resolve: {
     alias: [

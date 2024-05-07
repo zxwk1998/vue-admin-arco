@@ -32,18 +32,10 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useUserStore } from '@/store'
 
-export default defineComponent({
-  setup() {
-    const userStore = useUserStore()
-    return {
-      userInfo: userStore,
-    }
-  },
-})
+const userInfo = useUserStore()
 </script>
 
 <style scoped lang="less">

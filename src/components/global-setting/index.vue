@@ -36,18 +36,18 @@ const appStore = useAppStore()
 const { t } = useI18n()
 const { copy } = useClipboard()
 const visible = computed(() => appStore.globalSettings)
-const contentOpts: any = computed(() => [
+const contentOpts = computed(() => [
   { name: 'settings.navbar', key: 'navbar', defaultVal: appStore.navbar },
-  {
-    name: 'settings.menu',
-    key: 'menu',
-    defaultVal: appStore.menu,
-  },
-  {
-    name: 'settings.topMenu',
-    key: 'topMenu',
-    defaultVal: appStore.topMenu,
-  },
+  // {
+  //   name: 'settings.menu',
+  //   key: 'menu',
+  //   defaultVal: appStore.menu,
+  // },
+  // {
+  //   name: 'settings.topMenu',
+  //   key: 'topMenu',
+  //   defaultVal: appStore.topMenu,
+  // },
   { name: 'settings.footer', key: 'footer', defaultVal: appStore.footer },
   { name: 'settings.tabBar', key: 'tabBar', defaultVal: appStore.tabBar },
   {
@@ -62,7 +62,7 @@ const contentOpts: any = computed(() => [
     type: 'number',
   },
 ])
-const othersOpts: any = computed(() => [
+const othersOpts = computed(() => [
   {
     name: 'settings.colorWeak',
     key: 'colorWeak',

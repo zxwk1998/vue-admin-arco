@@ -1,16 +1,20 @@
-export default {
-  path: 'visualization',
+import { DEFAULT_LAYOUT } from '../base'
+import { AppRouteRecordRaw } from '../types'
+
+const VISUALIZATION: AppRouteRecordRaw = {
+  path: '/visualization',
   name: 'visualization',
-  component: () => import('@/views/visualization/index.vue'),
+  component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.visualization',
     requiresAuth: true,
     icon: 'icon-apps',
+    order: 1,
   },
   children: [
     {
       path: 'data-analysis',
-      name: 'dataAnalysis',
+      name: 'DataAnalysis',
       component: () => import('@/views/visualization/data-analysis/index.vue'),
       meta: {
         locale: 'menu.visualization.dataAnalysis',
@@ -20,7 +24,7 @@ export default {
     },
     {
       path: 'multi-dimension-data-analysis',
-      name: 'multiDimensionDataAnalysis',
+      name: 'MultiDimensionDataAnalysis',
       component: () => import('@/views/visualization/multi-dimension-data-analysis/index.vue'),
       meta: {
         locale: 'menu.visualization.multiDimensionDataAnalysis',
@@ -30,3 +34,5 @@ export default {
     },
   ],
 }
+
+export default VISUALIZATION

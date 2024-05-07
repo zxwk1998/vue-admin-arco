@@ -1,16 +1,20 @@
-export default {
-  path: 'form',
+import { DEFAULT_LAYOUT } from '../base'
+import { AppRouteRecordRaw } from '../types'
+
+const FORM: AppRouteRecordRaw = {
+  path: '/form',
   name: 'form',
-  component: () => import('@/views/form/index.vue'),
+  component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.form',
     icon: 'icon-settings',
     requiresAuth: true,
+    order: 3,
   },
   children: [
     {
       path: 'step',
-      name: 'step',
+      name: 'Step',
       component: () => import('@/views/form/step/index.vue'),
       meta: {
         locale: 'menu.form.step',
@@ -20,7 +24,7 @@ export default {
     },
     {
       path: 'group',
-      name: 'group',
+      name: 'Group',
       component: () => import('@/views/form/group/index.vue'),
       meta: {
         locale: 'menu.form.group',
@@ -30,3 +34,5 @@ export default {
     },
   ],
 }
+
+export default FORM

@@ -20,9 +20,7 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-
+<script lang="ts" setup>
 const links = [
   {
     text: 'workplace.contentManagement',
@@ -37,14 +35,10 @@ const links = [
     icon: 'icon-settings',
   },
 ]
-
-export default defineComponent({
-  setup() {
-    return {
-      links,
-    }
-  },
-})
 </script>
 
-<style lang="less" scoped></style>
+<style lang="less" scoped>
+:deep(.arco-card-header-title) {
+  line-height: inherit;
+}
+</style>

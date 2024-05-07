@@ -25,73 +25,67 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType, computed } from 'vue'
+<script lang="ts" setup>
+import { PropType, computed } from 'vue'
 import { EnterpriseCertificationModel } from '@/api/user-center'
+import type { DescData } from '@arco-design/web-vue/es/descriptions/interface'
 
-export default defineComponent({
-  props: {
-    enterpriseInfo: {
-      type: Object as PropType<EnterpriseCertificationModel>,
-      required: true,
+const props = defineProps({
+  enterpriseInfo: {
+    type: Object as PropType<EnterpriseCertificationModel>,
+    required: true,
+  },
+})
+const renderData = computed(() => {
+  const {
+    accountType,
+    status,
+    time,
+    legalPerson,
+    certificateType,
+    authenticationNumber,
+    enterpriseName,
+    enterpriseCertificateType,
+    organizationCode,
+  } = props.enterpriseInfo
+  return [
+    {
+      label: 'userSetting.certification.label.accountType',
+      value: accountType,
     },
-  },
-  setup(props) {
-    const renderData: any = computed(() => {
-      const {
-        accountType,
-        status,
-        time,
-        legalPerson,
-        certificateType,
-        authenticationNumber,
-        enterpriseName,
-        enterpriseCertificateType,
-        organizationCode,
-      } = props.enterpriseInfo
-      return [
-        {
-          label: 'userSetting.certification.label.accountType',
-          value: accountType,
-        },
-        {
-          label: 'userSetting.certification.label.status',
-          value: status,
-        },
-        {
-          label: 'userSetting.certification.label.time',
-          value: time,
-        },
-        {
-          label: 'userSetting.certification.label.legalPerson',
-          value: legalPerson,
-        },
-        {
-          label: 'userSetting.certification.label.certificateType',
-          value: certificateType,
-        },
-        {
-          label: 'userSetting.certification.label.authenticationNumber',
-          value: authenticationNumber,
-        },
-        {
-          label: 'userSetting.certification.label.enterpriseName',
-          value: enterpriseName,
-        },
-        {
-          label: 'userSetting.certification.label.enterpriseCertificateType',
-          value: enterpriseCertificateType,
-        },
-        {
-          label: 'userSetting.certification.label.organizationCode',
-          value: organizationCode,
-        },
-      ]
-    })
-    return {
-      renderData,
-    }
-  },
+    {
+      label: 'userSetting.certification.label.status',
+      value: status,
+    },
+    {
+      label: 'userSetting.certification.label.time',
+      value: time,
+    },
+    {
+      label: 'userSetting.certification.label.legalPerson',
+      value: legalPerson,
+    },
+    {
+      label: 'userSetting.certification.label.certificateType',
+      value: certificateType,
+    },
+    {
+      label: 'userSetting.certification.label.authenticationNumber',
+      value: authenticationNumber,
+    },
+    {
+      label: 'userSetting.certification.label.enterpriseName',
+      value: enterpriseName,
+    },
+    {
+      label: 'userSetting.certification.label.enterpriseCertificateType',
+      value: enterpriseCertificateType,
+    },
+    {
+      label: 'userSetting.certification.label.organizationCode',
+      value: organizationCode,
+    },
+  ] as DescData[]
 })
 </script>
 
@@ -101,12 +95,10 @@ export default defineComponent({
   padding: 20px;
   background-color: rgb(var(--gray-1));
 }
-
 .item-label {
   min-width: 98px;
   text-align: right;
   color: var(--color-text-8);
-
   &:after {
     content: ':';
   }

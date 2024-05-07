@@ -70,36 +70,26 @@
   </a-form>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 import { FormInstance } from '@arco-design/web-vue/es/form'
 import { BaseInfoModel } from '@/api/form'
 
-export default defineComponent({
-  emits: ['changeStep'],
-  setup(props, ctx) {
-    const formRef = ref<FormInstance>()
-    const formData = ref<BaseInfoModel>({
-      activityName: '',
-      channelType: '',
-      promotionTime: [],
-      promoteLink: 'https://arco.design',
-    })
-
-    const onNextClick = async () => {
-      const res = await formRef.value?.validate()
-      if (!res) {
-        ctx.emit('changeStep', 'forward', { ...formData.value })
-      }
-    }
-
-    return {
-      formData,
-      formRef,
-      onNextClick,
-    }
-  },
+const emits = defineEmits(['changeStep'])
+const formRef = ref<FormInstance>()
+const formData = ref<BaseInfoModel>({
+  activityName: '',
+  channelType: '',
+  promotionTime: [],
+  promoteLink: 'https://arco.design',
 })
+
+const onNextClick = async () => {
+  const res = await formRef.value?.validate()
+  if (!res) {
+    emits('changeStep', 'forward', { ...formData.value })
+  }
+}
 </script>
 
 <style scoped lang="less">

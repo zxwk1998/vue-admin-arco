@@ -101,40 +101,30 @@
   </a-form>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 import { FormInstance } from '@arco-design/web-vue/es/form'
 import { BasicInfoModel } from '@/api/user-center'
 
-export default defineComponent({
-  setup() {
-    const formRef = ref<FormInstance>()
-    const formData = ref<BasicInfoModel>({
-      email: '',
-      nickname: '',
-      countryRegion: '',
-      area: '',
-      address: '',
-      profile: '',
-    })
-    const validate = async () => {
-      const res = await formRef.value?.validate()
-      if (!res) {
-        // do some thing
-        // you also can use html-type to submit
-      }
-    }
-    const reset = async () => {
-      await formRef.value?.resetFields()
-    }
-    return {
-      formRef,
-      formData,
-      validate,
-      reset,
-    }
-  },
+const formRef = ref<FormInstance>()
+const formData = ref<BasicInfoModel>({
+  email: '',
+  nickname: '',
+  countryRegion: '',
+  area: '',
+  address: '',
+  profile: '',
 })
+const validate = async () => {
+  const res = await formRef.value?.validate()
+  if (!res) {
+    // do some thing
+    // you also can use html-type to submit
+  }
+}
+const reset = async () => {
+  await formRef.value?.resetFields()
+}
 </script>
 
 <style scoped lang="less">

@@ -24,24 +24,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import UserPanel from './components/user-panel.vue'
 import BasicInformation from './components/basic-information.vue'
 import SecuritySettings from './components/security-settings.vue'
 import Certification from './components/certification.vue'
+</script>
 
-export default defineComponent({
-  components: {
-    UserPanel,
-    BasicInformation,
-    SecuritySettings,
-    Certification,
-  },
-  setup() {
-    return {}
-  },
-})
+<script lang="ts">
+export default {
+  name: 'Setting',
+}
 </script>
 
 <style scoped lang="less">

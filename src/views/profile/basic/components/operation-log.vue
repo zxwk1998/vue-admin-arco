@@ -32,32 +32,24 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 import { queryOperationLog, operationLogRes } from '@/api/profile'
 import useLoading from '@/hooks/loading'
 
-export default defineComponent({
-  setup() {
-    const { loading, setLoading } = useLoading(true)
-    const renderData = ref<operationLogRes>([])
-    const fetchData = async () => {
-      try {
-        const { data } = await queryOperationLog()
-        renderData.value = data
-      } catch (err) {
-        // you can report use errorHandler or other
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-    return {
-      loading,
-      renderData,
-    }
-  },
-})
+const { loading, setLoading } = useLoading(true)
+const renderData = ref<operationLogRes>([])
+const fetchData = async () => {
+  try {
+    const { data } = await queryOperationLog()
+    renderData.value = data
+  } catch (err) {
+    // you can report use errorHandler or other
+  } finally {
+    setLoading(false)
+  }
+}
+fetchData()
 </script>
 
 <style scoped lang="less">

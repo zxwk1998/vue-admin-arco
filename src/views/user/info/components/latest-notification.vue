@@ -11,21 +11,13 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import useLoading from '@/hooks/loading'
 
-export default defineComponent({
-  setup() {
-    const { loading, setLoading } = useLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-    }, 500)
-    return {
-      loading,
-    }
-  },
-})
+const { loading, setLoading } = useLoading(true)
+setTimeout(() => {
+  setLoading(false)
+}, 500)
 </script>
 
 <style lang="less" scoped>

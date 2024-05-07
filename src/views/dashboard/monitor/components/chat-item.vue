@@ -24,17 +24,15 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType } from 'vue'
 import { ChatRecord } from '@/api/message'
 
-export default defineComponent({
-  props: {
-    itemData: {
-      type: Object as PropType<ChatRecord>,
-      default() {
-        return {}
-      },
+defineProps({
+  itemData: {
+    type: Object as PropType<ChatRecord>,
+    default() {
+      return {}
     },
   },
 })

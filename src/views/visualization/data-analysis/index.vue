@@ -7,14 +7,14 @@
           <PublicOpinion />
         </div>
         <div>
-          <a-row :gutter="20">
-            <a-col :span="16">
+          <a-grid :cols="24" :col-gap="16" :row-gap="16">
+            <a-grid-item :span="{ xs: 24, sm: 24, md: 24, lg: 24, xl: 16, xxl: 16 }">
               <ContentPublishRatio />
-            </a-col>
-            <a-col :span="8">
+            </a-grid-item>
+            <a-grid-item :span="{ xs: 24, sm: 24, md: 24, lg: 24, xl: 8, xxl: 8 }">
               <PopularAuthor />
-            </a-col>
-          </a-row>
+            </a-grid-item>
+          </a-grid>
         </div>
         <div>
           <ContentPeriodAnalysis />
@@ -24,21 +24,17 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import PublicOpinion from './components/public-opinion.vue'
 import ContentPeriodAnalysis from './components/content-period-analysis.vue'
 import ContentPublishRatio from './components/content-publish-ratio.vue'
 import PopularAuthor from './components/popular-author.vue'
+</script>
 
-export default defineComponent({
-  components: {
-    PublicOpinion,
-    ContentPeriodAnalysis,
-    ContentPublishRatio,
-    PopularAuthor,
-  },
-})
+<script lang="ts">
+export default {
+  name: 'DataAnalysis',
+}
 </script>
 
 <style scoped lang="less">
@@ -56,7 +52,7 @@ export default defineComponent({
   margin: 0 0 12px 0;
   font-size: 14;
 }
-:deep(.section-titile) {
+:deep(.section-title) {
   margin: 0 0 12px 0;
   font-size: 14px;
 }

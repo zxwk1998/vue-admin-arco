@@ -6,60 +6,54 @@
         <DataPanel />
         <ContentChart />
       </div>
-      <a-row style="margin-top: 16px">
-        <a-col :flex="1" class="panel" style="margin-right: 16px">
+      <a-grid :cols="24" :col-gap="16" :row-gap="16" style="margin-top: 16px">
+        <a-grid-item :span="{ xs: 24, sm: 24, md: 24, lg: 12, xl: 12, xxl: 12 }">
           <PopularContent />
-        </a-col>
-        <a-col :flex="1" class="panel">
-          <CateforiesPercent />
-        </a-col>
-      </a-row>
+        </a-grid-item>
+        <a-grid-item :span="{ xs: 24, sm: 24, md: 24, lg: 12, xl: 12, xxl: 12 }">
+          <CategoriesPercent />
+        </a-grid-item>
+      </a-grid>
     </div>
     <div class="right-side">
-      <div class="panel moduler-wrap">
-        <QuickOperation />
-        <RecentlyVisited />
-      </div>
-      <div class="panel" style="margin-top: 16px">
-        <Carousel />
-      </div>
-      <div class="panel" style="margin-top: 16px">
-        <Announcement />
-      </div>
-      <div class="panel" style="margin-top: 16px">
-        <Docs />
-      </div>
+      <a-grid :cols="24" :row-gap="16">
+        <a-grid-item :span="24">
+          <div class="panel moduler-wrap">
+            <QuickOperation />
+            <RecentlyVisited />
+          </div>
+        </a-grid-item>
+        <a-grid-item class="panel" :span="24">
+          <Carousel />
+        </a-grid-item>
+        <a-grid-item class="panel" :span="24">
+          <Announcement />
+        </a-grid-item>
+        <a-grid-item class="panel" :span="24">
+          <Docs />
+        </a-grid-item>
+      </a-grid>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import Banner from './components/banner.vue'
 import DataPanel from './components/data-panel.vue'
 import ContentChart from './components/content-chart.vue'
 import PopularContent from './components/popular-content.vue'
-import CateforiesPercent from './components/categories-percent.vue'
+import CategoriesPercent from './components/categories-percent.vue'
 import RecentlyVisited from './components/recently-visited.vue'
 import QuickOperation from './components/quick-operation.vue'
 import Announcement from './components/announcement.vue'
 import Carousel from './components/carousel.vue'
 import Docs from './components/docs.vue'
+</script>
 
-export default defineComponent({
-  components: {
-    Banner,
-    DataPanel,
-    ContentChart,
-    PopularContent,
-    CateforiesPercent,
-    RecentlyVisited,
-    QuickOperation,
-    Announcement,
-    Carousel,
-    Docs,
-  },
-})
+<script lang="ts">
+export default {
+  name: 'Dashboard', // If you want the include property of keep-alive to take effect, you must name the component
+}
 </script>
 
 <style lang="less" scoped>
@@ -130,6 +124,21 @@ export default defineComponent({
     text-align: center;
     background-color: rgb(var(--gray-1));
     border-radius: 4px;
+  }
+}
+</style>
+
+<style lang="less" scoped>
+// responsive
+.mobile {
+  .container {
+    display: block;
+  }
+  .right-side {
+    // display: none;
+    width: 100%;
+    margin-left: 0;
+    margin-top: 16px;
   }
 }
 </style>

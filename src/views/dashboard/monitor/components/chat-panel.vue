@@ -24,7 +24,7 @@
     </a-space>
     <div class="chat-panel-content">
       <a-spin :loading="loading" style="width: 100%">
-        <ChatList :render-list="chatList" />
+        <ChatList :render-list="chatData" />
       </a-spin>
     </div>
     <div class="chat-panel-footer">
@@ -40,36 +40,25 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 import { queryChatList, ChatRecord } from '@/api/message'
 import useLoading from '@/hooks/loading'
 import ChatList from './chat-list.vue'
 
-export default defineComponent({
-  components: {
-    ChatList,
-  },
-  setup() {
-    const { loading, setLoading } = useLoading(true)
-    const chatList = ref<ChatRecord[]>([])
-    const fetchData = async () => {
-      try {
-        const { data } = await queryChatList()
-        chatList.value = data
-      } catch (err) {
-        // you can report use errorHandler or other
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData()
-    return {
-      loading,
-      chatList,
-    }
-  },
-})
+const { loading, setLoading } = useLoading(true)
+const chatData = ref<ChatRecord[]>([])
+const fetchData = async () => {
+  try {
+    const { data } = await queryChatList()
+    chatData.value = data
+  } catch (err) {
+    // you can report use errorHandler or other
+  } finally {
+    setLoading(false)
+  }
+}
+fetchData()
 </script>
 
 <style scoped lang="less">

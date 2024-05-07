@@ -1,3 +1,4 @@
+import type { TableData } from '@arco-design/web-vue/es/table/interface'
 import axios from 'axios'
 
 export interface ContentDataRecord {
@@ -17,5 +18,5 @@ export interface PopularRecord {
 }
 
 export function queryPopularList(params: { type: string }) {
-  return axios.get<PopularRecord[]>('/api/popular/list', { params })
+  return axios.get<TableData[]>('/api/popular/list', { params })
 }

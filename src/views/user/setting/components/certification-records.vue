@@ -38,21 +38,16 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent, PropType } from 'vue'
+<script lang="ts" setup>
+import { PropType } from 'vue'
 import { CertificationRecord } from '@/api/user-center'
 
-export default defineComponent({
-  props: {
-    renderData: {
-      type: Array as PropType<CertificationRecord>,
-      default() {
-        return []
-      },
+defineProps({
+  renderData: {
+    type: Array as PropType<CertificationRecord>,
+    default() {
+      return []
     },
-  },
-  setup() {
-    //
   },
 })
 </script>

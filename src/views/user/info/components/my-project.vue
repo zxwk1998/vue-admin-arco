@@ -4,7 +4,17 @@
       <a-link>{{ $t('userInfo.showMore') }}</a-link>
     </template>
     <a-row :gutter="16">
-      <a-col v-for="(project, index) in projectList" :key="index" :span="8" class="my-project-item">
+      <a-col
+        v-for="(project, index) in projectList"
+        :key="index"
+        :xs="12"
+        :sm="12"
+        :md="12"
+        :lg="12"
+        :xl="8"
+        :xxl="8"
+        class="my-project-item"
+      >
         <a-card>
           <a-skeleton v-if="loading" :loading="loading" :animation="true">
             <a-skeleton-line :rows="3" />
@@ -15,7 +25,8 @@
               {{ project.description }}
             </a-typography-text>
             <a-space>
-              <a-avatar-group :size="0">
+              <a-avatar-group :size="24">
+                {{ project.contributors }}
                 <a-avatar v-for="(contributor, idx) in project.contributors" :key="idx" :size="32">
                   <img alt="avatar" :src="contributor.avatar" />
                 </a-avatar>
@@ -29,21 +40,12 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { queryMyProjectList, MyProjectRecord } from '@/api/user-center'
 import useRequest from '@/hooks/request'
 
-export default defineComponent({
-  setup() {
-    const defaultValue = Array(6).fill({} as MyProjectRecord)
-    const { loading, response: projectList } = useRequest<MyProjectRecord[]>(queryMyProjectList, defaultValue)
-    return {
-      loading,
-      projectList,
-    }
-  },
-})
+const defaultValue = Array(6).fill({} as MyProjectRecord)
+const { loading, response: projectList } = useRequest<MyProjectRecord[]>(queryMyProjectList, defaultValue)
 </script>
 
 <style scoped lang="less">

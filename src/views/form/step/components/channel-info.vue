@@ -70,40 +70,31 @@
   </a-form>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 import { FormInstance } from '@arco-design/web-vue/es/form'
 import { ChannelInfoModel } from '@/api/form'
 
-export default defineComponent({
-  emits: ['changeStep'],
-  setup(props, ctx) {
-    const formRef = ref<FormInstance>()
-    const formData = ref<ChannelInfoModel>({
-      advertisingSource: '',
-      advertisingMedia: '',
-      keyword: [],
-      pushNotify: true,
-      advertisingContent: '',
-    })
+const emits = defineEmits(['changeStep'])
 
-    const onNextClick = async () => {
-      const res = await formRef.value?.validate()
-      if (!res) {
-        ctx.emit('changeStep', 'submit', { ...formData.value })
-      }
-    }
-    const goPrev = () => {
-      ctx.emit('changeStep', 'backward')
-    }
-    return {
-      formData,
-      formRef,
-      onNextClick,
-      goPrev,
-    }
-  },
+const formRef = ref<FormInstance>()
+const formData = ref<ChannelInfoModel>({
+  advertisingSource: '',
+  advertisingMedia: '',
+  keyword: [],
+  pushNotify: true,
+  advertisingContent: '',
 })
+
+const onNextClick = async () => {
+  const res = await formRef.value?.validate()
+  if (!res) {
+    emits('changeStep', 'submit', { ...formData.value })
+  }
+}
+const goPrev = () => {
+  emits('changeStep', 'backward')
+}
 </script>
 
 <style scoped lang="less">

@@ -29,13 +29,18 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup></script>
 
-export default defineComponent({})
+<script lang="ts">
+export default {
+  name: 'Success',
+}
 </script>
 
 <style scoped lang="less">
+.container {
+  padding: 0 20px 20px 20px;
+}
 .wrapper {
   padding: 24px 150px;
   background-color: var(--color-bg-2);
@@ -57,5 +62,16 @@ export default defineComponent({})
   margin-bottom: 150px;
   padding: 20px;
   background-color: rgb(var(--gray-1));
+}
+</style>
+
+<style lang="less" scoped>
+.mobile {
+  .wrapper {
+    padding: 24px 10px;
+    .steps-wrapper {
+      transform: scale(0.8);
+    }
+  }
 }
 </style>

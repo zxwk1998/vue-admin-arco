@@ -1,6 +1,8 @@
+import { LoginData, getUserInfo, login as userLogin, logout as userLogout } from '@/api/user'
+import { clearToken, setToken } from '@/utils/auth'
+import { removeRouteListener } from '@/utils/route-listener'
 import { defineStore } from 'pinia'
-import { login as userLogin, logout as userLogout, getUserInfo, LoginData } from '@/api/user'
-import { setToken, clearToken } from '@/utils/auth'
+import useAppStore from '../app'
 import { UserState } from './types'
 
 const useUserStore = defineStore('user', {
@@ -63,13 +65,20 @@ const useUserStore = defineStore('user', {
         throw err
       }
     },
-
-    // Logout
-    async logout() {
-      await userLogout()
-
+    logoutCallBack() {
+      const appStore = useAppStore()
       this.resetInfo()
       clearToken()
+      removeRouteListener()
+      appStore.clearServerMenu()
+    },
+    // Logout
+    async logout() {
+      try {
+        await userLogout()
+      } finally {
+        this.logoutCallBack()
+      }
     },
   },
 })

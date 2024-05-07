@@ -1,88 +1,37 @@
-import { createRouter, createWebHashHistory, LocationQueryRaw } from 'vue-router'
 import NProgress from 'nprogress' // progress bar
 import 'nprogress/nprogress.css'
+import { createRouter, createWebHashHistory } from 'vue-router'
 
-import usePermission from '@/hooks/permission'
-import { useUserStore } from '@/store'
-import PageLayout from '@/layout/page-layout.vue'
-import { isLogin } from '@/utils/auth'
-import Login from './modules/login'
-import appRoutes from './modules'
+import createRouteGuard from './guard'
+import { appRoutes } from './routes'
+import { NOT_FOUND_ROUTE, REDIRECT_MAIN } from './routes/base'
 
 NProgress.configure({ showSpinner: false }) // NProgress Configuration
 
 const router = createRouter({
-  history: createWebHashHistory(''),
+  history: createWebHashHistory('./'),
   routes: [
     {
       path: '/',
       redirect: 'login',
     },
-    Login,
     {
-      name: 'root',
-      path: '/',
-      component: PageLayout,
-      children: appRoutes,
+      path: '/login',
+      name: 'login',
+      component: () => import('@/views/login/index.vue'),
+      meta: {
+        requiresAuth: false,
+      },
     },
-    {
-      path: '/:pathMatch(.*)*',
-      name: 'notFound',
-      component: () => import('@/views/not-found/index.vue'),
-    },
+    ...appRoutes,
+    REDIRECT_MAIN,
+    NOT_FOUND_ROUTE,
   ],
   scrollBehavior() {
     return { top: 0 }
   },
 })
 
-router.beforeEach(async (to, from, next) => {
-  NProgress.start()
-  const userStore = useUserStore()
-  async function crossroads() {
-    const Permission = usePermission()
-    if (Permission.accessRouter(to)) await next()
-    else {
-      const destination = Permission.findFirstPermissionRoute(appRoutes, userStore.role) || {
-        name: 'notFound',
-      }
-      await next(destination)
-    }
-    NProgress.done()
-  }
-  if (isLogin()) {
-    if (userStore.role) {
-      crossroads()
-    } else {
-      try {
-        await userStore.info()
-        crossroads()
-      } catch (error) {
-        next({
-          name: 'login',
-          query: {
-            redirect: to.name,
-            ...to.query,
-          } as LocationQueryRaw,
-        })
-        NProgress.done()
-      }
-    }
-  } else {
-    if (to.name === 'login') {
-      next()
-      NProgress.done()
-      return
-    }
-    next({
-      name: 'login',
-      query: {
-        redirect: to.name,
-        ...to.query,
-      } as LocationQueryRaw,
-    })
-    NProgress.done()
-  }
-})
+createRouteGuard(router)
 
 export default router

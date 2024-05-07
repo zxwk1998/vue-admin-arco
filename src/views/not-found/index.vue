@@ -7,22 +7,14 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import { useRouter } from 'vue-router'
 
-export default defineComponent({
-  setup() {
-    const router = useRouter()
-    const back = () => {
-      // warning： Go to the node that has the permission
-      router.push({ name: 'workplace' })
-    }
-    return {
-      back,
-    }
-  },
-})
+const router = useRouter()
+const back = () => {
+  // warning： Go to the node that has the permission
+  router.push({ name: 'Workplace' })
+}
 </script>
 
 <style scoped lang="less">

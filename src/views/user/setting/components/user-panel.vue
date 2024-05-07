@@ -2,7 +2,7 @@
   <a-card :bordered="false">
     <a-space :size="54">
       <a-upload
-        action="/"
+        :custom-request="customRequest"
         list-type="picture-card"
         :file-list="fileList"
         :show-upload-button="true"
@@ -44,52 +44,81 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
-import { FileItem } from '@arco-design/web-vue/es/upload/interfaces'
+<script lang="ts" setup>
+import { ref } from 'vue'
+import type { FileItem, RequestOption } from '@arco-design/web-vue/es/upload/interfaces'
 import { useUserStore } from '@/store'
+import { userUploadApi } from '@/api/user-center'
+import type { DescData } from '@arco-design/web-vue/es/descriptions/interface'
 
-export default defineComponent({
-  setup() {
-    const userStore = useUserStore()
-    const file = {
-      uid: '-2',
-      name: 'avatar.png',
-      url: userStore.avatar,
-    }
-    const renderData: any = [
-      {
-        label: 'userSetting.label.name',
-        value: userStore.name,
-      },
-      {
-        label: 'userSetting.label.certification',
-        value: userStore.certification,
-      },
-      {
-        label: 'userSetting.label.accountId',
-        value: userStore.accountId,
-      },
-      {
-        label: 'userSetting.label.phone',
-        value: userStore.phone,
-      },
-      {
-        label: 'userSetting.label.registrationDate',
-        value: userStore.registrationDate,
-      },
-    ]
-    const fileList = ref<FileItem[]>([file])
-    const uploadChange = (fileItemList: FileItem[], fileItem: FileItem) => {
-      fileList.value = [fileItem]
-    }
-    return {
-      fileList,
-      renderData,
-      uploadChange,
-    }
+const userStore = useUserStore()
+const file = {
+  uid: '-2',
+  name: 'avatar.png',
+  url: userStore.avatar,
+}
+const renderData = [
+  {
+    label: 'userSetting.label.name',
+    value: userStore.name,
   },
-})
+  {
+    label: 'userSetting.label.certification',
+    value: userStore.certification,
+  },
+  {
+    label: 'userSetting.label.accountId',
+    value: userStore.accountId,
+  },
+  {
+    label: 'userSetting.label.phone',
+    value: userStore.phone,
+  },
+  {
+    label: 'userSetting.label.registrationDate',
+    value: userStore.registrationDate,
+  },
+] as DescData[]
+const fileList = ref<FileItem[]>([file])
+const uploadChange = (fileItemList: FileItem[], fileItem: FileItem) => {
+  fileList.value = [fileItem]
+}
+const customRequest = (options: RequestOption) => {
+  // docs: https://axios-http.com/docs/cancellation
+  const controller = new AbortController()
+
+  ;(async function requestWrap() {
+    const { onProgress, onError, onSuccess, fileItem, name = 'file' } = options
+    onProgress(20)
+    const formData = new FormData()
+    formData.append(name as string, fileItem.file as Blob)
+    const onUploadProgress = (event: ProgressEvent) => {
+      let percent
+      if (event.total > 0) {
+        percent = (event.loaded / event.total) * 100
+      }
+      onProgress(parseInt(String(percent), 10), event)
+    }
+
+    try {
+      // https://github.com/axios/axios/issues/1630
+      // https://github.com/nuysoft/Mock/issues/127
+
+      const res = await userUploadApi(formData, {
+        controller,
+        onUploadProgress,
+      })
+      onSuccess(res)
+    } catch (error) {
+      onError(error)
+    }
+  })()
+  return {
+    abort() {
+      controller.abort()
+    },
+  }
+}
 </script>
 
 <style scoped lang="less">
@@ -97,13 +126,11 @@ export default defineComponent({
   padding: 14px 0 4px 4px;
   border-radius: 4px;
 }
-
 :deep(.arco-avatar-trigger-icon-button) {
   width: 32px;
   height: 32px;
   line-height: 32px;
   background-color: #e8f3ff;
-
   .arco-icon-camera {
     margin-top: 8px;
     color: rgb(var(--arcoblue-6));

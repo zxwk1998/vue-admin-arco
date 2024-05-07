@@ -1,16 +1,20 @@
-export default {
-  path: 'user',
+import { DEFAULT_LAYOUT } from '../base'
+import { AppRouteRecordRaw } from '../types'
+
+const USER: AppRouteRecordRaw = {
+  path: '/user',
   name: 'user',
-  component: () => import('@/views/user/index.vue'),
+  component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.user',
     icon: 'icon-user',
     requiresAuth: true,
+    order: 7,
   },
   children: [
     {
       path: 'info',
-      name: 'info',
+      name: 'Info',
       component: () => import('@/views/user/info/index.vue'),
       meta: {
         locale: 'menu.user.info',
@@ -20,7 +24,7 @@ export default {
     },
     {
       path: 'setting',
-      name: 'setting',
+      name: 'Setting',
       component: () => import('@/views/user/setting/index.vue'),
       meta: {
         locale: 'menu.user.setting',
@@ -30,3 +34,5 @@ export default {
     },
   ],
 }
+
+export default USER

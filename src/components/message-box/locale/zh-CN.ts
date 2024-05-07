@@ -9,5 +9,5 @@ export default {
   'messageBox.switchRoles': '切换角色',
   'messageBox.userCenter': '用户中心',
   'messageBox.userSettings': '用户设置',
-  'messageBox.logout': '退出登录',
+  'messageBox.logout': '登出登录',
 }

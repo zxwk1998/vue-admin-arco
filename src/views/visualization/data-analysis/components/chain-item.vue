@@ -22,14 +22,15 @@
   </a-spin>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref, PropType, CSSProperties } from 'vue'
-import useLoading from '@/hooks/loading'
-import { queryPublicOpinionAnalysis, PublicOpinionAnalysis, PublicOpinionAnalysisRes } from '@/api/visualization'
+<script lang="ts" setup>
+import { PublicOpinionAnalysis, PublicOpinionAnalysisRes, queryPublicOpinionAnalysis } from '@/api/visualization'
 import useChartOption from '@/hooks/chart-option'
+import useLoading from '@/hooks/loading'
+import { CSSProperties, PropType, ref } from 'vue'
 
 const barChartOptionsFactory = () => {
   const data = ref<any>([])
+  // @ts-ignore
   const { chartOption } = useChartOption(() => {
     return {
       grid: {
@@ -122,6 +123,7 @@ const lineChartOptionsFactory = () => {
 
 const pieChartOptionsFactory = () => {
   const data = ref<any>([])
+  // @ts-ignore
   const { chartOption } = useChartOption(() => {
     return {
       grid: {
@@ -164,97 +166,93 @@ const pieChartOptionsFactory = () => {
   }
 }
 
-export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    quota: {
-      type: String,
-      default: '',
-    },
-    chartType: {
-      type: String,
-      default: '',
-    },
-    cardStyle: {
-      type: Object as PropType<CSSProperties>,
-      default: () => {
-        return {}
-      },
-    },
+const props = defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-  setup(props) {
-    const { loading, setLoading } = useLoading(true)
-    const { chartOption: lineChartOption, data: lineData } = lineChartOptionsFactory()
-    const { chartOption: barChartOption, data: barData } = barChartOptionsFactory()
-    const { chartOption: pieChartOption, data: pieData } = pieChartOptionsFactory()
-    const renderData = ref<PublicOpinionAnalysisRes>({
-      count: 0,
-      growth: 0,
-      chartData: [],
-    })
-    const chartOption = ref({})
-    const fetchData = async (params: PublicOpinionAnalysis) => {
-      try {
-        const { data } = await queryPublicOpinionAnalysis(params)
-        renderData.value = data
-        const { chartData } = data
-        if (props.chartType === 'bar') {
-          chartData.forEach((el, idx) => {
-            barData.value.push({
-              value: el.y,
-              itemStyle: {
-                color: idx % 2 ? '#2CAB40' : '#86DF6C',
-              },
-            })
-          })
-          chartOption.value = barChartOption.value
-        } else if (props.chartType === 'line') {
-          chartData.forEach((el) => {
-            if (el.name === '2021') {
-              lineData.value[0].push(el.y)
-            } else {
-              lineData.value[1].push(el.y)
-            }
-          })
-          chartOption.value = lineChartOption.value
-        } else {
-          chartData.forEach((el) => {
-            pieData.value.push(el)
-          })
-          chartOption.value = pieChartOption.value
-        }
-      } catch (err) {
-        // you can report use errorHandler or other
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData({ quota: props.quota })
-    return {
-      loading,
-      renderData,
-      chartOption,
-    }
+  quota: {
+    type: String,
+    default: '',
+  },
+  chartType: {
+    type: String,
+    default: '',
+  },
+  cardStyle: {
+    type: Object as PropType<CSSProperties>,
+    default: () => {
+      return {}
+    },
   },
 })
+
+const { loading, setLoading } = useLoading(true)
+const { chartOption: lineChartOption, data: lineData } = lineChartOptionsFactory()
+const { chartOption: barChartOption, data: barData } = barChartOptionsFactory()
+const { chartOption: pieChartOption, data: pieData } = pieChartOptionsFactory()
+const renderData = ref<PublicOpinionAnalysisRes>({
+  count: 0,
+  growth: 0,
+  chartData: [],
+})
+const chartOption = ref({})
+const fetchData = async (params: PublicOpinionAnalysis) => {
+  try {
+    const { data } = await queryPublicOpinionAnalysis(params)
+    renderData.value = data
+    const { chartData } = data
+    if (props.chartType === 'bar') {
+      chartData.forEach((el, idx) => {
+        barData.value.push({
+          value: el.y,
+          itemStyle: {
+            color: idx % 2 ? '#2CAB40' : '#86DF6C',
+          },
+        })
+      })
+      chartOption.value = barChartOption.value
+    } else if (props.chartType === 'line') {
+      chartData.forEach((el) => {
+        if (el.name === '2021') {
+          lineData.value[0].push(el.y)
+        } else {
+          lineData.value[1].push(el.y)
+        }
+      })
+      chartOption.value = lineChartOption.value
+    } else {
+      chartData.forEach((el) => {
+        pieData.value.push(el)
+      })
+      chartOption.value = pieChartOption.value
+    }
+  } catch (err) {
+    // you can report use errorHandler or other
+  } finally {
+    setLoading(false)
+  }
+}
+fetchData({ quota: props.quota })
 </script>
 
 <style scoped lang="less">
+:deep(.arco-card) {
+  border-radius: 4px;
+}
 :deep(.arco-card-body) {
+  width: 100%;
   height: 134px;
+  padding: 0;
 }
 .content-wrap {
-  display: flex;
   width: 100%;
-  justify-content: space-between;
-  align-items: flex-end;
+  padding: 16px;
   white-space: nowrap;
 }
 :deep(.content) {
-  display: inline-block;
+  float: left;
+  width: 108px;
   height: 102px;
 }
 :deep(.arco-statistic) {
@@ -269,9 +267,8 @@ export default defineComponent({
 }
 
 .chart {
-  display: inline-block;
-  // width: calc(100% - 150px);
-  flex: 1;
+  float: right;
+  width: calc(100% - 108px);
   height: 90px;
   vertical-align: bottom;
 }

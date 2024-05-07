@@ -16,108 +16,97 @@
   </a-spin>
 </template>
 
-<script lang="ts">
-import { computed, defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { computed, ref } from 'vue'
 import useLoading from '@/hooks/loading'
 import { queryDataChainGrowth, DataChainGrowth } from '@/api/visualization'
 import useChartOption from '@/hooks/chart-option'
 
-export default defineComponent({
-  props: {
-    title: {
-      type: String,
-      default: '',
-    },
-    quota: {
-      type: String,
-      default: '',
-    },
-    chartType: {
-      type: String,
-      default: '',
-    },
+const props = defineProps({
+  title: {
+    type: String,
+    default: '',
   },
-  setup(props) {
-    const { loading, setLoading } = useLoading(true)
-    const count = ref(0)
-    const growth = ref(100)
-    const isUp = computed(() => growth.value > 50)
-    const chartDatas = ref<any>([])
-    const { chartOption } = useChartOption(() => {
-      return {
-        grid: {
-          left: 0,
-          right: 0,
-          top: 0,
-          bottom: 0,
-        },
-        xAxis: {
-          type: 'category',
-          show: false,
-        },
-        yAxis: {
-          show: false,
-        },
-        tooltip: {
-          show: true,
-          trigger: 'axis',
-          formatter: '{c}',
-        },
-        series: [
-          {
-            data: chartDatas.value,
-            ...(props.chartType === 'bar'
-              ? {
-                  type: 'bar',
-                  barWidth: 7,
-                  barGap: '0',
-                }
-              : {
-                  type: 'line',
-                  showSymbol: false,
-                  smooth: true,
-                  lineStyle: {
-                    color: '#4080FF',
-                  },
-                }),
-          },
-        ],
-      }
-    })
-    const fetchData = async (params: DataChainGrowth) => {
-      try {
-        const { data } = await queryDataChainGrowth(params)
-        const { chartData } = data
-        count.value = data.count
-        growth.value = data.growth
-        chartData.data.value.forEach((el, idx) => {
-          if (props.chartType === 'bar') {
-            chartDatas.value.push({
-              value: el,
-              itemStyle: {
-                color: idx % 2 ? '#468DFF' : '#86DF6C',
-              },
-            })
-          } else {
-            chartDatas.value.push(el)
-          }
-        })
-      } catch (err) {
-        // you can report use errorHandler or other
-      } finally {
-        setLoading(false)
-      }
-    }
-    fetchData({ quota: props.quota })
-    return {
-      loading,
-      count,
-      growth,
-      chartOption,
-      isUp,
-    }
+  quota: {
+    type: String,
+    default: '',
+  },
+  chartType: {
+    type: String,
+    default: '',
   },
 })
+const { loading, setLoading } = useLoading(true)
+const count = ref(0)
+const growth = ref(100)
+const isUp = computed(() => growth.value > 50)
+const chartData = ref<any>([])
+const { chartOption } = useChartOption(() => {
+  return {
+    grid: {
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+    },
+    xAxis: {
+      type: 'category',
+      show: false,
+    },
+    yAxis: {
+      show: false,
+    },
+    tooltip: {
+      show: true,
+      trigger: 'axis',
+      formatter: '{c}',
+    },
+    series: [
+      {
+        data: chartData.value,
+        ...(props.chartType === 'bar'
+          ? {
+              type: 'bar',
+              barWidth: 7,
+              barGap: '0',
+            }
+          : {
+              type: 'line',
+              showSymbol: false,
+              smooth: true,
+              lineStyle: {
+                color: '#4080FF',
+              },
+            }),
+      },
+    ],
+  }
+})
+const fetchData = async (params: DataChainGrowth) => {
+  try {
+    const { data } = await queryDataChainGrowth(params)
+    const { chartData: resChartData } = data
+    count.value = data.count
+    growth.value = data.growth
+    resChartData.data.value.forEach((el, idx) => {
+      if (props.chartType === 'bar') {
+        chartData.value.push({
+          value: el,
+          itemStyle: {
+            color: idx % 2 ? '#468DFF' : '#86DF6C',
+          },
+        })
+      } else {
+        chartData.value.push(el)
+      }
+    })
+  } catch (err) {
+    // you can report use errorHandler or other
+  } finally {
+    setLoading(false)
+  }
+}
+fetchData({ quota: props.quota })
 </script>
 
 <style scoped lang="less">

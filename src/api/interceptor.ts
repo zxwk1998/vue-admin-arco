@@ -1,6 +1,7 @@
-import axios from 'axios'
-import { Message, Modal } from '@arco-design/web-vue'
 import { useUserStore } from '@/store'
+import { getToken } from '@/utils/auth'
+import { Message, Modal } from '@arco-design/web-vue'
+import axios from 'axios'
 
 export interface HttpResponse<T = unknown> {
   status: number
@@ -9,8 +10,23 @@ export interface HttpResponse<T = unknown> {
   data: T
 }
 
+if (import.meta.env.VITE_API_BASE_URL) {
+  axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL
+}
+
 axios.interceptors.request.use(
   (config: any) => {
+    // let each request carry token
+    // this example using the JWT token
+    // Authorization is a custom headers key
+    // please modify it according to the actual situation
+    const token = getToken()
+    if (token) {
+      if (!config.headers) {
+        config.headers = {}
+      }
+      config.headers.Authorization = `Bearer ${token}`
+    }
     return config
   },
   (error) => {
@@ -48,7 +64,7 @@ axios.interceptors.response.use(
   },
   (error) => {
     Message.error({
-      content: error.msg,
+      content: error.msg || 'Request Error',
       duration: 5 * 1000,
     })
     return Promise.reject(error)

@@ -4,66 +4,41 @@
     <UserInfoHeader />
     <div class="content">
       <div class="content-left">
-        <a-space direction="vertical" :size="16" fill>
-          <MyProject />
-          <LatestActivity />
-        </a-space>
+        <a-grid :cols="24" :col-gap="16" :row-gap="16">
+          <a-grid-item :span="24">
+            <MyProject />
+          </a-grid-item>
+          <a-grid-item :span="24">
+            <LatestActivity />
+          </a-grid-item>
+        </a-grid>
       </div>
       <div class="content-right">
-        <a-space :size="16" direction="vertical" fill>
-          <Myteam />
-          <LatestNotification />
-        </a-space>
+        <a-grid :cols="24" :row-gap="16">
+          <a-grid-item :span="24">
+            <MyTeam />
+          </a-grid-item>
+          <a-grid-item class="panel" :span="24">
+            <LatestNotification />
+          </a-grid-item>
+        </a-grid>
       </div>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
-import { useI18n } from 'vue-i18n'
+<script lang="ts" setup>
 import UserInfoHeader from './components/user-info-header.vue'
 import LatestNotification from './components/latest-notification.vue'
 import MyProject from './components/my-project.vue'
 import LatestActivity from './components/latest-activity.vue'
-import Myteam from './components/my-team.vue'
+import MyTeam from './components/my-team.vue'
+</script>
 
-export default defineComponent({
-  components: {
-    UserInfoHeader,
-    LatestNotification,
-    MyProject,
-    LatestActivity,
-    Myteam,
-  },
-  setup() {
-    const { t } = useI18n()
-
-    const tabList = [
-      {
-        key: 'overview',
-        title: t('userInfo.tab.title.overview'),
-        icon: 'icon-face-smile-fill',
-        component: 'Overview',
-      },
-      {
-        key: 'project',
-        title: t('userInfo.tab.title.project'),
-        icon: 'icon-file',
-        component: 'Overview',
-      },
-      {
-        key: 'team',
-        title: t('userInfo.tab.title.team'),
-        icon: 'icon-user',
-        component: 'Overview',
-      },
-    ]
-    return {
-      tabList,
-    }
-  },
-})
+<script lang="ts">
+export default {
+  name: 'Info',
+}
 </script>
 
 <style scoped lang="less">
@@ -92,6 +67,21 @@ export default defineComponent({
 
   .tab-pane-wrapper {
     padding: 0 16px 16px 16px;
+  }
+}
+</style>
+
+<style lang="less" scoped>
+.mobile {
+  .content {
+    display: block;
+    &-left {
+      margin-right: 0;
+      margin-bottom: 16px;
+    }
+    &-right {
+      width: 100%;
+    }
   }
 }
 </style>

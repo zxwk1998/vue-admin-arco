@@ -155,33 +155,29 @@
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent, ref } from 'vue'
+<script lang="ts" setup>
+import { ref } from 'vue'
 import { FormInstance } from '@arco-design/web-vue/es/form'
 import useLoading from '@/hooks/loading'
 
-export default defineComponent({
-  setup() {
-    const formData = ref({})
-    const formRef = ref<FormInstance>()
-    const { loading, setLoading } = useLoading()
-    const onSubmitClick = async () => {
-      const res = await formRef.value?.validate()
-      if (!res) {
-        setLoading(true)
-      }
-      setTimeout(() => {
-        setLoading(false)
-      }, 1000)
-    }
-    return {
-      loading,
-      formRef,
-      formData,
-      onSubmitClick,
-    }
-  },
-})
+const formData = ref({})
+const formRef = ref<FormInstance>()
+const { loading, setLoading } = useLoading()
+const onSubmitClick = async () => {
+  const res = await formRef.value?.validate()
+  if (!res) {
+    setLoading(true)
+  }
+  setTimeout(() => {
+    setLoading(false)
+  }, 1000)
+}
+</script>
+
+<script lang="ts">
+export default {
+  name: 'Group',
+}
 </script>
 
 <style scoped lang="less">

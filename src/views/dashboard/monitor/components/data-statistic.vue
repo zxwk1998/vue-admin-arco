@@ -25,15 +25,8 @@
   </a-card>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue'
+<script lang="ts" setup>
 import DataStatisticList from './data-statistic-list.vue'
-
-export default defineComponent({
-  components: {
-    DataStatisticList,
-  },
-})
 </script>
 
 <style scoped lang="less">

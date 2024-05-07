@@ -1,16 +1,20 @@
-export default {
-  path: 'list',
+import { DEFAULT_LAYOUT } from '../base'
+import { AppRouteRecordRaw } from '../types'
+
+const LIST: AppRouteRecordRaw = {
+  path: '/list',
   name: 'list',
-  component: () => import('@/views/list/index.vue'),
+  component: DEFAULT_LAYOUT,
   meta: {
     locale: 'menu.list',
     requiresAuth: true,
     icon: 'icon-list',
+    order: 2,
   },
   children: [
     {
       path: 'search-table', // The midline path complies with SEO specifications
-      name: 'searchTable',
+      name: 'SearchTable',
       component: () => import('@/views/list/search-table/index.vue'),
       meta: {
         locale: 'menu.list.searchTable',
@@ -20,7 +24,7 @@ export default {
     },
     {
       path: 'card',
-      name: 'card',
+      name: 'Card',
       component: () => import('@/views/list/card/index.vue'),
       meta: {
         locale: 'menu.list.cardList',
@@ -30,3 +34,5 @@ export default {
     },
   ],
 }
+
+export default LIST
