@@ -16,10 +16,10 @@
     "lint:prettier": "prettier . --write"
   },
   "dependencies": {
-    "@arco-design/web-vue": "^2.55.1",
+    "@arco-design/web-vue": "^2.55.2",
     "@types/mockjs": "^1.0.10",
     "@vueuse/core": "^10.9.0",
-    "axios": "^1.6.8",
+    "axios": "^1.7.1",
     "dayjs": "^1.11.11",
     "echarts": "^5.5.0",
     "lodash": "^4.17.21",
@@ -31,7 +31,7 @@
     "sortablejs": "^1.15.2",
     "typescript": "^5.4.5",
     "vue": "^3.4.27",
-    "vue-echarts": "^6.7.1",
+    "vue-echarts": "^6.7.2",
     "vue-i18n": "^9.13.1",
     "vue-router": "4"
   },
@@ -39,12 +39,12 @@
     "@arco-plugins/vite-vue": "^1.4.5",
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "@types/lodash": "^4.17.1",
+    "@types/lodash": "^4.17.4",
     "@types/mockjs": "^1.0.10",
     "@types/nprogress": "^0.2.3",
     "@types/sortablejs": "^1.15.8",
-    "@typescript-eslint/eslint-plugin": "^7.8.0",
-    "@typescript-eslint/parser": "^7.8.0",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
     "@vitejs/plugin-vue": "^5.0.4",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "@vue/babel-plugin-jsx": "^1.2.2",
@@ -56,12 +56,12 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
-    "eslint-plugin-vue": "^9.25.0",
+    "eslint-plugin-vue": "^9.26.0",
     "husky": "^9.0.11",
     "less": "^4.2.0",
     "lint-staged": "^15.2.2",
     "mockjs": "^1.1.0",
-    "postcss-html": "^1.6.0",
+    "postcss-html": "^1.7.0",
     "prettier": "^3.2.5",
     "rollup": "^4.17.2",
     "rollup-plugin-visualizer": "^5.12.0",
@@ -78,6 +78,6 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-imagemin": "^0.6.1",
     "vite-svg-loader": "^4.0.0",
-    "vue-tsc": "^2.0.16"
+    "vue-tsc": "^2.0.19"
   }
 }
