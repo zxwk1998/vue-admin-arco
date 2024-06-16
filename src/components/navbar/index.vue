@@ -233,7 +233,7 @@ const switchRoles = async () => {
 }
 const toggleDrawerMenu = inject('toggleDrawerMenu') as () => void
 const switchGit = () => {
-  window.open('https://github.com/chuzhixin/vue-admin-arco')
+  window.open('https://github.com/zxwk1998/vue-admin-arco')
 }
 const open = (val: string) => {
   window.open(`https://vue-admin-beautiful.com/${val}`)

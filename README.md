@@ -11,7 +11,7 @@
 
 <br />
 
-[![stars](https://img.shields.io/github/stars/chuzhixin/vue-admin-arco?style=flat-square&logo=GitHub)](https://github.com/chuzhixin/vue-admin-arco)
+[![stars](https://img.shields.io/github/stars/chuzhixin/vue-admin-arco?style=flat-square&logo=GitHub)](https://github.com/zxwk1998/vue-admin-arco)
 [![star](https://gitee.com/chu1204505056/vue-admin-arco/badge/star.svg?theme=gray)](https://gitee.com/chu1204505056/vue-admin-arco)
 [![license](https://img.shields.io/github/license/chuzhixin/vue-admin-arco?style=flat-square)](https://en.wikipedia.org/wiki/MIT_License)
 
