@@ -145,7 +145,7 @@
               </a-space>
             </a-doption>
             <a-doption>
-              <a-space @click="open('/vue-admin-beautiful-element')">
+              <a-space @click="open('/vue-admin-better')">
                 <icon-tag />
                 <span>admin better 开源版</span>
               </a-space>
