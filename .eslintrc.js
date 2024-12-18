@@ -66,5 +66,9 @@ module.exports = {
     'no-param-reassign': 0,
     'prefer-regex-literals': 0,
     'import/no-extraneous-dependencies': 0,
+    'vue/require-valid-default-prop': 0,
+    '@typescript-eslint/no-unused-vars': 0,
+    'vue/attribute-hyphenation': 0,
+    '@typescript-eslint/ban-types': 0,
   },
 }
