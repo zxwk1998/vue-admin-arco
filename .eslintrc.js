@@ -24,7 +24,6 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
-    'plugin:vue/vue3-recommended',
     'plugin:prettier/recommended',
   ],
   settings: {
@@ -42,10 +41,6 @@ module.exports = {
     'vue/singleline-html-element-content-newline': 0,
     'vue/max-attributes-per-line': 0,
     // Vue: Add extra rules
-    'vue/custom-event-name-casing': [2, 'camelCase'],
-    'vue/no-v-text': 1,
-    'vue/padding-line-between-blocks': 1,
-    'vue/require-direct-export': 1,
     'vue/multi-word-component-names': 0,
     // Allow @ts-ignore comment
     '@typescript-eslint/ban-ts-comment': 0,
