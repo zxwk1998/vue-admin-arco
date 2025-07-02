@@ -38,24 +38,21 @@
         <a-button type="primary" html-type="submit" long :loading="loading">
           {{ $t('login.form.login') }}
         </a-button>
-        <a-button type="text" long class="login-form-register-btn">
-          {{ $t('login.form.register') }}
-        </a-button>
       </a-space>
     </a-form>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive } from 'vue'
-import { useRouter } from 'vue-router'
+import type { LoginData } from '@/api/user'
+import useLoading from '@/hooks/loading'
+import { useUserStore } from '@/store'
 import { Message } from '@arco-design/web-vue'
 import { ValidatedError } from '@arco-design/web-vue/es/form/interface'
-import { useI18n } from 'vue-i18n'
 import { useStorage } from '@vueuse/core'
-import { useUserStore } from '@/store'
-import useLoading from '@/hooks/loading'
-import type { LoginData } from '@/api/user'
+import { reactive, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const { t } = useI18n()
@@ -138,5 +135,14 @@ const setRememberPassword = (value: boolean) => {
   &-register-btn {
     color: var(--color-text-3) !important;
   }
+}
+
+:deep(.arco-btn) {
+  border-radius: 24px !important;
+}
+:deep(.arco-input),
+:deep(.arco-input-wrapper),
+:deep(.arco-input-password) {
+  border-radius: 18px !important;
 }
 </style>
