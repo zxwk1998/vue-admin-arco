@@ -129,25 +129,25 @@
             <a-doption>
               <a-space @click="open('/shop-vite')">
                 <icon-tag />
-                <span>shop vite 付费版本</span>
+                <span>shop vite</span>
               </a-space>
             </a-doption>
             <a-doption>
               <a-space @click="open('/admin-plus')">
                 <icon-tag />
-                <span>admin plus 付费版本</span>
+                <span>admin plus</span>
               </a-space>
             </a-doption>
             <a-doption>
               <a-space @click="open('/admin-pro')">
                 <icon-tag />
-                <span>admin pro 付费版本</span>
+                <span>admin pro</span>
               </a-space>
             </a-doption>
             <a-doption>
               <a-space @click="open('/vue-admin-better')">
                 <icon-tag />
-                <span>admin better 开源版</span>
+                <span>admin better</span>
               </a-space>
             </a-doption>
             <a-doption>
