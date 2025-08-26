@@ -51,5 +51,26 @@
   "path-intellisense.mappings": {
     "@": "${workspaceRoot}/src"
   },
-  "files.eol": "\n"
+  "files.eol": "\n",
+  "i18n-ally.localesPaths": [
+    "src/locale",
+    "src/components/message-box/locale",
+    "src/views/login/locale",
+    "src/views/dashboard/monitor/locale",
+    "src/views/exception/403/locale",
+    "src/views/dashboard/workplace/locale",
+    "src/views/exception/404/locale",
+    "src/views/exception/500/locale",
+    "src/views/form/group/locale",
+    "src/views/form/step/locale",
+    "src/views/list/card/locale",
+    "src/views/list/search-table/locale",
+    "src/views/profile/basic/locale",
+    "src/views/result/error/locale",
+    "src/views/result/success/locale",
+    "src/views/user/info/locale",
+    "src/views/user/setting/locale",
+    "src/views/visualization/multi-dimension-data-analysis/locale",
+    "src/views/visualization/data-analysis/locale"
+  ]
 }
