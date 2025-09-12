@@ -15,5 +15,5 @@
     },
     "lib": ["es2020", "dom"]
   },
-  "include": ["src/**/*", "src/**/*.vue"]
+  "include": ["src/**/*", "src/**/*.vue", "src/types/vue-i18n.d.ts"]
 }

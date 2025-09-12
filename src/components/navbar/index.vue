@@ -72,7 +72,7 @@
         </a-popover>
       </li>
       <li>
-        <a-tooltip :content="isFullscreen ? $t('settings.navbar.screen.toExit') : $t('settings.navbar.screen.toFull')">
+        <a-tooltip :content="isFullscreen ? t('settings.navbar.screen.toExit') : t('settings.navbar.screen.toFull')">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="toggleFullScreen">
             <template #icon>
               <icon-fullscreen-exit v-if="isFullscreen" />
@@ -82,7 +82,7 @@
         </a-tooltip>
       </li>
       <li>
-        <a-tooltip :content="$t('settings.title')">
+        <a-tooltip :content="t('settings.title')">
           <a-button class="nav-btn" type="outline" :shape="'circle'" @click="setVisible">
             <template #icon>
               <icon-settings />
@@ -102,30 +102,7 @@
                 <span>开源地址</span>
               </a-space>
             </a-doption>
-            <a-doption>
-              <a-space @click="switchRoles">
-                <icon-tag />
-                <span>
-                  {{ $t('messageBox.switchRoles') }}
-                </span>
-              </a-space>
-            </a-doption>
-            <a-doption>
-              <a-space @click="$router.push({ name: 'info' })">
-                <icon-user />
-                <span>
-                  {{ $t('messageBox.userCenter') }}
-                </span>
-              </a-space>
-            </a-doption>
-            <a-doption>
-              <a-space @click="$router.push({ name: 'setting' })">
-                <icon-settings />
-                <span>
-                  {{ $t('messageBox.userSettings') }}
-                </span>
-              </a-space>
-            </a-doption>
+
             <a-doption>
               <a-space @click="open('/shop-vite')">
                 <icon-tag />
@@ -154,7 +131,7 @@
               <a-space @click="handleLogout">
                 <icon-export />
                 <span>
-                  {{ $t('messageBox.logout') }}
+                  {{ t('messageBox.logout') }}
                 </span>
               </a-space>
             </a-doption>
@@ -173,7 +150,10 @@ import { useAppStore, useUserStore } from '@/store'
 import { Message } from '@arco-design/web-vue'
 import { useDark, useFullscreen, useToggle } from '@vueuse/core'
 import { computed, inject, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import MessageBox from '../message-box/index.vue'
+
+const { t } = useI18n()
 
 const appStore = useAppStore()
 const userStore = useUserStore()
