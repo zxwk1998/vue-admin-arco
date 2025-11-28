@@ -45,8 +45,8 @@ importers:
         specifier: ^3.0.4
         version: 3.0.4(typescript@5.9.3)(vue@3.5.25(typescript@5.9.3))
       pnpm:
-        specifier: ^10.23.0
-        version: 10.23.0
+        specifier: ^10.24.0
+        version: 10.24.0
       query-string:
         specifier: ^9.3.1
         version: 9.3.1
@@ -130,8 +130,8 @@ importers:
         specifier: ^5.5.4
         version: 5.5.4(@types/eslint@8.44.7)(eslint-config-prettier@10.1.8(eslint@8.57.0))(eslint@8.57.0)(prettier@3.7.1)
       eslint-plugin-vue:
-        specifier: ^10.6.1
-        version: 10.6.1(@typescript-eslint/parser@8.48.0(eslint@8.57.0)(typescript@5.9.3))(eslint@8.57.0)(vue-eslint-parser@9.4.3(eslint@8.57.0))
+        specifier: ^10.6.2
+        version: 10.6.2(@typescript-eslint/parser@8.48.0(eslint@8.57.0)(typescript@5.9.3))(eslint@8.57.0)(vue-eslint-parser@9.4.3(eslint@8.57.0))
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -2067,8 +2067,8 @@ packages:
       eslint-config-prettier:
         optional: true
 
-  eslint-plugin-vue@10.6.1:
-    resolution: {integrity: sha512-OMvDAFbewocYrJamF1EoSWoT4xa7/QRb/yYouEZMiroTE+WRmFUreR+kAFQHqM45W3kg5oljVfUYfH9HEwX1Bg==}
+  eslint-plugin-vue@10.6.2:
+    resolution: {integrity: sha512-nA5yUs/B1KmKzvC42fyD0+l9Yd+LtEpVhWRbXuDj0e+ZURcTtyRbMDWUeJmTAh2wC6jC83raS63anNM2YT3NPw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       '@stylistic/eslint-plugin': ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
@@ -3506,8 +3506,8 @@ packages:
   pkg-types@2.3.0:
     resolution: {integrity: sha512-SIqCzDRg0s9npO5XQ3tNZioRY1uK06lA41ynBC1YmFTmnY6FjUjVt6s4LoADmwoig1qqD0oK8h1p/8mlMx8Oig==}
 
-  pnpm@10.23.0:
-    resolution: {integrity: sha512-IcTlaYACrel+Tv6Li0qJqN48haN5GflX56DzDzj7xbvdBZgP/ikXmy+25uaRJC4JjZRdFgF3LK0P71+2QR4qSw==}
+  pnpm@10.24.0:
+    resolution: {integrity: sha512-Af+K5xtEGZA7ZcYPstydNM+LtuBtA73hEu8496NNaQTEJLpmvqXNzxKJAjC/OflYBHMUDtnJRv7zKLblI4o0Wg==}
     engines: {node: '>=18.12'}
     hasBin: true
 
@@ -6845,7 +6845,7 @@ snapshots:
       '@types/eslint': 8.44.7
       eslint-config-prettier: 10.1.8(eslint@8.57.0)
 
-  eslint-plugin-vue@10.6.1(@typescript-eslint/parser@8.48.0(eslint@8.57.0)(typescript@5.9.3))(eslint@8.57.0)(vue-eslint-parser@9.4.3(eslint@8.57.0)):
+  eslint-plugin-vue@10.6.2(@typescript-eslint/parser@8.48.0(eslint@8.57.0)(typescript@5.9.3))(eslint@8.57.0)(vue-eslint-parser@9.4.3(eslint@8.57.0)):
     dependencies:
       '@eslint-community/eslint-utils': 4.7.0(eslint@8.57.0)
       eslint: 8.57.0
@@ -8330,7 +8330,7 @@ snapshots:
       exsolve: 1.0.7
       pathe: 2.0.3
 
-  pnpm@10.23.0: {}
+  pnpm@10.24.0: {}
 
   posix-character-classes@0.1.1: {}
 
