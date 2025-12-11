@@ -15,7 +15,7 @@
     "lint:prettier": "prettier . --write"
   },
   "dependencies": {
-    "@arco-design/web-vue": "^2.55.0",
+    "@arco-design/web-vue": "^2.57.0",
     "@types/mockjs": "^1.0.10",
     "@vueuse/core": "^14.1.0",
     "axios": "^1.13.2",
