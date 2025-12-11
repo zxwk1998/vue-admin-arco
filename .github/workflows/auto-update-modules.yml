@@ -46,7 +46,7 @@ jobs:
         if: steps.git-check.outputs.changes == 'true'
         run: |
           git config --global user.name 'zxwk1998'
-          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git config --global user.email 'zxwk1998@users.noreply.github.com'
           git add .
           git commit -m "♻️ refactor: code"
           git push
