@@ -28,9 +28,6 @@ jobs:
         with:
           version: 8
 
-      - name: Install dependencies
-        run: pnpm install
-
       - name: Install npm-check-updates
         run: pnpm add -g npm-check-updates
 
