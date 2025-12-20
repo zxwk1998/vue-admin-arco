@@ -10,7 +10,7 @@
     "lint-staged": "npx lint-staged",
     "prepare": "husky install",
     "build:normal": "vite build --config ./config/vite.config.prod.ts",
-    "module:update": "ncu -u --reject vite-svg-loader,eslint --registry https://registry.npmmirror.com&&pnpm i",
+    "module:update": "ncu -u --reject vite-svg-loader,eslint --registry https://registry.npmmirror.com&&pnpm i --no-frozen-lockfile",
     "lint:eslint": "eslint . --fix",
     "lint:prettier": "prettier . --write"
   },
