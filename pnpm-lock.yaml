@@ -167,8 +167,8 @@ devDependencies:
     specifier: ^39.0.1
     version: 39.0.1(stylelint@16.26.1)
   stylelint-order:
-    specifier: ^7.0.0
-    version: 7.0.0(stylelint@16.26.1)
+    specifier: ^7.0.1
+    version: 7.0.1(stylelint@16.26.1)
   unplugin-vue-components:
     specifier: ^30.0.0
     version: 30.0.0(vue@3.5.26)
@@ -6828,11 +6828,11 @@ packages:
       stylelint: 9.10.1
     dev: true
 
-  /stylelint-order@7.0.0(stylelint@16.26.1):
-    resolution: {integrity: sha512-rSWxx0KscYfxU02wEskKXES9lkRzuuONMMNkZ7SUc6uiF3tDKm7e+sE0Ax/SBlG4TUf1sp1R6f3/SlsPGmzthg==}
+  /stylelint-order@7.0.1(stylelint@16.26.1):
+    resolution: {integrity: sha512-GWPei1zBVDDjxM+/BmcSCiOcHNd8rSqW6FUZtqQGlTRpD0Z5nSzspzWD8rtKif5KPdzUG68DApKEV/y/I9VbTw==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
-      stylelint: ^16.18.0
+      stylelint: ^16.18.0 || ^17.0.0
     dependencies:
       postcss: 8.5.6
       postcss-sorting: 9.1.0(postcss@8.5.6)

@@ -72,7 +72,7 @@
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-recommended-vue": "^1.6.1",
     "stylelint-config-standard": "^39.0.1",
-    "stylelint-order": "^7.0.0",
+    "stylelint-order": "^7.0.1",
     "typescript": "^5.9.3",
     "unplugin-vue-components": "^30.0.0",
     "vite": "^7.3.0",
