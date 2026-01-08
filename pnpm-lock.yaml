@@ -93,10 +93,10 @@ devDependencies:
     version: 8.52.0(eslint@8.57.0)(typescript@5.9.3)
   '@vitejs/plugin-vue':
     specifier: ^6.0.3
-    version: 6.0.3(vite@7.3.0)(vue@3.5.26)
+    version: 6.0.3(vite@7.3.1)(vue@3.5.26)
   '@vitejs/plugin-vue-jsx':
     specifier: ^5.1.3
-    version: 5.1.3(vite@7.3.0)(vue@3.5.26)
+    version: 5.1.3(vite@7.3.1)(vue@3.5.26)
   '@vue/babel-plugin-jsx':
     specifier: ^2.0.1
     version: 2.0.1(@babel/core@7.28.5)
@@ -173,14 +173,14 @@ devDependencies:
     specifier: ^30.0.0
     version: 30.0.0(vue@3.5.26)
   vite:
-    specifier: ^7.3.0
-    version: 7.3.0(@types/node@25.0.2)(less@4.5.1)
+    specifier: ^7.3.1
+    version: 7.3.1(@types/node@25.0.2)(less@4.5.1)
   vite-plugin-compression:
     specifier: ^0.5.1
-    version: 0.5.1(vite@7.3.0)
+    version: 0.5.1(vite@7.3.1)
   vite-plugin-eslint:
     specifier: ^1.8.1
-    version: 1.8.1(eslint@8.57.0)(vite@7.3.0)
+    version: 1.8.1(eslint@8.57.0)(vite@7.3.1)
   vite-svg-loader:
     specifier: ^4.0.0
     version: 4.0.0
@@ -1781,7 +1781,7 @@ packages:
     dev: true
     optional: true
 
-  /@vitejs/plugin-vue-jsx@5.1.3(vite@7.3.0)(vue@3.5.26):
+  /@vitejs/plugin-vue-jsx@5.1.3(vite@7.3.1)(vue@3.5.26):
     resolution: {integrity: sha512-I6Zr8cYVr5WHMW5gNOP09DNqW9rgO8RX73Wa6Czgq/0ndpTfJM4vfDChfOT1+3KtdrNqilNBtNlFwVeB02ZzGw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
@@ -1793,13 +1793,13 @@ packages:
       '@babel/plugin-transform-typescript': 7.28.5(@babel/core@7.28.5)
       '@rolldown/pluginutils': 1.0.0-beta.57
       '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.28.5)
-      vite: 7.3.0(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
       vue: 3.5.26(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@vitejs/plugin-vue@6.0.3(vite@7.3.0)(vue@3.5.26):
+  /@vitejs/plugin-vue@6.0.3(vite@7.3.1)(vue@3.5.26):
     resolution: {integrity: sha512-TlGPkLFLVOY3T7fZrwdvKpjprR3s4fxRln0ORDo1VQ7HHyxJwTlrjKU3kpVWTlaAjIEuCTokmjkZnr8Tpc925w==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
@@ -1807,7 +1807,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       '@rolldown/pluginutils': 1.0.0-beta.53
-      vite: 7.3.0(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
       vue: 3.5.26(typescript@5.9.3)
     dev: true
 
@@ -7474,7 +7474,7 @@ packages:
       vfile-message: 1.1.1
     dev: true
 
-  /vite-plugin-compression@0.5.1(vite@7.3.0):
+  /vite-plugin-compression@0.5.1(vite@7.3.1):
     resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
     peerDependencies:
       vite: '>=2.0.0'
@@ -7482,12 +7482,12 @@ packages:
       chalk: 4.1.2
       debug: 4.4.3
       fs-extra: 10.1.0
-      vite: 7.3.0(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /vite-plugin-eslint@1.8.1(eslint@8.57.0)(vite@7.3.0):
+  /vite-plugin-eslint@1.8.1(eslint@8.57.0)(vite@7.3.1):
     resolution: {integrity: sha512-PqdMf3Y2fLO9FsNPmMX+//2BF5SF8nEWspZdgl4kSt7UvHDRHVVfHvxsD7ULYzZrJDGRxR81Nq7TOFgwMnUang==}
     peerDependencies:
       eslint: '>=7'
@@ -7497,7 +7497,7 @@ packages:
       '@types/eslint': 8.56.12
       eslint: 8.57.0
       rollup: 2.79.2
-      vite: 7.3.0(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
     dev: true
 
   /vite-svg-loader@4.0.0:
@@ -7507,8 +7507,8 @@ packages:
       svgo: 3.3.2
     dev: true
 
-  /vite@7.3.0(@types/node@25.0.2)(less@4.5.1):
-    resolution: {integrity: sha512-dZwN5L1VlUBewiP6H9s2+B3e3Jg96D0vzN+Ry73sOefebhYr9f94wwkMNN/9ouoU8pV1BqA1d1zGk8928cx0rg==}
+  /vite@7.3.1(@types/node@25.0.2)(less@4.5.1):
+    resolution: {integrity: sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
