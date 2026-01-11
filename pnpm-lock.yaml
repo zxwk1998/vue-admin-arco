@@ -77,8 +77,8 @@ devDependencies:
     specifier: ^20.3.1
     version: 20.3.1
   '@types/lodash':
-    specifier: ^4.17.21
-    version: 4.17.21
+    specifier: ^4.17.23
+    version: 4.17.23
   '@types/nprogress':
     specifier: ^0.2.3
     version: 0.2.3
@@ -1423,8 +1423,8 @@ packages:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
     dev: true
 
-  /@types/lodash@4.17.21:
-    resolution: {integrity: sha512-FOvQ0YPD5NOfPgMzJihoT+Za5pdkDJWcbpuj1DjaKZIr/gxodQjY/uWEFlTNqW2ugXHUiL8lRQgw63dzKHZdeQ==}
+  /@types/lodash@4.17.23:
+    resolution: {integrity: sha512-RDvF6wTulMPjrNdCoYRC8gNR880JNGT8uB+REUpC2Ns4pRqQJhGz90wh7rgdXDPpCczF3VGktDuFGVnz8zP7HA==}
     dev: true
 
   /@types/minimatch@6.0.0:

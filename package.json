@@ -40,7 +40,7 @@
     "@arco-plugins/vite-vue": "^1.4.6",
     "@commitlint/cli": "^20.3.1",
     "@commitlint/config-conventional": "^20.3.1",
-    "@types/lodash": "^4.17.21",
+    "@types/lodash": "^4.17.23",
     "@types/mockjs": "^1.0.10",
     "@types/nprogress": "^0.2.3",
     "@types/sortablejs": "^1.15.9",
