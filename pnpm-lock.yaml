@@ -140,8 +140,8 @@ devDependencies:
     specifier: ^16.2.7
     version: 16.2.7
   postcss-html:
-    specifier: ^1.8.0
-    version: 1.8.0
+    specifier: ^1.8.1
+    version: 1.8.1
   prettier:
     specifier: ^3.7.4
     version: 3.7.4
@@ -162,7 +162,7 @@ devDependencies:
     version: 0.1.2
   stylelint-config-recommended-vue:
     specifier: ^1.6.1
-    version: 1.6.1(postcss-html@1.8.0)(stylelint@16.26.1)
+    version: 1.6.1(postcss-html@1.8.1)(stylelint@16.26.1)
   stylelint-config-standard:
     specifier: ^39.0.1
     version: 39.0.1(stylelint@16.26.1)
@@ -5763,11 +5763,11 @@ packages:
     dependencies:
       htmlparser2: 3.10.1
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@1.8.0)(postcss@8.5.6)
+      postcss-syntax: 0.36.2(postcss-html@1.8.1)(postcss@8.5.6)
     dev: true
 
-  /postcss-html@1.8.0:
-    resolution: {integrity: sha512-5mMeb1TgLWoRKxZ0Xh9RZDfwUUIqRrcxO2uXO+Ezl1N5lqpCiSU5Gk6+1kZediBfBHFtPCdopr2UZ2SgUsKcgQ==}
+  /postcss-html@1.8.1:
+    resolution: {integrity: sha512-OLF6P7qctfAWayOhLpcVnTGqVeJzu2W3WpIYelfz2+JV5oGxfkcEvweN9U4XpeqE0P98dcD9ssusGwlF0TK0uQ==}
     engines: {node: ^12 || >=14}
     dependencies:
       htmlparser2: 8.0.2
@@ -5784,7 +5784,7 @@ packages:
     dependencies:
       '@babel/core': 7.28.5
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@1.8.0)(postcss@8.5.6)
+      postcss-syntax: 0.36.2(postcss-html@1.8.1)(postcss@8.5.6)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5803,7 +5803,7 @@ packages:
       postcss-syntax: '>=0.36.0'
     dependencies:
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@1.8.0)(postcss@8.5.6)
+      postcss-syntax: 0.36.2(postcss-html@1.8.1)(postcss@8.5.6)
       remark: 10.0.1
       unist-util-find-all-after: 1.0.5
     dev: true
@@ -5898,7 +5898,7 @@ packages:
       postcss: 8.5.6
     dev: true
 
-  /postcss-syntax@0.36.2(postcss-html@1.8.0)(postcss@8.5.6):
+  /postcss-syntax@0.36.2(postcss-html@1.8.1)(postcss@8.5.6):
     resolution: {integrity: sha512-nBRg/i7E3SOHWxF3PpF5WnJM/jQ1YpY9000OaVXlAQj6Zp/kIqJxEDWIZ67tAd7NLuk7zqN4yqe9nc0oNAOs1w==}
     peerDependencies:
       postcss: '>=5.0.0'
@@ -5920,7 +5920,7 @@ packages:
         optional: true
     dependencies:
       postcss: 8.5.6
-      postcss-html: 1.8.0
+      postcss-html: 1.8.1
     dev: true
 
   /postcss-value-parser@3.3.1:
@@ -6790,14 +6790,14 @@ packages:
     resolution: {integrity: sha512-Dj1Okke1C3uKKwQcetra4jSuk0DqbzbYtXipzFlFMZtowbF1x7BKJwB9AayVMyFARvU8EDrZdcax4At/452cAg==}
     dev: true
 
-  /stylelint-config-html@1.1.0(postcss-html@1.8.0)(stylelint@16.26.1):
+  /stylelint-config-html@1.1.0(postcss-html@1.8.1)(stylelint@16.26.1):
     resolution: {integrity: sha512-IZv4IVESjKLumUGi+HWeb7skgO6/g4VMuAYrJdlqQFndgbj6WJAXPhaysvBiXefX79upBdQVumgYcdd17gCpjQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       postcss-html: ^1.0.0
       stylelint: '>=14.0.0'
     dependencies:
-      postcss-html: 1.8.0
+      postcss-html: 1.8.1
       stylelint: 16.26.1(typescript@5.9.3)
     dev: true
 
@@ -6820,17 +6820,17 @@ packages:
       - supports-color
     dev: true
 
-  /stylelint-config-recommended-vue@1.6.1(postcss-html@1.8.0)(stylelint@16.26.1):
+  /stylelint-config-recommended-vue@1.6.1(postcss-html@1.8.1)(stylelint@16.26.1):
     resolution: {integrity: sha512-lLW7hTIMBiTfjenGuDq2kyHA6fBWd/+Df7MO4/AWOxiFeXP9clbpKgg27kHfwA3H7UNMGC7aeP3mNlZB5LMmEQ==}
     engines: {node: ^12 || >=14}
     peerDependencies:
       postcss-html: ^1.0.0
       stylelint: '>=14.0.0'
     dependencies:
-      postcss-html: 1.8.0
+      postcss-html: 1.8.1
       semver: 7.7.3
       stylelint: 16.26.1(typescript@5.9.3)
-      stylelint-config-html: 1.1.0(postcss-html@1.8.0)(stylelint@16.26.1)
+      stylelint-config-html: 1.1.0(postcss-html@1.8.1)(stylelint@16.26.1)
       stylelint-config-recommended: 17.0.0(stylelint@16.26.1)
     dev: true
 
@@ -6966,7 +6966,7 @@ packages:
       postcss-sass: 0.3.5
       postcss-scss: 2.1.1
       postcss-selector-parser: 3.1.2
-      postcss-syntax: 0.36.2(postcss-html@1.8.0)(postcss@8.5.6)
+      postcss-syntax: 0.36.2(postcss-html@1.8.1)(postcss@8.5.6)
       postcss-value-parser: 3.3.1
       resolve-from: 4.0.0
       signal-exit: 3.0.7
