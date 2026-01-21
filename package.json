@@ -65,7 +65,7 @@
     "mockjs": "^1.1.0",
     "postcss-html": "^1.8.1",
     "prettier": "^3.8.0",
-    "rollup": "^4.55.1",
+    "rollup": "^4.55.2",
     "rollup-plugin-visualizer": "^6.0.5",
     "stylelint": "^17.0.0",
     "stylelint-config-prettier": "^9.0.5",
