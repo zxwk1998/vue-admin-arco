@@ -17,7 +17,7 @@
   "dependencies": {
     "@arco-design/web-vue": "^2.57.0",
     "@types/mockjs": "^1.0.10",
-    "@vueuse/core": "^14.1.0",
+    "@vueuse/core": "^14.2.0",
     "axios": "^1.13.4",
     "dayjs": "^1.11.19",
     "echarts": "^6.0.0",
