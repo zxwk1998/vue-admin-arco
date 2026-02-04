@@ -67,7 +67,7 @@
     "prettier": "^3.8.1",
     "rollup": "^4.57.1",
     "rollup-plugin-visualizer": "^6.0.5",
-    "stylelint": "^17.1.0",
+    "stylelint": "^17.1.1",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-config-recommended-vue": "^1.6.1",
