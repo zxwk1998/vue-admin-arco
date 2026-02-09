@@ -15,8 +15,8 @@ dependencies:
     specifier: ^14.2.0
     version: 14.2.0(vue@3.5.27)
   axios:
-    specifier: ^1.13.4
-    version: 1.13.4
+    specifier: ^1.13.5
+    version: 1.13.5
   dayjs:
     specifier: ^1.11.19
     version: 1.11.19
@@ -42,8 +42,8 @@ dependencies:
     specifier: ^3.0.4
     version: 3.0.4(typescript@5.9.3)(vue@3.5.27)
   pnpm:
-    specifier: ^10.29.1
-    version: 10.29.1
+    specifier: ^10.29.2
+    version: 10.29.2
   query-string:
     specifier: ^9.3.1
     version: 9.3.1
@@ -2465,8 +2465,8 @@ packages:
       possible-typed-array-names: 1.1.0
     dev: true
 
-  /axios@1.13.4:
-    resolution: {integrity: sha512-1wVkUaAO6WyaYtCkcYCOx12ZgpGf9Zif+qXa4n+oYzK558YryKqiL6UWwd5DqiH3VRW0GYhTZQ/vlgJrCoNQlg==}
+  /axios@1.13.5:
+    resolution: {integrity: sha512-cz4ur7Vb0xS4/KUN0tPWe44eqxrIu31me+fbang3ijiNscE129POzipJJA6zniq2C/Z6sJCjMimjS8Lc/GAs8Q==}
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.5
@@ -5889,8 +5889,8 @@ packages:
       exsolve: 1.0.8
       pathe: 2.0.3
 
-  /pnpm@10.29.1:
-    resolution: {integrity: sha512-SNriM2NaZFdoowKNGVRcrMFohjnusfNzTkLW1rlxr78iqhrJr1Khc9nDogwVhXz6QA8ZmU15ovYm/Mc/zNqbvA==}
+  /pnpm@10.29.2:
+    resolution: {integrity: sha512-vvQ/p1nZH9LaSzGaWg0T73pFu5haPXNCBYRw+dIFGjuoZ05ilnJlRobvlEOtE6gtor657rPgIhyHuBVP/510uA==}
     engines: {node: '>=18.12'}
     hasBin: true
     dev: false
