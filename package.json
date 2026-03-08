@@ -27,13 +27,13 @@
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.4",
-    "pnpm": "^10.30.3",
+    "pnpm": "^10.31.0",
     "query-string": "^9.3.1",
     "sortablejs": "^1.15.7",
     "typescript": "^5.9.3",
     "vue": "^3.5.29",
     "vue-echarts": "^8.0.1",
-    "vue-i18n": "^11.2.8",
+    "vue-i18n": "^11.3.0",
     "vue-router": "5"
   },
   "devDependencies": {
