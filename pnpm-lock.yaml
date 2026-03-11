@@ -134,11 +134,11 @@ devDependencies:
     specifier: ^9.1.7
     version: 9.1.7
   less:
-    specifier: ^4.5.1
-    version: 4.5.1
+    specifier: ^4.6.2
+    version: 4.6.2
   lint-staged:
-    specifier: ^16.3.2
-    version: 16.3.2
+    specifier: ^16.3.3
+    version: 16.3.3
   postcss-html:
     specifier: ^1.8.1
     version: 1.8.1
@@ -174,7 +174,7 @@ devDependencies:
     version: 31.0.0(vue@3.5.30)
   vite:
     specifier: ^7.3.1
-    version: 7.3.1(@types/node@25.0.2)(less@4.5.1)
+    version: 7.3.1(@types/node@25.0.2)(less@4.6.2)
   vite-plugin-compression:
     specifier: ^0.5.1
     version: 0.5.1(vite@7.3.1)
@@ -1954,7 +1954,7 @@ packages:
       '@babel/plugin-transform-typescript': 7.28.6(@babel/core@7.29.0)
       '@rolldown/pluginutils': 1.0.0-rc.2
       '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.29.0)
-      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.6.2)
       vue: 3.5.30(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
@@ -1968,7 +1968,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
-      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.6.2)
       vue: 3.5.30(typescript@5.9.3)
     dev: true
 
@@ -2931,10 +2931,11 @@ packages:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
     dev: true
 
-  /copy-anything@2.0.6:
-    resolution: {integrity: sha512-1j20GZTsvKNkc4BY3NpMOM8tt///wY3FpIzozTOFO2ffuZcV61nojHXVKIy3WM+7ADCy5FVhdZYHYDdgTU0yJw==}
+  /copy-anything@3.0.5:
+    resolution: {integrity: sha512-yCEafptTtb4bk7GLEQoM8KVJpxAfdBJYaXyzQEgQQQgYrZiDp8SJmGKlYza6CYjEDNstAdNdKA3UuoULlEbS6w==}
+    engines: {node: '>=12.13'}
     dependencies:
-      is-what: 3.14.1
+      is-what: 4.1.16
     dev: true
 
   /copy-anything@4.0.5:
@@ -4989,8 +4990,9 @@ packages:
       get-intrinsic: 1.3.0
     dev: true
 
-  /is-what@3.14.1:
-    resolution: {integrity: sha512-sNxgpk9793nzSs7bA6JQJGeIuRBQhAaNGG77kzYQgMkrID+lS6SlK07K5LaptscDlSaIgH+GPFzf+d75FVxozA==}
+  /is-what@4.1.16:
+    resolution: {integrity: sha512-ZhMwEosbFJkA0YhFnNDgTM4ZxDRsS6HqTo7qsZM08fehyRYIYa0yHu5R6mgo1n/8MgaPBXiPimPD77baVFYg+A==}
+    engines: {node: '>=12.13'}
     dev: true
 
   /is-what@5.5.0:
@@ -5154,15 +5156,13 @@ packages:
     resolution: {integrity: sha512-bEZlJzXo5V/ApNNa5z375mJC6Nrz4vG43UgcSCrg2OHC+yuB6j0iDSrY7RQ/+PRofFB03wNIIt9iXIVLr4wc7w==}
     dev: true
 
-  /less@4.5.1:
-    resolution: {integrity: sha512-UKgI3/KON4u6ngSsnDADsUERqhZknsVZbnuzlRZXLQCmfC/MDld42fTydUE9B+Mla1AL6SJ/Pp6SlEFi/AVGfw==}
-    engines: {node: '>=14'}
+  /less@4.6.2:
+    resolution: {integrity: sha512-/f26k/Z8VOtdkmubElnfZGtNoOlnZN6E1g9WkPkRmsz/FNVaaArbwCIMflPdH//RJeowfuTPmdZSp9zyEYQ1gQ==}
+    engines: {node: '>=18'}
     hasBin: true
-    requiresBuild: true
     dependencies:
-      copy-anything: 2.0.6
+      copy-anything: 3.0.5
       parse-node-version: 1.0.1
-      tslib: 2.8.1
     optionalDependencies:
       errno: 0.1.8
       graceful-fs: 4.2.11
@@ -5190,8 +5190,8 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged@16.3.2:
-    resolution: {integrity: sha512-xKqhC2AeXLwiAHXguxBjuChoTTWFC6Pees0SHPwOpwlvI3BH7ZADFPddAdN3pgo3aiKgPUx/bxE78JfUnxQnlg==}
+  /lint-staged@16.3.3:
+    resolution: {integrity: sha512-RLq2koZ5fGWrx7tcqx2tSTMQj4lRkfNJaebO/li/uunhCJbtZqwTuwPHpgIimAHHi/2nZIiGrkCHDCOeR1onxA==}
     engines: {node: '>=20.17'}
     hasBin: true
     dependencies:
@@ -7418,7 +7418,9 @@ packages:
 
   /tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
+    requiresBuild: true
     dev: true
+    optional: true
 
   /type-check@0.4.0:
     resolution: {integrity: sha512-XleUoc9uwGXqjWwXaUTZAmzMcFZ5858QA2vvx1Ur5xIcixXIP+8LnFDgRplU30us6teqdlskFfu+ae4K79Ooew==}
@@ -7726,7 +7728,7 @@ packages:
       chalk: 4.1.2
       debug: 4.4.3
       fs-extra: 10.1.0
-      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.6.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7741,7 +7743,7 @@ packages:
       '@types/eslint': 8.56.12
       eslint: 8.57.0
       rollup: 2.79.2
-      vite: 7.3.1(@types/node@25.0.2)(less@4.5.1)
+      vite: 7.3.1(@types/node@25.0.2)(less@4.6.2)
     dev: true
 
   /vite-svg-loader@4.0.0:
@@ -7751,7 +7753,7 @@ packages:
       svgo: 3.3.2
     dev: true
 
-  /vite@7.3.1(@types/node@25.0.2)(less@4.5.1):
+  /vite@7.3.1(@types/node@25.0.2)(less@4.6.2):
     resolution: {integrity: sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -7794,7 +7796,7 @@ packages:
       '@types/node': 25.0.2
       esbuild: 0.27.1
       fdir: 6.5.0(picomatch@4.0.3)
-      less: 4.5.1
+      less: 4.6.2
       picomatch: 4.0.3
       postcss: 8.5.6
       rollup: 4.59.0
