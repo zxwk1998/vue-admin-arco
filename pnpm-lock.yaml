@@ -134,8 +134,8 @@ devDependencies:
     specifier: ^9.1.7
     version: 9.1.7
   less:
-    specifier: ^4.6.3
-    version: 4.6.3
+    specifier: ^4.6.4
+    version: 4.6.4
   lint-staged:
     specifier: ^16.3.3
     version: 16.3.3
@@ -167,14 +167,14 @@ devDependencies:
     specifier: ^40.0.0
     version: 40.0.0(stylelint@17.4.0)
   stylelint-order:
-    specifier: ^8.0.0
-    version: 8.0.0(stylelint@17.4.0)
+    specifier: ^8.1.0
+    version: 8.1.0(stylelint@17.4.0)
   unplugin-vue-components:
     specifier: ^31.0.0
     version: 31.0.0(vue@3.5.30)
   vite:
     specifier: ^8.0.0
-    version: 8.0.0(@types/node@25.0.2)(less@4.6.3)
+    version: 8.0.0(@types/node@25.0.2)(less@4.6.4)
   vite-plugin-compression:
     specifier: ^0.5.1
     version: 0.5.1(vite@8.0.0)
@@ -1831,7 +1831,7 @@ packages:
       '@babel/plugin-transform-typescript': 7.28.6(@babel/core@7.29.0)
       '@rolldown/pluginutils': 1.0.0-rc.2
       '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.29.0)
-      vite: 8.0.0(@types/node@25.0.2)(less@4.6.3)
+      vite: 8.0.0(@types/node@25.0.2)(less@4.6.4)
       vue: 3.5.30(typescript@5.9.3)
     transitivePeerDependencies:
       - supports-color
@@ -1845,7 +1845,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       '@rolldown/pluginutils': 1.0.0-rc.2
-      vite: 8.0.0(@types/node@25.0.2)(less@4.6.3)
+      vite: 8.0.0(@types/node@25.0.2)(less@4.6.4)
       vue: 3.5.30(typescript@5.9.3)
     dev: true
 
@@ -5000,8 +5000,8 @@ packages:
     resolution: {integrity: sha512-bEZlJzXo5V/ApNNa5z375mJC6Nrz4vG43UgcSCrg2OHC+yuB6j0iDSrY7RQ/+PRofFB03wNIIt9iXIVLr4wc7w==}
     dev: true
 
-  /less@4.6.3:
-    resolution: {integrity: sha512-xxjVIiz0rvWAhx49t8YLA/Dj6Uig4XdJgTRI5hbYHGmiDSh+S8hi2Wxsed2trjl/uur4kbW2+e2a8Mrk9Rcgbw==}
+  /less@4.6.4:
+    resolution: {integrity: sha512-OJmO5+HxZLLw0RLzkqaNHzcgEAQG7C0y3aMbwtCzIUFZsLMNNq/1IdAdHEycQ58CwUO3jPTHmoN+tE5I7FQxNg==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
@@ -7100,8 +7100,8 @@ packages:
       stylelint: 9.10.1
     dev: true
 
-  /stylelint-order@8.0.0(stylelint@17.4.0):
-    resolution: {integrity: sha512-1oAwPRz6Ba8u9LPjgvdbeMjZszHhjY6DBBK+xMlS3IC89GdTsvAPpGYvW+dkn6pxc4ZaI1S959g4c8CftZbhIg==}
+  /stylelint-order@8.1.0(stylelint@17.4.0):
+    resolution: {integrity: sha512-ao2+VzToCqbAVGaEYEeSR2zNurvQx+86Kw1d0//kZDx3zlyjvb24dE4J0e4HQgOTruOwZpfaHHRtK58+lrsTAQ==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       stylelint: ^16.18.0 || ^17.0.0
@@ -7705,7 +7705,7 @@ packages:
       chalk: 4.1.2
       debug: 4.4.3
       fs-extra: 10.1.0
-      vite: 8.0.0(@types/node@25.0.2)(less@4.6.3)
+      vite: 8.0.0(@types/node@25.0.2)(less@4.6.4)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7720,7 +7720,7 @@ packages:
       '@types/eslint': 8.56.12
       eslint: 8.57.0
       rollup: 2.79.2
-      vite: 8.0.0(@types/node@25.0.2)(less@4.6.3)
+      vite: 8.0.0(@types/node@25.0.2)(less@4.6.4)
     dev: true
 
   /vite-svg-loader@4.0.0:
@@ -7730,7 +7730,7 @@ packages:
       svgo: 3.3.2
     dev: true
 
-  /vite@8.0.0(@types/node@25.0.2)(less@4.6.3):
+  /vite@8.0.0(@types/node@25.0.2)(less@4.6.4):
     resolution: {integrity: sha512-fPGaRNj9Zytaf8LEiBhY7Z6ijnFKdzU/+mL8EFBaKr7Vw1/FWcTBAMW0wLPJAGMPX38ZPVCVgLceWiEqeoqL2Q==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -7775,7 +7775,7 @@ packages:
     dependencies:
       '@oxc-project/runtime': 0.115.0
       '@types/node': 25.0.2
-      less: 4.6.3
+      less: 4.6.4
       lightningcss: 1.32.0
       picomatch: 4.0.3
       postcss: 8.5.8
