@@ -137,8 +137,8 @@ devDependencies:
     specifier: ^4.6.4
     version: 4.6.4
   lint-staged:
-    specifier: ^16.3.3
-    version: 16.3.3
+    specifier: ^16.4.0
+    version: 16.4.0
   postcss-html:
     specifier: ^1.8.1
     version: 1.8.1
@@ -167,8 +167,8 @@ devDependencies:
     specifier: ^40.0.0
     version: 40.0.0(stylelint@17.4.0)
   stylelint-order:
-    specifier: ^8.1.0
-    version: 8.1.0(stylelint@17.4.0)
+    specifier: ^8.1.1
+    version: 8.1.1(stylelint@17.4.0)
   unplugin-vue-components:
     specifier: ^31.0.0
     version: 31.0.0(vue@3.5.30)
@@ -5152,16 +5152,16 @@ packages:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
     dev: true
 
-  /lint-staged@16.3.3:
-    resolution: {integrity: sha512-RLq2koZ5fGWrx7tcqx2tSTMQj4lRkfNJaebO/li/uunhCJbtZqwTuwPHpgIimAHHi/2nZIiGrkCHDCOeR1onxA==}
+  /lint-staged@16.4.0:
+    resolution: {integrity: sha512-lBWt8hujh/Cjysw5GYVmZpFHXDCgZzhrOm8vbcUdobADZNOK/bRshr2kM3DfgrrtR1DQhfupW9gnIXOfiFi+bw==}
     engines: {node: '>=20.17'}
     hasBin: true
     dependencies:
       commander: 14.0.3
       listr2: 9.0.5
-      micromatch: 4.0.8
+      picomatch: 4.0.3
       string-argv: 0.3.2
-      tinyexec: 1.0.2
+      tinyexec: 1.0.4
       yaml: 2.8.2
     dev: true
 
@@ -7100,8 +7100,8 @@ packages:
       stylelint: 9.10.1
     dev: true
 
-  /stylelint-order@8.1.0(stylelint@17.4.0):
-    resolution: {integrity: sha512-ao2+VzToCqbAVGaEYEeSR2zNurvQx+86Kw1d0//kZDx3zlyjvb24dE4J0e4HQgOTruOwZpfaHHRtK58+lrsTAQ==}
+  /stylelint-order@8.1.1(stylelint@17.4.0):
+    resolution: {integrity: sha512-LqsEB6VggJuu5v10RtkrQsBObcdwBE7GuAOlwfc/LR3VL/w8UqKX2BOLIjhyGt0Gne/njo7gRNGiJAKhfmPMNw==}
     engines: {node: '>=20.19.0'}
     peerDependencies:
       stylelint: ^16.18.0 || ^17.0.0
@@ -7311,6 +7311,11 @@ packages:
 
   /tinyexec@1.0.2:
     resolution: {integrity: sha512-W/KYk+NFhkmsYpuHq5JykngiOCnxeVL8v8dFnqxSD8qEEdRfXk1SDM6JzNqcERbcGYj9tMrDQBYV9cjgnunFIg==}
+    engines: {node: '>=18'}
+    dev: true
+
+  /tinyexec@1.0.4:
+    resolution: {integrity: sha512-u9r3uZC0bdpGOXtlxUIdwf9pkmvhqJdrVCH9fapQtgy/OeTTMZ1nqH7agtvEfmGui6e1XxjcdrlxvxJvc3sMqw==}
     engines: {node: '>=18'}
     dev: true
 
