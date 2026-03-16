@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.6",
-    "@commitlint/cli": "^20.4.4",
-    "@commitlint/config-conventional": "^20.4.4",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
     "@types/lodash": "^4.17.24",
     "@types/mockjs": "^1.0.10",
     "@types/nprogress": "^0.2.3",
