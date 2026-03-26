@@ -31,7 +31,7 @@
     "query-string": "^9.3.1",
     "sortablejs": "^1.15.7",
     "typescript": "^6.0.2",
-    "vue": "^3.5.30",
+    "vue": "^3.5.31",
     "vue-echarts": "^8.0.1",
     "vue-i18n": "^11.3.0",
     "vue-router": "5"
@@ -49,7 +49,7 @@
     "@vitejs/plugin-vue": "^6.0.5",
     "@vitejs/plugin-vue-jsx": "^5.1.5",
     "@vue/babel-plugin-jsx": "^2.0.1",
-    "@vue/compiler-sfc": "^3.5.30",
+    "@vue/compiler-sfc": "^3.5.31",
     "consola": "^3.4.2",
     "cross-env": "^10.1.0",
     "eslint": "8.57.0",
