@@ -18,7 +18,7 @@
     "@arco-design/web-vue": "^2.57.0",
     "@types/mockjs": "^1.0.10",
     "@vueuse/core": "^14.2.1",
-    "axios": "^1.14.0",
+    "axios": "^1.15.0",
     "dayjs": "^1.11.20",
     "echarts": "^6.0.0",
     "install": "^0.13.0",
@@ -33,7 +33,7 @@
     "typescript": "^6.0.2",
     "vue": "^3.5.32",
     "vue-echarts": "^8.0.1",
-    "vue-i18n": "^11.3.1",
+    "vue-i18n": "^11.3.2",
     "vue-router": "5"
   },
   "devDependencies": {
