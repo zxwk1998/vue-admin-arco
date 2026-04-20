@@ -18,7 +18,7 @@
     "@arco-design/web-vue": "^2.58.0",
     "@types/mockjs": "^1.0.10",
     "@vueuse/core": "^14.2.1",
-    "axios": "^1.15.0",
+    "axios": "^1.15.1",
     "dayjs": "^1.11.20",
     "echarts": "^6.0.0",
     "install": "^0.13.0",
@@ -79,6 +79,6 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-svg-loader": "^4.0.0",
-    "vue-tsc": "^3.2.6"
+    "vue-tsc": "^3.2.7"
   }
 }
