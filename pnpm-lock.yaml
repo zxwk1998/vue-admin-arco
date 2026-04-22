@@ -15,8 +15,8 @@ dependencies:
     specifier: ^14.2.1
     version: 14.2.1(vue@3.5.32)
   axios:
-    specifier: ^1.15.1
-    version: 1.15.1
+    specifier: ^1.15.2
+    version: 1.15.2
   dayjs:
     specifier: ^1.11.20
     version: 1.11.20
@@ -128,8 +128,8 @@ devDependencies:
     specifier: ^5.5.5
     version: 5.5.5(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3)
   eslint-plugin-vue:
-    specifier: ^10.8.0
-    version: 10.8.0(@typescript-eslint/parser@8.59.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0)
+    specifier: ^10.9.0
+    version: 10.9.0(@typescript-eslint/parser@8.59.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0)
   husky:
     specifier: ^9.1.7
     version: 9.1.7
@@ -2260,8 +2260,8 @@ packages:
       possible-typed-array-names: 1.1.0
     dev: true
 
-  /axios@1.15.1:
-    resolution: {integrity: sha512-WOG+Jj8ZOvR0a3rAn+Tuf1UQJRxw5venr6DgdbJzngJE3qG7X0kL83CZGpdHMxEm+ZK3seAbvFsw4FfOfP9vxg==}
+  /axios@1.15.2:
+    resolution: {integrity: sha512-wLrXxPtcrPTsNlJmKjkPnNPK2Ihe0hn0wGSaTEiHRPxwjvJwT3hKmXF4dpqxmPO9SoNb2FsYXj/xEo0gHN+D5A==}
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.5
@@ -3427,8 +3427,8 @@ packages:
       synckit: 0.11.12
     dev: true
 
-  /eslint-plugin-vue@10.8.0(@typescript-eslint/parser@8.59.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0):
-    resolution: {integrity: sha512-f1J/tcbnrpgC8suPN5AtdJ5MQjuXbSU9pGRSSYAuF3SHoiYCOdEX6O22pLaRyLHXvDcOe+O5ENgc1owQ587agA==}
+  /eslint-plugin-vue@10.9.0(@typescript-eslint/parser@8.59.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0):
+    resolution: {integrity: sha512-EFNNzu4HqtTRb5DJINpyd+u3bDdzETWDMpCzG+UBHz1tpsnMDCeOcf61u4Wy/cbXnMymK+MT9bjH7KcG1fItSw==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       '@stylistic/eslint-plugin': ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
