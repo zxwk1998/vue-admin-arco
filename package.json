@@ -17,7 +17,7 @@
   "dependencies": {
     "@arco-design/web-vue": "^2.58.0",
     "@types/mockjs": "^1.0.10",
-    "@vueuse/core": "^14.2.1",
+    "@vueuse/core": "^14.3.0",
     "axios": "^1.15.2",
     "dayjs": "^1.11.20",
     "echarts": "^6.0.0",
@@ -38,8 +38,8 @@
   },
   "devDependencies": {
     "@arco-plugins/vite-vue": "^1.4.6",
-    "@commitlint/cli": "^20.5.2",
-    "@commitlint/config-conventional": "^20.5.0",
+    "@commitlint/cli": "^20.5.3",
+    "@commitlint/config-conventional": "^20.5.3",
     "@types/lodash": "^4.17.24",
     "@types/mockjs": "^1.0.10",
     "@types/nprogress": "^0.2.3",
