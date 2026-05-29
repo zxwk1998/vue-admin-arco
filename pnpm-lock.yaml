@@ -125,8 +125,8 @@ devDependencies:
     specifier: ^2.32.0
     version: 2.32.0(@typescript-eslint/parser@8.60.0)(eslint-import-resolver-typescript@4.4.4)(eslint@8.57.0)
   eslint-plugin-prettier:
-    specifier: ^5.5.5
-    version: 5.5.5(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3)
+    specifier: ^5.5.6
+    version: 5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3)
   eslint-plugin-vue:
     specifier: ^10.9.1
     version: 10.9.1(@typescript-eslint/parser@8.60.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0)
@@ -963,9 +963,9 @@ packages:
     resolution: {integrity: sha512-FESMOxil5Se014ui/Eq8fT5uHJo6nIRwH0PfJrZJXs6Gek3ZVFOrpUv3YIZT20m+extU98Hg1Ym72U58rlsxUQ==}
     dev: true
 
-  /@pkgr/core@0.2.9:
-    resolution: {integrity: sha512-QNqXyfVS2wm9hweSYD2O7F0G06uurj9kZ96TRQE5Y9hU7+tgdZwIkbAKc5Ocy1HxEY2kuDQa6cQ1WRs/O5LFKA==}
-    engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
+  /@pkgr/core@0.3.6:
+    resolution: {integrity: sha512-SEeaJLb3qBNF/OaXnaR1NmmBbFYk1zC0ZH/52fATcRPLFg/p791YrcyFFy44Bo9sLaGuSuLp5Q6axbb/O+v/RA==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     dev: true
 
   /@rolldown/binding-android-arm64@1.0.2:
@@ -3431,8 +3431,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier@5.5.5(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3):
-    resolution: {integrity: sha512-hscXkbqUZ2sPithAuLm5MXL+Wph+U7wHngPBv9OMWwlP8iaflyxpjTYZkmdgB4/vPIhemRlBEoLrH7UC1n7aUw==}
+  /eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3):
+    resolution: {integrity: sha512-ifetmTcxWfz+4qRW3pH/ujdTq2jQIj59AxJMIN26K5avYgU8dxycUETQonWiW+wPrYXA0j3Try0l1CnwVQtDqQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -3449,7 +3449,7 @@ packages:
       eslint-config-prettier: 10.1.8(eslint@8.57.0)
       prettier: 3.8.3
       prettier-linter-helpers: 1.0.1
-      synckit: 0.11.12
+      synckit: 0.11.13
     dev: true
 
   /eslint-plugin-vue@10.9.1(@typescript-eslint/parser@8.60.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0):
@@ -7193,11 +7193,11 @@ packages:
       sax: 1.6.0
     dev: true
 
-  /synckit@0.11.12:
-    resolution: {integrity: sha512-Bh7QjT8/SuKUIfObSXNHNSK6WHo6J1tHCqJsuaFDP7gP0fkzSfTxI8y85JrppZ0h8l0maIgc2tfuZQ6/t3GtnQ==}
+  /synckit@0.11.13:
+    resolution: {integrity: sha512-eNRKgb3z66Yp3D2CixVujOUvXLFUTij/zVnV8KRyvFdQwpz7I5DS8UfRkTeLzb64u+dkzDSdelE24izu+zSSUg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     dependencies:
-      '@pkgr/core': 0.2.9
+      '@pkgr/core': 0.3.6
     dev: true
 
   /table@5.4.6:
