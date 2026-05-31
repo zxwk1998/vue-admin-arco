@@ -61,7 +61,7 @@
     "eslint-plugin-vue": "^10.9.1",
     "husky": "^9.1.7",
     "less": "^4.6.4",
-    "lint-staged": "^17.0.5",
+    "lint-staged": "^17.0.6",
     "mockjs": "^1.1.0",
     "postcss-html": "^1.8.1",
     "prettier": "^3.8.3",
@@ -79,6 +79,6 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-svg-loader": "^4.0.0",
-    "vue-tsc": "^3.3.2"
+    "vue-tsc": "^3.3.3"
   }
 }
