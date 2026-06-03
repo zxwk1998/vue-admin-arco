@@ -27,7 +27,7 @@
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^3.0.4",
-    "pnpm": "^11.5.0",
+    "pnpm": "^11.5.1",
     "query-string": "^9.4.0",
     "sortablejs": "^1.15.7",
     "typescript": "^6.0.3",
