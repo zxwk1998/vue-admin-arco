@@ -42,8 +42,8 @@ dependencies:
     specifier: ^3.0.4
     version: 3.0.4(typescript@6.0.3)(vue@3.5.35)
   pnpm:
-    specifier: ^11.5.1
-    version: 11.5.1
+    specifier: ^11.5.2
+    version: 11.5.2
   query-string:
     specifier: ^9.4.0
     version: 9.4.0
@@ -5809,8 +5809,8 @@ packages:
       exsolve: 1.0.8
       pathe: 2.0.3
 
-  /pnpm@11.5.1:
-    resolution: {integrity: sha512-k/e1dCLqcGglcjW0wW62B2LraOHcI3IxmcxzkEPqm+LEFDJ0o5nYxt76KxF2Im2cocS2NILWIAwaj7qnjB0UhQ==}
+  /pnpm@11.5.2:
+    resolution: {integrity: sha512-ccYx44IGbvwlYl1c8CkHXeB7YbN/bic1D72Esb2lhkyMGWetwoB3a0XDCnFcA1mjvgj+9C1bsJ4rmQKZeWkpFg==}
     engines: {node: '>=22.13'}
     hasBin: true
     dev: false
