@@ -126,7 +126,7 @@ devDependencies:
     version: 2.32.0(@typescript-eslint/parser@8.61.0)(eslint-import-resolver-typescript@4.4.5)(eslint@8.57.0)
   eslint-plugin-prettier:
     specifier: ^5.5.6
-    version: 5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3)
+    version: 5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.4)
   eslint-plugin-vue:
     specifier: ^10.9.2
     version: 10.9.2(@typescript-eslint/parser@8.61.0)(eslint@8.57.0)(vue-eslint-parser@10.4.0)
@@ -143,8 +143,8 @@ devDependencies:
     specifier: ^1.8.1
     version: 1.8.1
   prettier:
-    specifier: ^3.8.3
-    version: 3.8.3
+    specifier: ^3.8.4
+    version: 3.8.4
   rollup:
     specifier: ^4.61.1
     version: 4.61.1
@@ -3414,7 +3414,7 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.3):
+  /eslint-plugin-prettier@5.5.6(eslint-config-prettier@10.1.8)(eslint@8.57.0)(prettier@3.8.4):
     resolution: {integrity: sha512-ifetmTcxWfz+4qRW3pH/ujdTq2jQIj59AxJMIN26K5avYgU8dxycUETQonWiW+wPrYXA0j3Try0l1CnwVQtDqQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -3430,7 +3430,7 @@ packages:
     dependencies:
       eslint: 8.57.0
       eslint-config-prettier: 10.1.8(eslint@8.57.0)
-      prettier: 3.8.3
+      prettier: 3.8.4
       prettier-linter-helpers: 1.0.1
       synckit: 0.11.13
     dev: true
@@ -6043,8 +6043,8 @@ packages:
       fast-diff: 1.3.0
     dev: true
 
-  /prettier@3.8.3:
-    resolution: {integrity: sha512-7igPTM53cGHMW8xWuVTydi2KO233VFiTNyF5hLJqpilHfmn8C8gPf+PS7dUT64YcXFbiMGZxS9pCSxL/Dxm/Jw==}
+  /prettier@3.8.4:
+    resolution: {integrity: sha512-N2MylSdi48+5N/6S5j+maeHbUSIzzZ5uOcX5Hm4QpV8Dkb1HFjfAKTKX6yNPJQD9AhcT3ifHNB66tWTTJDi11Q==}
     engines: {node: '>=14'}
     hasBin: true
     dev: true
