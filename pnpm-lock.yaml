@@ -39,11 +39,11 @@ dependencies:
     specifier: ^0.2.0
     version: 0.2.0
   pinia:
-    specifier: ^4.0.1
-    version: 4.0.1(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.39)
+    specifier: ^4.0.2
+    version: 4.0.2(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.39)
   pnpm:
-    specifier: ^11.13.0
-    version: 11.13.0
+    specifier: ^11.13.1
+    version: 11.13.1
   query-string:
     specifier: ^9.4.1
     version: 9.4.1
@@ -64,7 +64,7 @@ dependencies:
     version: 11.4.6(vue@3.5.39)
   vue-router:
     specifier: '5'
-    version: 5.0.4(@vue/compiler-sfc@3.5.39)(pinia@4.0.1)(vue@3.5.39)
+    version: 5.0.4(@vue/compiler-sfc@3.5.39)(pinia@4.0.2)(vue@3.5.39)
 
 devDependencies:
   '@arco-plugins/vite-vue':
@@ -6167,8 +6167,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /pinia@4.0.1(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.39):
-    resolution: {integrity: sha512-0T9mU4aDENt40cnJLxYLkqr1Fwqao2CHCL5H65jCSjnL0kOsvARc+PYydwEw2YfQ0VObzwjMNFwzDr+q7n/nnQ==}
+  /pinia@4.0.2(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.39):
+    resolution: {integrity: sha512-yKVVA7bSj5oRZFp/Ab9wLlmyb5gPUYEiIm4ryiWTe/xe7PtkRdMVOp1X1ggvq0c6Uj7Q0Du1HnV2mtAwM0Ks1g==}
     peerDependencies:
       '@vue/devtools-api': ^8.1.5
       typescript: '>=5.6.0'
@@ -6197,8 +6197,8 @@ packages:
       exsolve: 1.0.8
       pathe: 2.0.3
 
-  /pnpm@11.13.0:
-    resolution: {integrity: sha512-iNlHJNjy5sGGdEpVhMblnsrIaex7oV6ctM1ijo3HBmggskgdjuO1HqjaMjpzeAaKpYxVajcg0yt8IKBR0Ig2Og==}
+  /pnpm@11.13.1:
+    resolution: {integrity: sha512-svx2g7imUlQU59E+G6KMqt3elr9m7FQL+ut+cCuB8+C+TR8pXt9/n+A5Z0Co3ORQnFgt33mJH0VD/qMtN2RfJQ==}
     engines: {node: '>=22.13'}
     hasBin: true
     dev: false
@@ -8147,7 +8147,7 @@ packages:
       vue: 3.5.39(typescript@7.0.2)
     dev: false
 
-  /vue-router@5.0.4(@vue/compiler-sfc@3.5.39)(pinia@4.0.1)(vue@3.5.39):
+  /vue-router@5.0.4(@vue/compiler-sfc@3.5.39)(pinia@4.0.2)(vue@3.5.39):
     resolution: {integrity: sha512-lCqDLCI2+fKVRl2OzXuzdSWmxXFLQRxQbmHugnRpTMyYiT+hNaycV0faqG5FBHDXoYrZ6MQcX87BvbY8mQ20Bg==}
     peerDependencies:
       '@pinia/colada': '>=0.21.2'
@@ -8175,7 +8175,7 @@ packages:
       muggle-string: 0.4.1
       pathe: 2.0.3
       picomatch: 4.0.4
-      pinia: 4.0.1(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.39)
+      pinia: 4.0.2(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.39)
       scule: 1.3.0
       tinyglobby: 0.2.15
       unplugin: 3.0.0
