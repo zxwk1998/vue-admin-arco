@@ -42,8 +42,8 @@ dependencies:
     specifier: ^4.0.2
     version: 4.0.2(@vue/devtools-api@8.1.5)(typescript@7.0.2)(vue@3.5.40)
   pnpm:
-    specifier: ^11.13.1
-    version: 11.13.1
+    specifier: ^11.14.0
+    version: 11.14.0
   query-string:
     specifier: ^9.4.1
     version: 9.4.1
@@ -6227,8 +6227,8 @@ packages:
       exsolve: 1.0.8
       pathe: 2.0.3
 
-  /pnpm@11.13.1:
-    resolution: {integrity: sha512-svx2g7imUlQU59E+G6KMqt3elr9m7FQL+ut+cCuB8+C+TR8pXt9/n+A5Z0Co3ORQnFgt33mJH0VD/qMtN2RfJQ==}
+  /pnpm@11.14.0:
+    resolution: {integrity: sha512-ZsGsTH1HYtbX3eRMfz5ac1ke0KCAbnUdTtMtTwBPJbIoWpBrH9ip4+Yh3ztOKFi/iOUODPYmvtvpd/5DSlyvhQ==}
     engines: {node: '>=22.13'}
     hasBin: true
     dev: false
