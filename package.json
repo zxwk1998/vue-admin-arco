@@ -60,7 +60,7 @@
     "eslint-plugin-prettier": "^5.5.6",
     "eslint-plugin-vue": "^10.10.0",
     "husky": "^9.1.7",
-    "less": "^4.8.0",
+    "less": "^4.8.1",
     "lint-staged": "^17.2.0",
     "mockjs": "^1.1.0",
     "postcss-html": "^1.8.1",
