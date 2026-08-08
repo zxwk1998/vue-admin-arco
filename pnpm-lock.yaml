@@ -57,8 +57,8 @@ dependencies:
     specifier: ^3.5.41
     version: 3.5.41(typescript@7.0.2)
   vue-echarts:
-    specifier: ^8.0.1
-    version: 8.0.1(echarts@6.1.0)(vue@3.5.41)
+    specifier: ^8.1.0
+    version: 8.1.0(echarts@6.1.0)(vue@3.5.41)
   vue-i18n:
     specifier: ^11.4.8
     version: 11.4.8(vue@3.5.41)
@@ -8128,8 +8128,8 @@ packages:
     resolution: {integrity: sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ==}
     dev: true
 
-  /vue-echarts@8.0.1(echarts@6.1.0)(vue@3.5.41):
-    resolution: {integrity: sha512-23rJTFLu1OUEGRWjJGmdGt8fP+8+ja1gVgzMYPIPaHWpXegcO1viIAaeu2H4QHESlVeHzUAHIxKXGrwjsyXAaA==}
+  /vue-echarts@8.1.0(echarts@6.1.0)(vue@3.5.41):
+    resolution: {integrity: sha512-/uJVwijy3M2vIZ0NcPDgdZVqgboc6zZtC/vERfESau0eFpkHOIujj0sIiMiLP4kztQrckMFnDYWrid+gLI+IOg==}
     peerDependencies:
       echarts: ^6.0.0
       vue: ^3.3.0
