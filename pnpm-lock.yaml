@@ -71,11 +71,11 @@ devDependencies:
     specifier: ^1.4.6
     version: 1.4.6
   '@commitlint/cli':
-    specifier: ^21.2.1
-    version: 21.2.1(@types/node@25.5.0)(typescript@7.0.2)
+    specifier: ^21.2.2
+    version: 21.2.2(@types/node@25.5.0)(typescript@7.0.2)
   '@commitlint/config-conventional':
-    specifier: ^21.2.0
-    version: 21.2.0
+    specifier: ^21.2.2
+    version: 21.2.2
   '@types/lodash':
     specifier: ^4.17.25
     version: 4.17.25
@@ -134,8 +134,8 @@ devDependencies:
     specifier: ^9.1.7
     version: 9.1.7
   less:
-    specifier: ^4.8.1
-    version: 4.8.1
+    specifier: ^4.9.0
+    version: 4.9.0
   lint-staged:
     specifier: ^17.3.0
     version: 17.3.0
@@ -174,7 +174,7 @@ devDependencies:
     version: 32.1.0(vue@3.5.41)
   vite:
     specifier: ^8.2.1
-    version: 8.2.1(@types/node@25.5.0)(less@4.8.1)
+    version: 8.2.1(@types/node@25.5.0)(less@4.9.0)
   vite-plugin-compression:
     specifier: ^0.5.1
     version: 0.5.1(vite@8.2.1)
@@ -729,15 +729,15 @@ packages:
       keyv: 5.6.0
     dev: true
 
-  /@commitlint/cli@21.2.1(@types/node@25.5.0)(typescript@7.0.2):
-    resolution: {integrity: sha512-blsZGe29hJ72VGEFVl72IVYX+1vsfINpjA9yWQA6i7OKD/McGEOXg08sKIRKjFk4JvzhV/9n0l3i6NooPLTNfg==}
+  /@commitlint/cli@21.2.2(@types/node@25.5.0)(typescript@7.0.2):
+    resolution: {integrity: sha512-a+6hQxIxnpdvSvS2apvttPNbEliYsVC3PqFYDiiB2kjbwIsQsj1urvQ4Tkf70pKYozPalKAuRQmm/GHwndduqA==}
     engines: {node: '>=22.12.0'}
     hasBin: true
     dependencies:
-      '@commitlint/config-conventional': 21.2.0
-      '@commitlint/format': 21.2.0
-      '@commitlint/lint': 21.2.0
-      '@commitlint/load': 21.2.0(@types/node@25.5.0)(typescript@7.0.2)
+      '@commitlint/config-conventional': 21.2.2
+      '@commitlint/format': 21.2.2
+      '@commitlint/lint': 21.2.2
+      '@commitlint/load': 21.2.2(@types/node@25.5.0)(typescript@7.0.2)
       '@commitlint/read': 21.2.1
       '@commitlint/types': 21.2.0
       tinyexec: 1.2.4
@@ -749,8 +749,8 @@ packages:
       - typescript
     dev: true
 
-  /@commitlint/config-conventional@21.2.0:
-    resolution: {integrity: sha512-Qf8WRDVcyVd14if6VTWenebxFbKnVnbzPUJjlzjkyJGeHK2xCGd63Dr1XZzj0plXKQb9P0BfOxoc1HVeCo2BWQ==}
+  /@commitlint/config-conventional@21.2.2:
+    resolution: {integrity: sha512-NxA37SZviusFUEYOQZ5hNnZ1h7O/KiemPkxjOlpzKJNnWxThiwc6/SaZhaPa8fyLvfRBAywhQhJJk8XESHWlpQ==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/types': 21.2.0
@@ -778,39 +778,39 @@ packages:
     engines: {node: '>=22.12.0'}
     dev: true
 
-  /@commitlint/format@21.2.0:
-    resolution: {integrity: sha512-c4q64xaav2U83t7k7RyzJerBZurPer7FxUOY0RL5L/6CZijZ7K+s6HIBGIghj0ey1P2+seRX0J9XQYtDued6tg==}
+  /@commitlint/format@21.2.2:
+    resolution: {integrity: sha512-v6fvxZSc/AvVMROlr3H34+1766bZSYApRUSCAMjWamStPjKMvZ8GdvVA5YW/VQNgbFTmcMz6OYmSTJEvIjPrfA==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/types': 21.2.0
       picocolors: 1.1.1
     dev: true
 
-  /@commitlint/is-ignored@21.2.0:
-    resolution: {integrity: sha512-4/eB0vBN7L88O/oC4ajAEqi7j2ZfNgxl/+11RfAV9YosejZgDXhY2C9VcHnHJhOzPLoSy5P3Mg/46kqeyJfXKw==}
+  /@commitlint/is-ignored@21.2.2:
+    resolution: {integrity: sha512-9UoKNgfFE3LU7FrzierCvk3CdDfMDeVGC86qZiT/n0TIjfq/dmZ9MHuXd45OTNRa26ZanmJRxEtmiXk/lEJihg==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/types': 21.2.0
-      semver: 7.7.4
+      semver: 7.8.5
     dev: true
 
-  /@commitlint/lint@21.2.0:
-    resolution: {integrity: sha512-ceO5dp9pLjEZ6y6qbq/uXWXDPykqqlTsyzoQ0NzecpisSJhK3kTy9qzQoPeJuWG/IMNdV1lO0RgmzqoAlSi1uw==}
+  /@commitlint/lint@21.2.2:
+    resolution: {integrity: sha512-Fy8JxEBzdmsYWFude/61GxXu5O+wEymwiRK2z9GL9R8mCsXphCoGxAFc5iHn5mjlfcSrhiiONE+ksf4KOjnaPg==}
     engines: {node: '>=22.12.0'}
     dependencies:
-      '@commitlint/is-ignored': 21.2.0
-      '@commitlint/parse': 21.2.0
-      '@commitlint/rules': 21.2.0
+      '@commitlint/is-ignored': 21.2.2
+      '@commitlint/parse': 21.2.2
+      '@commitlint/rules': 21.2.2
       '@commitlint/types': 21.2.0
     dev: true
 
-  /@commitlint/load@21.2.0(@types/node@25.5.0)(typescript@7.0.2):
-    resolution: {integrity: sha512-RjlzWQqruRwIenJEfZtq7kG97co97nKoHpflE5YnF61tDLXxHPrdWImgzw6VL6MlFyaOcVlk74eBV8ZQmc3oIA==}
+  /@commitlint/load@21.2.2(@types/node@25.5.0)(typescript@7.0.2):
+    resolution: {integrity: sha512-0Tt6wDPX167cjKC5D4zhm0+20wJJG+TN/TKovMOspfSe78rOnKX+MNzlVNiu6HyQPZChPJ8QBH31MVt6Bb8fCg==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/config-validator': 21.2.0
       '@commitlint/execute-rule': 21.0.1
-      '@commitlint/resolve-extends': 21.2.0
+      '@commitlint/resolve-extends': 21.2.2
       '@commitlint/types': 21.2.0
       cosmiconfig: 9.0.2(typescript@7.0.2)
       cosmiconfig-typescript-loader: 6.2.0(@types/node@25.5.0)(cosmiconfig@9.0.2)(typescript@7.0.2)
@@ -827,8 +827,8 @@ packages:
     engines: {node: '>=22.12.0'}
     dev: true
 
-  /@commitlint/parse@21.2.0:
-    resolution: {integrity: sha512-QHWxG4d0PLTF634/AdyZ0MQS+CLn5YOuJlCFhMMlSGKFxzYGUetkHBj18xgBD+6fVzUrA2lrCdi/vlS2f/oYXg==}
+  /@commitlint/parse@21.2.2:
+    resolution: {integrity: sha512-MEkobPfvRp+z06Wro8HMG1BDGHzZmj82A1LH1nWeG3ipHpg/x4m6v3wEDvMBIKjRFUnfR3nBeFs3MVCr7UdAmg==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/types': 21.2.0
@@ -849,8 +849,8 @@ packages:
       - conventional-commits-parser
     dev: true
 
-  /@commitlint/resolve-extends@21.2.0:
-    resolution: {integrity: sha512-4O/1j51+79Wth9s/MGxt/5gs0XYLDgNlYpltQfhAvLE0itusLKs9zruxbiNg1oOkmkb9L9L4USYGjEj7n87NxA==}
+  /@commitlint/resolve-extends@21.2.2:
+    resolution: {integrity: sha512-RPkJ/IFi7sMUUVbZLqwWFtWw/zRDcfFsmrPSiTMrt5wb7AdxOr86EGQFvmGzef5QKV5IPBWWCujqVTw1RWX44A==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/config-validator': 21.2.0
@@ -860,8 +860,8 @@ packages:
       resolve-from: 5.0.0
     dev: true
 
-  /@commitlint/rules@21.2.0:
-    resolution: {integrity: sha512-C2yXMNpiB8ETZKfx5JD8+ExgF8vTU1VQMKPSUUYwqKpw9oJWQBrlXBpdU038mj2WPjof7o9UzFpmTyBeGMZwZg==}
+  /@commitlint/rules@21.2.2:
+    resolution: {integrity: sha512-eplQzyYkBjYB1HyyRj8hkcK11Y9DU9nuBz7uOKEd6NpE9NGDytLFCAnlRE+OoiK/5sHEJsaz2RGhuWBvYzIbNA==}
     engines: {node: '>=22.12.0'}
     dependencies:
       '@commitlint/ensure': 21.2.0
@@ -904,7 +904,7 @@ packages:
     dependencies:
       '@simple-libs/child-process-utils': 2.0.0
       '@simple-libs/stream-utils': 2.0.0
-      semver: 7.7.4
+      semver: 7.8.5
     dev: true
 
   /@conventional-changelog/template@1.2.0:
@@ -2182,7 +2182,7 @@ packages:
       '@babel/plugin-transform-typescript': 7.29.7(@babel/core@7.29.0)
       '@rolldown/pluginutils': 1.0.1
       '@vue/babel-plugin-jsx': 2.0.1(@babel/core@7.29.0)
-      vite: 8.2.1(@types/node@25.5.0)(less@4.8.1)
+      vite: 8.2.1(@types/node@25.5.0)(less@4.9.0)
       vue: 3.5.41(typescript@7.0.2)
     transitivePeerDependencies:
       - supports-color
@@ -2196,7 +2196,7 @@ packages:
       vue: ^3.2.25
     dependencies:
       '@rolldown/pluginutils': 1.0.1
-      vite: 8.2.1(@types/node@25.5.0)(less@4.8.1)
+      vite: 8.2.1(@types/node@25.5.0)(less@4.9.0)
       vue: 3.5.41(typescript@7.0.2)
     dev: true
 
@@ -5308,8 +5308,8 @@ packages:
     resolution: {integrity: sha512-bEZlJzXo5V/ApNNa5z375mJC6Nrz4vG43UgcSCrg2OHC+yuB6j0iDSrY7RQ/+PRofFB03wNIIt9iXIVLr4wc7w==}
     dev: true
 
-  /less@4.8.1:
-    resolution: {integrity: sha512-jQ3lRIo1aUtiWVYXZ7mk4+V4BjCGswF3IxTLJ+4RUta8ZiHh8lhkig2G8dya2eCcyR1dYUvzuV46EkJN8PSwww==}
+  /less@4.9.0:
+    resolution: {integrity: sha512-umRhrCH7fCi8Uj2RcwKjJdvUORTjeWqkdKx0LbcZvjIwsAVsnIAGcxHaqowPeBFBjQuWOeC/bve0AlpFzF/+SQ==}
     engines: {node: '>=18'}
     hasBin: true
     dependencies:
@@ -6907,12 +6907,6 @@ packages:
     hasBin: true
     dev: true
 
-  /semver@7.7.4:
-    resolution: {integrity: sha512-vFKC2IEtQnVhpT78h1Yp8wzwrf8CM+MzKMHGJZfBtzhZNycRFnXsHk6E5TxIkkMsgNS7mdX3AGB7x2QM2di4lA==}
-    engines: {node: '>=10'}
-    hasBin: true
-    dev: true
-
   /semver@7.8.5:
     resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
     engines: {node: '>=10'}
@@ -8045,7 +8039,7 @@ packages:
       chalk: 4.1.2
       debug: 4.4.3
       fs-extra: 10.1.0
-      vite: 8.2.1(@types/node@25.5.0)(less@4.8.1)
+      vite: 8.2.1(@types/node@25.5.0)(less@4.9.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8060,7 +8054,7 @@ packages:
       '@types/eslint': 8.56.12
       eslint: 8.57.0
       rollup: 2.80.0
-      vite: 8.2.1(@types/node@25.5.0)(less@4.8.1)
+      vite: 8.2.1(@types/node@25.5.0)(less@4.9.0)
     dev: true
 
   /vite-svg-loader@4.0.0:
@@ -8070,7 +8064,7 @@ packages:
       svgo: 3.3.3
     dev: true
 
-  /vite@8.2.1(@types/node@25.5.0)(less@4.8.1):
+  /vite@8.2.1(@types/node@25.5.0)(less@4.9.0):
     resolution: {integrity: sha512-EU/eS7BH3XROHh2YnBefjM6DBKA6ZeMZEYQbj7NLWg5wHYlhB8B/Mayd5XsgWq+NFYccDOTemRpdETWR6Ka/lw==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
@@ -8114,7 +8108,7 @@ packages:
         optional: true
     dependencies:
       '@types/node': 25.5.0
-      less: 4.8.1
+      less: 4.9.0
       lightningcss: 1.33.0
       picomatch: 4.0.5
       postcss: 8.5.25
