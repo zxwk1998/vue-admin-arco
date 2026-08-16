@@ -27,7 +27,7 @@
     "mockjs": "^1.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^4.0.3",
-    "pnpm": "^11.21.0",
+    "pnpm": "^11.22.0",
     "query-string": "^9.5.0",
     "sortablejs": "^1.15.7",
     "typescript": "^7.0.2",
@@ -79,6 +79,6 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-eslint": "^1.8.1",
     "vite-svg-loader": "^4.0.0",
-    "vue-tsc": "^3.3.9"
+    "vue-tsc": "^3.3.10"
   }
 }
