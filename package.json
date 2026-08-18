@@ -19,7 +19,7 @@
     "@types/mockjs": "^1.0.10",
     "@vueuse/core": "^14.4.0",
     "axios": "^1.19.0",
-    "dayjs": "^1.11.22",
+    "dayjs": "^1.11.23",
     "echarts": "^6.1.0",
     "install": "^0.13.0",
     "lodash": "^4.18.1",
