@@ -141,7 +141,7 @@ devDependencies:
     version: 17.3.0
   postcss-html:
     specifier: ^2.0.0
-    version: 2.0.0(postcss@8.5.25)
+    version: 2.0.0(postcss@8.5.26)
   prettier:
     specifier: ^3.9.6
     version: 3.9.6
@@ -185,8 +185,8 @@ devDependencies:
     specifier: ^4.0.0
     version: 4.0.0
   vue-tsc:
-    specifier: ^3.3.10
-    version: 3.3.10(typescript@7.0.2)
+    specifier: ^3.3.11
+    version: 3.3.11(typescript@7.0.2)
 
 packages:
 
@@ -2349,8 +2349,8 @@ packages:
     resolution: {integrity: sha512-mhT4zcPFhF+Xk1O4BfhhrbXzpmfqY03fS6xGpcllbQG7lDjhQf8pQHcTIhqQIYx1hfwtHmk/6jM96ele0UxPqQ==}
     dev: false
 
-  /@vue/language-core@3.3.10:
-    resolution: {integrity: sha512-CR7ByBbgPHqhxrioKPOcZBqttaozzLNwtkCzXQ+uF8gLPHnUe03srPnGpdtHD3zp+bq5iyVkZ1WNx7W564RPwg==}
+  /@vue/language-core@3.3.11:
+    resolution: {integrity: sha512-QJmpliwAVpC/OxubIByPAhNzsQPRc8/gxlN2qnVzVfIMjMDz/9RnXRFoetjz5yEgXVXyp4LqhXq3V53PjmNzFw==}
     dependencies:
       '@volar/language-core': 2.4.28
       '@vue/compiler-dom': 3.5.41
@@ -6189,10 +6189,10 @@ packages:
     dependencies:
       htmlparser2: 3.10.1
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.25)
+      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.26)
     dev: true
 
-  /postcss-html@2.0.0(postcss@8.5.25):
+  /postcss-html@2.0.0(postcss@8.5.26):
     resolution: {integrity: sha512-f2Rvw5FCollEfVj3wfN7JdQb7n2rNIthW+epw2EByio7M6P7RH0BTj8a/ODHrUXd0cmO7ychb6YniymV93182Q==}
     engines: {node: ^22.12 || >=24}
     peerDependencies:
@@ -6200,8 +6200,8 @@ packages:
     dependencies:
       htmlparser2: 9.1.0
       js-tokens: 9.0.1
-      postcss: 8.5.25
-      postcss-safe-parser: 7.0.1(postcss@8.5.25)
+      postcss: 8.5.26
+      postcss-safe-parser: 7.0.1(postcss@8.5.26)
     dev: true
 
   /postcss-jsx@0.36.4(postcss-syntax@0.36.2)(postcss@7.0.39):
@@ -6212,7 +6212,7 @@ packages:
     dependencies:
       '@babel/core': 8.0.1
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.25)
+      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.26)
     dev: true
 
   /postcss-less@3.1.4:
@@ -6229,7 +6229,7 @@ packages:
       postcss-syntax: '>=0.36.0'
     dependencies:
       postcss: 7.0.39
-      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.25)
+      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.26)
       remark: 10.0.1
       unist-util-find-all-after: 1.0.5
     dev: true
@@ -6268,13 +6268,13 @@ packages:
       postcss: 8.5.19
     dev: true
 
-  /postcss-safe-parser@7.0.1(postcss@8.5.25):
+  /postcss-safe-parser@7.0.1(postcss@8.5.26):
     resolution: {integrity: sha512-0AioNCJZ2DPYz5ABT6bddIqlhgwhpHZ/l65YAYo0BCIn0xiDpsnTHz0gnoTGk0OXZW0JRs+cDwL8u/teRdz+8A==}
     engines: {node: '>=18.0'}
     peerDependencies:
       postcss: ^8.4.31
     dependencies:
-      postcss: 8.5.25
+      postcss: 8.5.26
     dev: true
 
   /postcss-sass@0.3.5:
@@ -6324,7 +6324,7 @@ packages:
       postcss: 7.0.39
     dev: true
 
-  /postcss-syntax@0.36.2(postcss-html@2.0.0)(postcss@8.5.25):
+  /postcss-syntax@0.36.2(postcss-html@2.0.0)(postcss@8.5.26):
     resolution: {integrity: sha512-nBRg/i7E3SOHWxF3PpF5WnJM/jQ1YpY9000OaVXlAQj6Zp/kIqJxEDWIZ67tAd7NLuk7zqN4yqe9nc0oNAOs1w==}
     peerDependencies:
       postcss: '>=5.0.0'
@@ -6345,8 +6345,8 @@ packages:
       postcss-scss:
         optional: true
     dependencies:
-      postcss: 8.5.25
-      postcss-html: 2.0.0(postcss@8.5.25)
+      postcss: 8.5.26
+      postcss-html: 2.0.0(postcss@8.5.26)
     dev: true
 
   /postcss-value-parser@3.3.1:
@@ -7289,7 +7289,7 @@ packages:
       postcss-html: ^2.0.0
       stylelint: '>=16.0.0'
     dependencies:
-      postcss-html: 2.0.0(postcss@8.5.25)
+      postcss-html: 2.0.0(postcss@8.5.26)
       stylelint: 17.14.1(typescript@7.0.2)
     dev: true
 
@@ -7325,7 +7325,7 @@ packages:
       stylelint-config-recommended-scss:
         optional: true
     dependencies:
-      postcss-html: 2.0.0(postcss@8.5.25)
+      postcss-html: 2.0.0(postcss@8.5.26)
       semver: 7.8.5
       stylelint: 17.14.1(typescript@7.0.2)
       stylelint-config-html: 2.0.0(postcss-html@2.0.0)(stylelint@17.14.1)
@@ -7460,7 +7460,7 @@ packages:
       postcss-sass: 0.3.5
       postcss-scss: 2.1.1
       postcss-selector-parser: 3.1.2
-      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.25)
+      postcss-syntax: 0.36.2(postcss-html@2.0.0)(postcss@8.5.26)
       postcss-value-parser: 3.3.1
       resolve-from: 4.0.0
       signal-exit: 3.0.7
@@ -8156,14 +8156,14 @@ packages:
       yaml: 2.8.3
     dev: false
 
-  /vue-tsc@3.3.10(typescript@7.0.2):
-    resolution: {integrity: sha512-YaDVxcW+CGtaOt3pZahMG5jYPx0hsUTxyEoPOTSMebcGUXP9lIBabQ14vfKMORb2CqqK5CxsNo/d1d+4IQwiKg==}
+  /vue-tsc@3.3.11(typescript@7.0.2):
+    resolution: {integrity: sha512-gOb0B9rtU2+f1dszwPqSH5kAieIF9ReeLhD3kSRNHv5WZZUQz/JdVXW0RTdqhNTMlQkqKzrTTviqKr/4FYZraQ==}
     hasBin: true
     peerDependencies:
       typescript: '>=5.0.0'
     dependencies:
       '@volar/typescript': 2.4.28
-      '@vue/language-core': 3.3.10
+      '@vue/language-core': 3.3.11
       typescript: 7.0.2
     dev: true
 
