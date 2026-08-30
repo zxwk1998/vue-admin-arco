@@ -32,7 +32,7 @@
     "sortablejs": "^1.15.7",
     "typescript": "^7.0.2",
     "vue": "^3.5.42",
-    "vue-echarts": "^8.1.0",
+    "vue-echarts": "^8.2.0",
     "vue-i18n": "^11.4.10",
     "vue-router": "5"
   },
