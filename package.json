@@ -28,7 +28,7 @@
     "nprogress": "^0.2.0",
     "pinia": "^4.0.3",
     "pnpm": "^11.25.0",
-    "query-string": "^9.5.0",
+    "query-string": "^9.5.1",
     "sortablejs": "^1.15.7",
     "typescript": "^7.0.2",
     "vue": "^3.5.42",
