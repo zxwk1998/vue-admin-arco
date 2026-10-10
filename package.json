@@ -32,7 +32,7 @@
     "sortablejs": "^1.15.7",
     "typescript": "^7.0.2",
     "vue": "^3.5.43",
-    "vue-echarts": "^8.3.1",
+    "vue-echarts": "^8.3.2",
     "vue-i18n": "^11.4.13",
     "vue-router": "5"
   },
@@ -40,7 +40,7 @@
     "@arco-plugins/vite-vue": "^1.4.6",
     "@commitlint/cli": "^21.2.3",
     "@commitlint/config-conventional": "^21.2.3",
-    "@types/lodash": "^4.17.25",
+    "@types/lodash": "^4.17.26",
     "@types/mockjs": "^1.0.10",
     "@types/nprogress": "^0.2.3",
     "@types/sortablejs": "^1.15.9",
